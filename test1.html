@@ -1,0 +1,19 @@
+<script type="text/javascript">
+alert("234");
+var n = "631758924";  
+var arr = [];  
+var res = [];  
+for(var i=0; i<n.length; i++) {  
+    arr.push(n.charAt(i));  
+}  
+while(arr.length) {  
+    if(arr.length !== 1) {  
+        res.push( arr.shift() );  
+        arr.push( arr.shift() );      
+    } else {  
+        res.push( arr.shift() );  
+    }  
+}     
+alert(res.join(''));
+console.log(res.join(''));
+</script>
