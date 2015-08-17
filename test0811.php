@@ -152,3 +152,159 @@ function  test3 ()
 }
 echo "<hr/>";
 test3();
+echo "<hr/>";
+class Foo
+{
+    public static $my_static = 'foo';
+
+    public function staticValue() {
+        return self::$my_static;
+    }
+}
+
+class Bar extends Foo
+{
+    public function fooStatic() {
+        return parent::$my_static;
+    }
+}
+
+
+print Foo::$my_static . "\n";
+
+$foo = new Foo();
+print $foo->staticValue() . "\n";
+print $foo->my_static . "\n";      // Undefined "Property" my_static
+
+print $foo::$my_static . "\n";
+$classname = 'Foo';
+print $classname::$my_static . "\n"; // PHP 5.3.0之后可以动态调用
+
+print Bar::$my_static . "\n";
+$bar = new Bar();
+print $bar->fooStatic() . "\n";
+echo "<hr/>";
+abstract class AbstractClass
+{
+    // 强制要求子类定义这些方法
+    //在子类中要实现这些方法
+    abstract protected function getValue();
+    abstract protected function prefixValue($prefix);
+
+    // 普通方法（非抽象方法）
+    public function printOut() {
+        print $this->getValue() . "\n";
+    }
+}
+
+class ConcreteClass1 extends AbstractClass
+{
+    protected function getValue() {
+        return "ConcreteClass1";
+    }
+
+    public function prefixValue($prefix) {
+        return "{$prefix}ConcreteClass1";
+    }
+}
+
+class ConcreteClass2 extends AbstractClass
+{
+    public function getValue() {
+        return "ConcreteClass2";
+    }
+
+    public function prefixValue($prefix) {
+        return "{$prefix}ConcreteClass2";
+    }
+}
+
+$class1 = new ConcreteClass1;
+$class1->printOut();
+echo $class1->prefixValue('FOO_') ."\n";
+
+$class2 = new ConcreteClass2;
+$class2->printOut();
+echo $class2->prefixValue('FOO_') ."\n";
+/*
+ * 使用接口（interface），你可以指定某个类必须实现哪些方法，但不需要定义这些方法的具体内容。
+ * 我们可以通过interface来定义一个接口，就像定义一个标准的类一样，但其中定义所有的方法都是空的。
+ *  接口中定义的所有方法都必须是public，这是接口的特性。
+1. 实现
+要实现一个接口，可以使用implements操作符。类中必须实现接口中定义的   所有方法，
+否则会报一个fatal错误。如果要实现多个接口，可以用逗号来分隔多个接口的名称。
+Note: 实现多个接口时，接口中的方法不能有重名。
+Note: 接口也可以继承，通过使用extends操作符。
+2. 常量
+接口中也可以定义常量。接口常量和类常量的使用完全相同。 它们都是定值，不能被子类或子接口修改。
+ */
+// 声明一个'iTemplate'接口
+interface iTemplate
+{
+    public function setVariable($name, $var);
+    public function getHtml($template);
+}
+
+
+// 实现接口
+// 下面的写法是正确的
+class Template implements iTemplate
+{
+    private $vars = array();
+
+    public function setVariable($name, $var)
+    {
+        $this->vars[$name] = $var;
+    }
+
+    public function getHtml($template)
+    {
+        foreach($this->vars as $name => $value) {
+            $template = str_replace('{' . $name . '}', $value, $template);
+        }
+
+        return $template;
+    }
+}
+
+// 下面的写法是错误的，会报错：
+//要实现接口中的所有的方法
+// Fatal error: Class BadTemplate contains 1 abstract methods
+// and must therefore be declared abstract (iTemplate::getHtml)
+/*class BadTemplate implements iTemplate
+{
+    private $vars = array();
+
+    public function setVariable($name, $var)
+    {
+        $this->vars[$name] = $var;
+    }
+}*/
+//多个接口之间的继承
+interface a
+{
+    public function foo();
+}
+interface b
+{
+    public function bar();
+}
+interface c extends a, b
+{
+    public function baz();
+}
+class d implements c
+{
+    public function foo()
+    {
+
+    }
+    public function bar()
+    {
+
+    }
+    public function baz()
+    {
+
+    }
+}
