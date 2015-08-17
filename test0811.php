@@ -65,7 +65,7 @@ if($a == $b) {//运行发现a与b相等
 echo "<hr/>";
 //curl_init()创建一个会话
 // 创建一个新cURL资源
-$ch  =  curl_init ();
+//$ch  =  curl_init ();
 
 // 设置URL和相应的选项
 //curl_setopt ( $ch ,  CURLOPT_URL ,  "http://www.baidu.com/" );
@@ -76,3 +76,79 @@ $ch  =  curl_init ();
 //
 //// 关闭cURL资源，并且释放系统资源
 //curl_close ( $ch );
+echo "成功导入github<br/>";
+$count = "2 cats";
+echo gettype($count);
+echo "<br/>";
+$count +=3;
+echo $count."<br/>";
+echo gettype($count);
+echo "<hr/>";
+class Myclass5 {
+    private $a = "a";
+    public $b = "b";
+    public $c = "c";
+    protected $d = 'd';
+}
+$test = new Myclass5();
+echo "<pre>";
+print_r((array)$test);
+echo "<hr/>";
+foreach ((array) $test as $key => $value) {
+    $len = strlen($key);
+    echo "{$key} ({$len}) => {$value}<br />";
+    for ($i = 0; $i < $len; ++$i) {
+        echo ord($key[$i]) . ' ';//ord() 函数返回字符串的首个字符的 ASCII 值。
+    }
+    echo '<hr />';
+}
+$str = "Hello World";
+//unset($str);
+echo $str."<br/>";
+echo trim($str,"hd");//trim() 函数移除字符串两侧的空白字符或其他预定义字符。
+//ltrim() - 移除字符串左侧的空白字符或其他预定义字符
+//rtrim() - 移除字符串右侧的空白字符或其他预定义字符
+echo "<hr/>";
+$ArrayList = array("_GET", "_POST", "_SESSION", "_COOKIE", "_SERVER");
+foreach($ArrayList as $gblArray)
+{
+    $keys = array_keys($$gblArray);
+    foreach($keys as $key)
+    {
+        echo "$key"."<br/>";
+        $$key = trim(${$gblArray}[$key]);
+        //echo $$key."<br/>";
+    }
+}
+echo "<hr/>";
+function  Test ()
+{
+    $a  =  0 ;
+    echo  $a ;
+    $a ++;
+}
+function  Test_static ()
+{
+   static $a  =  0 ;
+    echo  $a ;
+    $a ++;
+}
+for($i=0;$i<3;$i++){
+    Test();//不管循环多少次都是0,因为变量a不会改变
+    echo "<br/>";
+    Test_static();//变量a会保持赋值的新值，每次循环都会递增1
+}
+//静态变量与递归函数
+function  test3 ()
+{
+    static  $count  =  0 ;
+
+    $count ++;
+    echo  $count."<br/>" ;
+    if ( $count  <  10 ) {
+        test3 ();//递归函数
+    }
+    $count --;
+}
+echo "<hr/>";
+test3();
