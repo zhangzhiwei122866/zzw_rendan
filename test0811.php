@@ -141,7 +141,7 @@ for($i=0;$i<3;$i++){
 //静态变量与递归函数
 function  test3 ()
 {
-    static  $count  =  0 ;
+    static  $count  =  0 ;//变量count的值在每次循环都会保存下来的
 
     $count ++;
     echo  $count."<br/>" ;
@@ -308,3 +308,130 @@ class d implements c
 
     }
 }
+echo "<hr/>";
+
+// if you really want to create a variable within its own scope
+// that does not have access to variables outside its scope create a function
+
+$var = "hello";
+
+$func = function(){
+//    global $var;//可以设置全局变量，读取变量var的值
+    // declare variables here that will only last throughout this scope
+
+    if( !isset($var) ) // var will not be set in this scope
+    {
+        $var = "i was out of scope";
+    }
+
+    echo $var;
+
+};
+
+echo "$var<br />";
+
+$func(); // invoke the function  这个方法调用之后  $var变量不会变
+
+echo "<br />".'$var'." never changed from $var";
+echo "<hr/>";
+function test1 () {
+    static $a = 0;
+    $a = 4;//如果是   $a +=4    输出的值就变成 4 9
+     echo $a ++;
+}
+test1();
+echo "<br/>";
+test1();
+echo "<hr/>";
+
+class example {
+    public static $s = 'unchanged';
+
+    public function set() {
+        $this::$s = 'changed';
+    }
+}
+
+$o = new example;
+$p = new example;
+
+$o->set();
+
+print "o static: {$o::$s}\n p static: {$p::$s}";
+echo "<hr/>";
+class global_reference
+{
+    public $val;
+
+    public function __construct () {
+        global $var;
+        $this->val = $var;
+    }
+
+    public function dump_it ()
+    {
+        debug_zval_dump($this->val);
+    }
+
+    public function type_cast ()
+    {
+        $this->val = (int) $this->val;
+    }
+}
+$var = "x";
+$obj = new global_reference();
+$obj->dump_it();
+
+$obj->type_cast();
+
+echo "after change ";
+echo "<br/>";
+$obj->dump_it();
+echo "<br/>";
+echo "original $var\n";
+echo "<hr/>";
+function cycle($a, $b, $i=0) {
+    static $switches = array();
+    if (isset($switches[$i])) $switches[$i] = !$switches[$i]; else !$switches[$i] = true;
+    echo $switches[$i];//echo true; 结果是  1
+    return ($switches[$i])?$a:$b;
+}
+for ($i = 1; $i<3; $i++) {
+    echo cycle('a', 'b').PHP_EOL;
+    for ($j = 1; $j<5; $j++) {
+        echo ' '.cycle('a', 'b', 1).PHP_EOL;
+        for ($k = 1; $k<3; $k++) {
+            echo '  '.cycle('c', 'd', 2).PHP_EOL;
+        }
+    }
+}
+echo "<hr/>";
+class test1{}
+class test2{}
+class test3{}
+
+function cache( $class )
+{
+    static $loaders = array();
+
+    $loaders[ $class ] = new $class();
+
+    var_dump( $loaders );
+}
+print '<pre>';
+cache( 'test1' );//输出一个
+cache( 'test2' );//输出两个
+cache( 'test3' );//输出三个
+echo "<hr/>";
+//输出数组形式
+class  foo1  {
+    var  $bar  =  'I am bar.' ;
+    var  $arr  = array( 'I am A.' ,  'I am B.' ,  'I am C.' );
+    var  $r    =  'I am r.' ;
+}
+$a = new foo1;
+
+$arr = "arr";
+echo $a->$arr[1]."<br/>";//输出第一个 r 对应 $r
+$arr1 = array("1","2","3","4");
+echo $a->{$arr}[1]."<br/>";//对应$arr数组中的第二个元素
