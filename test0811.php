@@ -435,3 +435,38 @@ $arr = "arr";
 echo $a->$arr[1]."<br/>";//输出第一个 r 对应 $r
 $arr1 = array("1","2","3","4");
 echo $a->{$arr}[1]."<br/>";//对应$arr数组中的第二个元素
+
+echo "<hr/>";
+//常量设置
+class const_shezhi {
+    const Max_number = 1;
+//    public const Mix_number = 2;//类常量在本质上是默认情况下公众的但是他们不能指定可见性因素,反过来又使语法错误
+}
+$cons = new const_shezhi();
+echo $cons::Max_number."<br/>";
+define("bian","bianliang");
+echo constant("bian")."<br/>";
+echo bian;//如果没有使用constant，就不能用 echo直接输出变量名
+echo "<hr/>";
+echo __LINE__."<br/>";//所在的行号
+echo __FILE__."<br/>";//文件的完整路径和文件名。
+echo __CLASS__."<br/>";//类的名称
+echo __COMPILER_HALT_OFFSET__."<br/>";
+echo __DIR__."<br/>";//文件所在的目录。
+echo __METHOD__."<br/>";//类的方法名
+echo __FUNCTION__."<br/>";//函数名称
+echo "<hr/>";
+for ($a = 2, $b = 4; $a < 3; $a++)
+{//只循环一次
+    echo $a."\n";
+    echo $b."\n";
+}
+echo "<hr/>";
+//位运算 逻辑运算
+$a = true;$b = false;
+if($a^$b) {
+    echo "True";
+}else {
+    echo "False";
+}
+var_dump(date('G'));
