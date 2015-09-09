@@ -470,3 +470,145 @@ if($a^$b) {
     echo "False";
 }
 var_dump(date('G'));
+/*
+ *
+1、++i 的用法（以 a=++i ，i=2 为例）
+
+先将 i 值加 1 （也就是 i=i+1 ），然后赋给变量 a （也就是 a=i ），
+
+则最终 a 值等于 3 , i 值等于 3 。
+
+所以 a=++i 相当于 i=i+1 ，a=i
+
+2、i++ 的用法（以 a=i++ ，i=2 为例）
+
+先将 i 值赋给变量 a （也就是 a=i ）,然后 i 值加 1 （也就是 i=i+1 ），
+
+则最终 a 值等于 2 ，i 值等于 3 。
+
+所以 a=i++ 相当于 a=i , i=i+1
+
+3、++i 与 i++
+
+a=++i 相当于 i++ , a=i
+
+a=i++ 相当于 a=i , i++
+
+4、++i 与 i++ 单独使用时，相当于 i=i+1
+
+如果赋给一个新变量，则 ++i 先将 i 值加 1 ，而 i++ 先将 i 赋给新变量。
+ */
+echo "<hr/>";
+$a  =  3  *  3  %  5 ;  // (3 * 3) % 5 = 4
+$a  =  true  ?  0  :  true  ?  1  :  2 ;  // (true ? 0 : true) ? 1 : 2 = 2
+
+$a  =  1 ;
+$b  =  2 ;
+$a  =  $b  +=  3 ;  // $a = ($b += 3) -> $a = 5, $b = 5
+
+// mixing ++ and + produces undefined behavior
+$a  =  1 ;
+//echo ++$a;//输出2  相当与 $i = $i+1 $a = $i
+//echo $a++;//输出1 相当于 $a =$i $i=$i+1
+echo ++ $a  +  $a ++;  // may print 4 or 5
+echo "<hr/>";
+$output  = ` ls -al `;//执行运算符
+echo  "<pre> $output </pre>" ;
+echo "<hr/>";
+$output  =  shell_exec ( 'ls -lart' );
+echo  "<pre> $output </pre>" ;
+echo "<hr/>";
+$start = '01';
+++$start;
+print $start; //Outputs '2' not '02'
+echo "<hr/>";
+echo json_encode("中文", JSON_UNESCAPED_UNICODE);
+echo "<hr/>";
+$x = true and false;   //$x will be true
+$y = (true and false); //$y will be false
+echo $x."<br/>".$y;
+echo "<hr/>";
+//生成二维码
+include "phpqrcode/phpqrcode.php";
+QRcode::png('http://www.7878.com/1000/',"qrcode/test.png","L",2,2);
+echo '<img src="qrcode/test.png">';
+
+$value = 'http://www.phpfensi.com'; //二维码内容
+$qr_eclevel = 'H';//容错级别
+$picsize = 3;//生成图片大小
+QRcode::png($value, 'qrcode.png', $qr_eclevel, $picsize);//生成二维码图片
+$logo = 'logo.gif';//准备好的logo图片
+$QR = 'qrcode.png';//已经生成的原始二维码图
+
+
+$QR = imagecreatefromstring(file_get_contents($QR));
+$logo = imagecreatefromstring(file_get_contents($logo));
+$QR_width = imagesx($QR);//二维码图片宽度
+$QR_height = imagesy($QR);//二维码图片高度
+$logo_width = imagesx($logo);//logo图片宽度
+$logo_height = imagesy($logo);//logo图片高度
+$logo_qr_width = $QR_width / 5;
+$scale = $logo_width/$logo_qr_width;
+$logo_qr_height = $logo_height/$scale;
+$from_width = ($QR_width - $logo_qr_width) / 2;
+//重新组合图片并调整大小
+imagecopyresampled($QR, $logo, $from_width, $from_width, 0, 0, $logo_qr_width,
+    $logo_qr_height, $logo_width, $logo_height);
+
+//输出图片
+imagepng($QR, 'myxzy.png');
+echo '<img src="myxzy.png">';
+
+/*
+ * phpqrcode
+ * $content:生成二维码的内容，可是text格式，也可是url格式
+ * $filename:命名生成的二维码，
+ * $errorCorrectionLevel：容错率也就是有被覆盖的区域还能识别,分别是 L（QR_ECLEVEL_L，7%）,M（QR_ECLEVEL_M，15%）,Q（QR_ECLEVEL_Q，25%）,H（QR_ECLEVEL_H，30%）
+ * $matrixPointSize:生成图片的大小,大小范围是  1--50 为33px的倍数
+ * $margin表示二维码周围边框空白区域间距值
+ * $saveandprint表示是否保存二维码并显示。
+ * $logo是否加logo
+ */
+function qrecode($content,$filename,$saveandprint=false,$logo=false,$errorCorrectionLevel="L",$matrixPointSize=3,$margin=4) {
+    if($logo == false) {
+        QRcode::png($content,$filename,$errorCorrectionLevel,$matrixPointSize,$margin,$saveandprint);
+        return $filename;
+    } else {
+        $errorCorrectionLevel = 'H';//容错级别
+        $matrixPointSize = 6;//生成图片大小
+        QRcode::png($content, $filename, $errorCorrectionLevel, $matrixPointSize);//生成二维码图片
+        $QR = $filename;//已经生成的原始二维码图
+        $QR = imagecreatefromstring(file_get_contents($QR));
+        $logo = imagecreatefromstring(file_get_contents($logo));
+        $QR_width = imagesx($QR);//二维码图片宽度
+        $QR_height = imagesy($QR);//二维码图片高度
+        $logo_width = imagesx($logo);//logo图片宽度
+        $logo_height = imagesy($logo);//logo图片高度
+        $logo_qr_width = $QR_width / 5;
+        $scale = $logo_width/$logo_qr_width;
+        $logo_qr_height = $logo_height/$scale;
+        $from_width = ($QR_width - $logo_qr_width) / 2;
+        //重新组合图片并调整大小
+        imagecopyresampled($QR, $logo, $from_width, $from_width, 0, 0, $logo_qr_width,
+            $logo_qr_height, $logo_width, $logo_height);
+        //输出图片
+        imagepng($QR, 'myxzy.png');
+        echo '<img src="myxzy.png">';
+    }
+}
+
+echo "<hr/>";
+$start = new DateTime('2014-05-05');
+$end = new DateTime('2014-05-18');
+$current = new DateTime(date('Y-m-d'));
+if($end < $current) $current = $end;
+$interval = $start->diff($end);
+$days = intval($interval->format('%R%a'));
+$players += 6000;
+$players += $days*300;
+for ($i=0;$i<$days;$i++) {
+    $players += $i*100;
+}
+var_dump($interval);
+var_dump($days);
+echo $players;
