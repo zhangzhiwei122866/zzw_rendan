@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>设置研究人员的登陆权限</title>
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size: 12px
+}
+a{text-decoration:none}
+#table{margin:20px auto;border-top:1px solid #B5CFEE;border-left:1px solid #B5CFEE;margin-top:100px}
+#table tr,#table td{border-right:1px solid #B5CFEE;border-bottom:1px solid #B5CFEE; text-align:center;}
+.input{border:none ; outline:none;}
+#table textarea{height:90px;width:90%;border:0px; outline:none; overflow:hidden;}
+table {
+	margin:auto;
+}
+td {
+	font-size:10pt;
+	color: #000080;
+}
+.button {
+	width:101px;
+	height:41px;
+	color:#fff;
+	font-weight:bold;
+	line-height:30px;
+	font-size:16px;
+	background:url(__PUBLIC__/images/botton.png);
+	border:none;
+	margin:5px auto;
+	cursor:pointer;
+}
+.button_1:hover input {
+	background:url(__PUBLIC__/images/botton_2.png);
+}
+-->
+</style>
+<import type="JS" file="Js.calendar" />
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="30" background="__PUBLIC__/images/tab_05.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="12" height="30"><img src="__PUBLIC__/images/tab_03.gif" width="12" height="30" /></td>
+        <td><font>登陆权限设置</font></td>
+        <td width="16"><img src="__PUBLIC__/images/tab_07.gif" width="16" height="30" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <form  method="post" enctype="multipart/form-data" action="__URL__/setLogin">	  
+	  <table id="table" width="60%"cellspacing="0" cellpadding="0">
+	  	<tr height="40">
+	  		<td style="background:#daedfb;">登陆账号：[必填<font color="red">*</font>]</td>
+	  		<td colspan="2"><input class="input" style="width:90%;margin-left:-25px;margin-bottom:-8px;" type="text" name="username"></td>
+	  	</tr>
+	 	<tr height="40">
+	  		<td style="background:#daedfb;">登录密码：[必填<font color="red">*</font>]</td>
+	  		<td colspan="2"><input class="input" style="width:90%;margin-left:-25px;margin-bottom:-8px;" type="text" name="password"></td>
+	  	</tr>
+	  	<tr height="40">
+	  		<td style="background:#daedfb;">登录权限：[必填<font color="red">*</font>]</td>
+	  		<td colspan="2">
+			  	<input id="radioButton1" type="radio" name="power" value="3" value="校级管理员" />
+			  	<label for="radioButton1" style="font-size:13px;">校级管理员</label> &nbsp;&nbsp;&nbsp;
+			  	<input id="radioButton2" type="radio" name="power" value="2" value="院级管理员" />
+			  	<label for="radioButton2" style="font-size:13px;">院级管理员</label>&nbsp;&nbsp;&nbsp;
+			  	<input id="radioButton2" type="radio" name="power" value="2"  checked="checked"  value="普通研究员" />
+			  	<label for="radioButton2" style="font-size:13px;">普通研究员</label>
+			 </td>
+		</tr>			
+	  	  <tr>
+          <td colspan=4 align="center" height="50">
+          <a class="button_1" style="text-decoration:none;"><input type="submit" name="submit" value="提交" class="button"/></a>
+	  	  <a class="button_1" style="text-decoration:none;"><input type="reset" value="重置" style="margin-left:10px;" name="Submit2" class="button" /></a>
+	  	  <a class="button_1" style="text-decoration:none;" onClick="javascript:history.back()">
+            <input type="button" value="返回" class="button"/>
+            </a></td>
+        </tr>
+	  </table>
+  </form>
+  </table>
+</body>
+</html>

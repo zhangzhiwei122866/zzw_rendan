@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+
+.topinput{width:90px;height:15px;line-height:15px;margin-right:15px;}
+
+
+.tatr0{width:100%;text-align:center;heigt:40px;line-height:40px;font-size:16px;font-weight:600;}
+.tatr3{height:43px;text-align:center;}
+.tar3 td{height:100%;text-align:center;display:none;border-right:1px solid red;}

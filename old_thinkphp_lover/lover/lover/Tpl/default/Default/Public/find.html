@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="/Public/css/findpassword.css" />
+<script type="text/javascript" src="/Public/Js/findpassword.js"></script>
+<link href="/Public/images/favicon.ico" rel="SHORTCUT ICON" />
+<script type="text/javascript" src="/Public/Js/jquery1.js"></script>
+<script type="text/javascript" src="/Public/Js/denglu.js"></script>
+<script type="text/javascript" src="/Public/Js/input.js"></script>
+<title>找回密码</title>
+<style type="text/css">
+.bt{width:270px;height:40px;border: solid 2px #f2c4de;background: #FBFBFB;text-align: center;}
+.btcenter{text-align: center;clear: left;padding: 4px 0px 0px;}
+.sffocus {background: #f2c4de; border: 1px solid #1D95C7;}
+textarea:focus, input:focus {background: #f2c4de;border:2px solid #ffffff;}
+</style>
+</head>
+<body>
+<div class="zong">
+	<div class="zon">
+		<div class="zhongjian">
+			<div class="button">
+				<ul id="work">
+					<li>
+					   <div class="show">
+					     <a href="" ><img src="/Public/images/button3.jpg" style="border-radius:10px;" /></a>
+					   </div>
+				       <div class="hide">
+				         <a href="/Index/index"><img alt="我们要幸福一辈子" title="我们要幸福一辈子" src="/Public/images/button4.jpg" style="border-radius:10px;" /></a> 
+				       </div>
+					</li>
+					<li>
+					   <div class="show">
+					     <a href="" ><img src="/Public/images/button5.jpg" style="border-radius:10px;"/></a>
+					   </div>
+				       <div class="hide">
+				         <a href=""><img alt="我们要幸福一辈子" title="我们要幸福一辈子" src="/Public/images/button6.jpg" style="border-radius:10px;"/></a> 
+				       </div>
+					</li>
+					<li>
+					   <div class="show">
+					     <a href="" ><img src="/Public/images/button7.jpg" style="border-radius:10px;"/></a>
+					   </div>
+				       <div class="hide">
+				         <a href=""><img alt="我们要幸福一辈子" title="我们要幸福一辈子" src="/Public/images/button8.jpg" style="border-radius:10px;"/></a> 
+				       </div>
+					</li>
+				</ul>
+			</div>
+				<div class="e">
+					<a href="" class="show"><img src="/Public/images/e5.jpg" style="border-radius:10px;height:100%;width:100%;position:relative;" /></a>
+					<a href="../Record/record" class="hide"><img alt="书写属于我们自己的爱情传奇" title="书写属于我们自己的爱情传奇" src="/Public/images/e6.jpg" style="border-radius:10px;height:100%;width:100%;position:relative;" /></a>
+				</div>
+			</div>
+			<div id="center">
+				<div id="center1">
+					<form action="findpassword" method="post" name="myform" id="myform" onsubmit="return register();">
+						<div id="center2">
+							<div id="input">
+								<div id="input1">
+									<span>请您输入：</span>
+								</div>
+								<div id="input2">
+									<input type="text" name="phone" onkeydown="types('phone')" onblur="pe()" class="grayTips"  value="请输入您的手机号或邮箱" style="height:40px;width:260px;font-size:180%;color:#e95e95; font-weight: bold;line-height: 1; font-family: Arial, Tahoma, sans-serif;" />
+								</div>
+							</div>
+							<div id="button">	
+								<div id="button1">
+									<input type="submit" value="手机号找回" style="background-color:#f2c4de;font-size:180%;color:#e95e95; font-weight: bold;line-height: 1; font-family: Arial, Tahoma, sans-serif;border-radius:5px;" />
+								</div>
+								<div id="button2">
+									<input type="submit" value="邮箱找回" style="background-color:#f2c4de;font-size:180%;color:#e95e95; font-weight: bold;line-height: 1; font-family: Arial, Tahoma, sans-serif;border-radius:5px;" />
+								</div>
+							</div>
+						</div>
+					</form>	
+				</div>	
+			</div>
+		</div>
+</div>
+</body>
+</html>

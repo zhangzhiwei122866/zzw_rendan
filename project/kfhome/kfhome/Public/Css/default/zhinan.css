@@ -1,0 +1,192 @@
+﻿.zn_left {
+	background: rgb(255, 255, 255); padding: 10px; width: 660px; overflow: hidden; float: left;
+}
+.zn_right {
+	background: rgb(246, 243, 226); padding: 6px; width: 292px; margin-top: 4px; float: left;
+}
+.news_left {
+	background: rgb(255, 255, 255); padding: 0px 10px 10px; width: 700px; overflow: hidden; float: left;
+}
+.news_right {
+	background: rgb(246, 243, 226); padding: 0px 7px 7px; width: 244px; margin-top: 2px; float: right;
+}
+.zx_left {
+	background: rgb(240, 243, 248); padding: 10px; width: 232px; margin-top: 2px;
+}
+.zx_right {
+	background: rgb(255, 255, 255); padding: 10px; width: 710px; overflow: hidden;
+}
+.zn_right_img {
+	padding-left: 20px;
+}
+.zn_right_img img {
+	margin-top: 10px;
+}
+.zn_btn {
+	margin-top: 5px; margin-right: 5px; float: right;
+}
+.zn_under_btn {
+	text-align: center; overflow: hidden; padding-left: 10px;
+}
+.zn_con {
+	padding: 10px 20px 20px 40px; line-height: 23px;
+}
+.zn_border {
+	overflow: hidden; padding-bottom: 5px; margin-bottom: 3px; border-bottom-color: rgb(98, 111, 104); border-bottom-width: 1px; border-bottom-style: dotted;
+}
+.zn_layer {
+	background: rgb(255, 248, 230); overflow: hidden; clear: both;
+}
+.zn_layer .zn_img {
+	width: 21px; margin-top: 1px; margin-left: 1px; float: left;
+}
+.zn_layer .zn_ul {
+	width: 620px; padding-top: 5px; padding-bottom: 5px; margin-left: 15px; float: left;
+}
+.zn_layer .zn_ul ul {
+	margin: 0px; padding: 0px; list-style-type: none;
+}
+.zn_layer .zn_ul ul li {
+	background: url("image/dian.gif") no-repeat left; width: 300px; text-align: left; line-height: 20px; padding-left: 10px; float: left; list-style-type: none;
+}
+.zn_layer .zn_ul ul li a {
+	color: rgb(153, 153, 153); text-decoration: none;
+}
+.zn_layer .zn_ul ul li a:hover {
+	color: rgb(204, 51, 0); text-decoration: none;
+}
+.news_list {
+	padding: 5px 10px 10px;
+}
+.news_list ul {
+	margin: 0px; padding: 0px; list-style-type: none;
+}
+.news_list ul li {
+	background: url("image/dot02.gif") no-repeat left; line-height: 36px; padding-left: 15px; font-size: 14px; border-bottom-color: rgb(104, 104, 104); border-bottom-width: 1px; border-bottom-style: dotted; list-style-type: none;
+}
+.news_list ul li span {
+	font-size: 12px; margin-right: 5px; float: right;
+}
+.news_right_ul {
+	padding: 15px 5px 5px; clear: both;
+}
+.news_right_ul ul {
+	margin: 0px; padding: 0px; list-style-type: none;
+}
+.news_right_ul ul li {
+	background: url("image/dot07.gif") no-repeat left 10px; line-height: 25px; padding-left: 15px; font-size: 12px; margin-bottom: 8px; list-style-type: none;
+}
+.news_right_ul ul li span {
+	color: rgb(102, 102, 102); font-size: 12px; float: right;
+}
+.news {
+	padding: 5px 10px 10px;
+}
+.news h2 {
+	text-align: center; color: rgb(51, 51, 51); line-height: 40px; font-family: "微软雅黑","黑体"; font-size: 20px; font-weight: bold;
+}
+.miaosu {
+	text-align: center; color: rgb(102, 102, 102); padding-top: 15px; padding-bottom: 10px; border-bottom-color: rgb(238, 238, 238); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.news_con {
+	padding: 5px 15px 10px;
+}
+.news_con p {
+	line-height: 25px; text-indent: 26px; font-size: 14px;
+}
+.new_con_xg {
+	padding-left: 15px; clear: both; border-top-color: rgb(238, 238, 238); border-top-width: 1px; border-top-style: solid;
+}
+.new_con_xg_title {
+	padding-top: 10px; padding-bottom: 5px;
+}
+.new_con_xg_title h3 {
+	background: url("image/dot02.gif") no-repeat left; color: rgb(84, 84, 84); line-height: 24px; padding-left: 15px; font-size: 12px;
+}
+.new_con_xg ul {
+	margin: 0px; padding: 0px; list-style-type: none;
+}
+.new_con_xg ul li {
+	background: url("image/dian.gif") no-repeat left 10px; border: currentColor; line-height: 23px; padding-left: 10px; font-size: 12px;
+}
+.new_con_xg ul li span {
+	font-family: Tahoma; font-size: 12px; margin-right: 5px; float: right;
+}
+.tousu_con {
+	line-height: 23px; margin-right: 10px; margin-left: 10px;
+}
+.qu_div {
+	margin: 10px; line-height: 23px; overflow: hidden; font-size: 14px;
+}
+.qu_div .qu_div_span {
+	color: rgb(102, 102, 102); font-size: 12px; float: right;
+}
+.qu_div h3 {
+	background: url("image/dot07.gif") no-repeat left; padding-left: 15px;
+}
+.qu_right_span {
+	line-height: 32px; float: right;
+}
+.qu_right_span a:link {
+	color: rgb(166, 23, 7); text-decoration: underline;
+}
+.qu_right_span a:hover {
+	color: rgb(255, 0, 0); text-decoration: underline;
+}
+.qu_right_span a:visited {
+	color: rgb(166, 23, 7); text-decoration: underline;
+}
+.qu_zuijia {
+	background: rgb(255, 245, 234); overflow: hidden; border-top-color: rgb(204, 204, 204); border-top-width: 1px; border-top-style: solid;
+}
+.qu_fenlei {
+	color: rgb(51, 51, 51); line-height: 23px; padding-bottom: 5px; padding-left: 10px; clear: both;
+}
+.qu_fenlei h3 {
+	color: rgb(55, 79, 120); line-height: 28px; font-size: 14px; font-weight: bold;
+}
+.qu_bg {
+	background: rgb(249, 250, 252);
+}
+.qu_ul {
+	padding: 5px 10px 10px; clear: both;
+}
+.qu_ul ul {
+	margin: 0px; padding: 0px; list-style-type: none;
+}
+.qu_ul ul li {
+	background: url("image/dot07.gif") no-repeat left; line-height: 25px; padding-left: 15px; font-size: 14px; list-style-type: none;
+}
+.fl_kuang {
+	clear: both;
+}
+.fl_title {
+	background: rgb(249, 250, 252); height: 32px; line-height: 32px; padding-left: 12px; font-size: 14px; font-weight: bold; margin-top: 2px; margin-bottom: 5px;
+}
+.fl_title a:link {
+	color: rgb(55, 79, 120); text-decoration: none;
+}
+.fl_title a:hover {
+	color: rgb(0, 0, 0); text-decoration: none;
+}
+.fl_title a:visited {
+	color: rgb(55, 79, 120); text-decoration: none;
+}
+.fl_kuang ul {
+	margin: 0px; padding: 0px; list-style-type: none;
+}
+.fl_kuang ul li {
+	background: url("image/dian.gif") no-repeat left 10px; width: 80px; line-height: 22px; padding-left: 10px; font-size: 12px; margin-left: 15px; float: left; list-style-type: none;
+}
+.y_shixiang {
+	padding: 5px; line-height: 23px; clear: both;
+}
+#outer {
+	padding: 0px;
+}
+#outer a {
+	background: rgb(249, 250, 252); padding-left: 12px; display: block;
+}
+#outer a:hover {
+	background: rgb(221, 221, 221);
+}

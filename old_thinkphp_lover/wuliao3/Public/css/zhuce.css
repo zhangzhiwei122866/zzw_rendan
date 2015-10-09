@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+@import url(public.css);
+
+#content{width:900px;height:auto;border:2px solid blue;position:absolute;font-size:14px;}
+.passqd{display: block;height: 13px !important;_height: 11px;width: 104px;float: left;background-image:url(../images/pwdstrength.gif);background-repeat: no-repeat;background-position: left 60px;padding: 0px;margin:3px 0px 0px 0px;}
+
+
+
+

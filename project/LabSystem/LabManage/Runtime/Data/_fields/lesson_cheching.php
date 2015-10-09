@@ -1,0 +1,35 @@
+<?php
+return array (
+  0 => 'cheching_id',
+  1 => 'class_number',
+  2 => 'progect_number',
+  3 => 'teacher_name1',
+  4 => 'cheching_lab_number',
+  5 => 'cheching_lab_name',
+  6 => 'class',
+  7 => 'monitor',
+  8 => 'class_time',
+  9 => 'attendence',
+  10 => 'absence',
+  11 => 'cheching_date',
+  12 => 'remark',
+  '_autoinc' => true,
+  '_pk' => 'cheching_id',
+  '_type' => 
+  array (
+    'cheching_id' => 'int(11) unsigned',
+    'class_number' => 'int(11) unsigned',
+    'progect_number' => 'int(11)',
+    'teacher_name1' => 'varchar(30)',
+    'cheching_lab_number' => 'int(11) unsigned',
+    'cheching_lab_name' => 'varchar(50)',
+    'class' => 'varchar(50)',
+    'monitor' => 'varchar(30)',
+    'class_time' => 'time',
+    'attendence' => 'int(11)',
+    'absence' => 'int(11)',
+    'cheching_date' => 'date',
+    'remark' => 'text',
+  ),
+);
+?>

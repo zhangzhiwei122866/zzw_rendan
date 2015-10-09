@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<import type='css' file="Css.admin.admin" />
+<import file="Js.jquery" />
+<title>实验室一览</title>
+</head>
+<body>
+	<div id="rightTop">
+    <p>查找结果</p>
+    <ul class="subnav">    	
+    	<li><a href="__URL__/userList">返回</a></li>
+    </ul>
+</div>
+<div class = "tdare">
+	<table width="100%" cellspacing="0" class="dataTable">
+		<tr class="tatr1">
+			<th width="10%"  class="firstCell" >序号</th>
+			<th width="15%">用户工号</th>
+			<th width="15%">姓名</th>
+			<th width="15%">角色</th>
+			<th width="15%">密码</th>	
+			<th width="15%">时间</th>	
+			<th width="15%">操作</th>			
+		</tr>		       
+		<tr class="tatr2" style="text-align:center;">
+			<td><?php echo "1"; ?></td>
+			<td><?php echo $query['number'];?></td>
+			<td><?php echo $query['name'];?></td>
+			<td><?php echo $query['type'];?></td>
+			<td><?php echo $query['password'];?></td>
+			<td><?php echo date('Y-m-d',$query['date']);?></td>					
+			<td><a href="__URL__/edit/id/<?php echo $query['id'];?>">编辑</a> | <a onclick="return confirm('确定将此记录删除?')"  href="__URL__/delete/id/<?php echo $query['id'];?>">删除</a></td>
+		</tr>				
+	</table>
+	<div class="pageLinks">
+	{$page}
+	</div>
+	</div>
+<import file="Js.jquery,Js.index" />
+</body>
+</html>

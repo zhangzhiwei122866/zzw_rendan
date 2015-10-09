@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>图片查看</title>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/admin/css/chakan.css" />
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.kk').hover(
+		function(){
+			$(this).children().last().addClass("block");
+			},function(){
+			$(this).children().last().removeClass("block");
+				}
+			);
+	$(".kk input").bind("click" , function(){
+		var str = $(this).serialize();
+		var index = $('.kk input').index(this);
+		$.get('__URL__/shanchu' , str , function(cc){
+			if(cc.status == 1){
+				$(".kk:eq("+index+")").remove();
+				location.reload(true);
+				}
+			},'json');
+		});	
+});
+</script>
+</head>
+<body style="width:100%;heigh:auto;">
+<ul>
+	<?php foreach ($result  as $key => $val): ?>
+		<li>
+			<div class="kk">
+				<img src="<?php echo $val['lujing']; ?>" width="200" height="200" class="polaroid" />
+				<div class="miaoshu">
+					<span style="color:red;margin-left:60px;line-height:30px;opacity:0.7;"><input type="checkbox" style="cursor:pointer;" name="shan"   value="<?php echo $val['id']; ?>" ><span>删除</span></span>			
+				</div>
+			</div>			
+		</li>
+	<?php endforeach; ?>
+</ul>
+</body>
+</html>

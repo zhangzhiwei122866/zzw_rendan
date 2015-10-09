@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk2312">
+<title>发表文章</title>
+<script type="text/javascript" language="javascript" src="__PUBLIC__/js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/biaoqing/css/manhuaHtmlArea.1.0.css" />
+<script type="text/javascript" src="__PUBLIC__/biaoqing/js/manhuaHtmlArea.1.0.js"></script>
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/pub.css" />
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/admin/css/wen.css" />
+<script type="text/javascript">
+$(function (){
+	$("#bq").manhuaHtmlArea({
+		Event : "click",
+		Left : -22,
+		Top : 23,			
+		id : "content"
+	});
+	$("#bq1").manhuaHtmlArea({
+		Event : "click",
+		Left : -22,
+		Top : 23,			
+		id : "content1"
+	});
+	$("#btnTJ1").click(function(){
+		var str = $('form').serialize();
+		$.get(
+			'__URL__/tianjia',
+			str,
+			function(cc){
+				if(cc.status == 1){
+					alert("发表成功");
+				}else{
+					alert("您的填写有误，文章之间不要加空格");
+				}
+			},
+			'json'
+		);
+	});
+	
+});
+</script>
+<style type="text/css">
+div,div,input,select,fieldset,textarea{background-color:#FFFFFF;}
+input{border:1px solid #ccc;height:28px;width:190px;}
+select,opition{border:1px solid #ccc;}
+</style>
+</head>
+<body>
+<div id="kuang">
+	<form action="">
+		<table id="tab" cellspacing="0" cellpadding="0">
+			<tr height="40px">
+				<td width="10px">&nbsp;</td>
+				<td width="220px">
+					<lable for="tit">标题</lable>
+					<input type="text" name="title" id="tit" value="必须填写" />
+				</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr height="40px">
+				<td>&nbsp;</td>
+				<td>
+                	<label for="lei">类别</label>
+                    <select name="leibie" id="lei">
+                    	<option value="动画">动画</option>
+                        <option value="玄幻">玄幻</option>
+                        <option value="科幻">科幻</option>
+                    </select>
+                </td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr height="auto">
+				<td>&nbsp;</td>
+				<td colspan="2">
+                	<fieldset class="nei">
+                    	<legend style="margin-left:10px;">文章内容</legend>
+                        <textarea id="content1" class="content neirong" name="nei" style="height:300px;width:900px;margin-left:25px;font-size:16px;overflow:auto;clear:both;">
+                        
+                        </textarea><br />
+                        <div style="margin-left:30px; height:50px;font-size:16px;">
+                        	<span style="color:blue;">表情</span>
+	                        <img  src="__PUBLIC__/biaoqing/images/smail.png" id="bq1" alt="选择表情" class="bq">
+	                        <input style="width:90px;cursor:hand" type="button" value="提交" id="btnTJ1" />
+                        </div>
+                    </fieldset>
+                </td>
+			</tr>
+		</table>
+	</form>
+</div>
+</body>
+</html>

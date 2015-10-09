@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>情侣注册</title>
+<link rel="stylesheet" type="text/css" href="/Public/css/register.css" />
+  <link href="/Public/images/favicon.ico" rel="SHORTCUT ICON" />
+<script type="text/javascript" src="/Public/Js/jquery1.js"></script>
+<script type="text/javascript" src="/Public/Js/input.js"></script>
+<script type="text/javascript" src="/Public/Js/register.js"></script>
+<style type="text/css">
+.bt{width:270px;height:40px;border: solid 2px #f2c4de;background: #FBFBFB;text-align: center;}
+.btcenter{text-align: center;clear: left;padding: 4px 0px 0px;}
+.sffocus {background: #f2c4de; border: 1px solid #1D95C7;}
+textarea:focus, input:focus {background: #f2c4de;border:2px solid #ffffff;}
+</style>
+</head>
+<body>
+<div class="zong">
+	<div class="zon">
+		<div class="zhongjian">
+			<div id="center">
+				<form action="doregister" method="post" name="myform" id="myform" onsubmit="return register();">
+					<div id="table">
+						<table  width="100%" style="margin-top:20px;">
+							<tr style="height:45px;">
+								<td style="height:40px;">
+									<p>昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：</p>
+								</td>
+								<td style="height:45px;">
+									<input type="text" name="username" onkeydown="types('username')" onblur="na()" class="grayTips"  value="请输入您的昵称" style="height:40px;width:270px;font-size:100%;color:#e95e95; font-weight: bold;line-height: 1; font-family: Arial, Tahoma, sans-serif;" />
+								</td>
+							</tr>
+							<tr style="height:45px;">
+								<td style="height:45px;">
+									<p>手&nbsp;&nbsp;&nbsp;&nbsp;机&nbsp;&nbsp;&nbsp;&nbsp;号：</p>
+								</td>
+								<td style="height:45px;">
+									<input type="text" name="phone" onkeydown="types('phone')" onblur="pe()" class="grayTips"  value="请输入您的手机号" style="height:40px;width:270px;font-size:100%;color:#e95e95; font-weight: bold;line-height: 1; font-family: Arial, Tahoma, sans-serif;" />
+								</td>
+							</tr>
+						   <tr style="height:45px;">
+								<td style="height:45px;">
+									<p>对方手机号：</p>
+								</td>
+								<td style="height:45px;">
+									<input type="text" name="Fphone" onkeydown="types('Fphone')" onblur="Fpe()" class="grayTips"  value="请输入对方的手机号" style="height:40px;width:270px;font-size:100%;color:#e95e95; font-weight: bold;line-height: 1; font-family: Arial, Tahoma, sans-serif;" />
+								</td>
+							</tr>
+							<tr style="height:45px;">
+								<td style="height:45px;">
+									<p>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</p>
+								</td>
+								<td style="height:45px;">
+									<input type="password" onkeydown="types('password')" onblur="pwd()" class="grayTips" value="admin" name="password" style="height:40px;width:270px;font-size:100%;color:#e95e95; font-weight: bold;line-height: 1; font-family: Arial, Tahoma, sans-serif;" />
+								</td>
+							</tr>
+							<tr style="height:45px;">
+								<td style="height:45px;">
+									<p>确认&nbsp;&nbsp;&nbsp;密码：</p>
+								</td>
+								<td style="height:45px;">
+									<input type="password" onkeydown="types('repassword')" onblur="repwd()" class="grayTips" value="admin" name="repassword" style="height:40px;width:270px;font-size:100%;color:#e95e95; font-weight: bold;line-height: 1; font-family: Arial, Tahoma, sans-serif;" />
+								</td>
+							</tr>
+							<tr style="height:45px;">
+								<td style="height:45px;">
+									<p>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：</p>
+								</td>
+								<td style="height:45px;">
+									<input type="text" onkeydown="types('mail')" onblur="mal()" class="grayTips"  value="请输入您的邮箱" name="mail" style="height:40px;width:270px;font-size:100%;color:#e95e95; font-weight: bold;line-height: 1; font-family: Arial, Tahoma, sans-serif;" />
+								</td>
+							</tr>
+							<tr style="height:45px;">
+								<td style="height:45px;">
+									<p>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</p>
+								</td>
+								<td style="height:45px;">
+									 <input type="radio" name="sex" value="男" checked="checked" /><span>男</span>
+									 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      								 <input type="radio" name="sex" value="女" /><span>女</span>
+								</td>
+							</tr>
+							<tr style="width:364px;height:45px;">
+								<td colspan="2">
+									<input type="submit" value="注册" style="background-color:#f2c4de;font-size:100%;color:#e95e95; font-weight: bold;line-height: 1; font-family: Arial, Tahoma, sans-serif;border-radius:5px;" />
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<a href="javascript:history.back(-1)"><input type="button" value="返回" style="background-color:#f2c4de;font-size:100%;color:#e95e95; font-weight: bold;line-height: 1; font-family: Arial, Tahoma, sans-serif;border-radius:5px;" /></a>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<input type="reset" value="重置" style="background-color:#f2c4de;font-size:100%;color:#e95e95; font-weight: bold;line-height: 1; font-family: Arial, Tahoma, sans-serif;border-radius:5px;" />
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div id="table1">
+						<div id="username" class="table2">
+							<p>* 以汉字、数字、字母、下划线 不能<br/>&nbsp;&nbsp;&nbsp;以下划线 开头 和结尾 组成</p>
+						</div>
+						<div id="phone" class="table3">* 请填写 自己常用的 手机号</div>
+						<div id="Fphone" class="table3">* 请填写 你的 他(她)的 手机号</div>
+						<div id="password" class="table3">
+							<p>* 密码 只能为 数字 或 字母 且 不少于 六位</p>
+						</div>
+						<div id="repassword" class="table3">* 谨记 填写的 密码 要保持一致</div>
+						<div id="mail" class="table3">* 可填写 腾讯, 163 , 126 , sina邮箱等</div>
+						<div class="table4"></div>
+					</div>
+				</form>	
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>		

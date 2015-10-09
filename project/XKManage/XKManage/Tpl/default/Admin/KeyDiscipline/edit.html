@@ -1,0 +1,464 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>重点学科基本表</title>
+<import type='css' file="Css.admin.css" />
+<import type='Js' file="Js.calendar" />
+<style>
+input{border-bottom:1px solid #ccc; text-align:center;height:16px;}
+.inputstyle{width:35px;text-align:center;}
+.inputsaveunderline{ }
+.timelength{width:75px;}
+.tdwidth{width:200px;}
+.td2{width:150px;background:#f1f1f1;}
+.header{width:600px;font-size:13px;}
+.tijiao{margin-left:800px;margin-top:10px;width:100px;height:40px;font-size:16px;font-weight:bold;}
+.w6{ width:3%;}
+table {
+	margin:auto;
+}
+td {
+	font-size:13px;
+	color: #204d79;
+}
+.button {
+	width:101px;
+	height:41px;
+	line-height:30px;
+	font-size:16px;
+	background:url(__PUBLIC__/images/botton.png);
+	border:none;
+	margin:5px auto;
+	cursor:pointer;
+}
+.button_1:hover input {
+	background:url(__PUBLIC__/images/botton_2.png);
+}
+p a input{color:#fff;font-weight:bold;}
+</style>
+<script type="text/javascript">
+	function input1() {
+
+		var into1=document.getElementById("is_doctor").value;
+		if((into1==1)||(into1==0))
+			{
+				return true;
+			}
+		else{
+			alert("只允许输入0或1，请重新输入！");
+			document.getElementById("is_doctor").value="";
+			return false;
+		}
+	}
+	function input2() {
+		var into2=document.getElementById("is_master").value;
+		if((into2==1)||(into2==0))
+			{
+				return true;
+			}
+		else{
+			alert("只允许输入0或1，请重新输入！");
+			document.getElementById("is_master").value="";
+			return false;
+		}
+	}
+	function input3() {
+		var into3=document.getElementById("is_pro_key").value;
+		if((into3==1)||(into3==0))
+			{
+				return true;
+			}
+		else{
+			alert("只允许输入0或1，请重新输入！");
+			document.getElementById("is_pro_key").value="";
+			return false;
+		}
+	}
+	function input4() {
+		var into4=document.getElementById("ishave_pro_teach_job").value;
+		if((into4==1)||(into4==0))
+			{
+				return true;
+			}
+		else{
+			alert("只允许输入0或1，请重新输入！");
+			document.getElementById("ishave_pro_teach_job").value="";
+			return false;
+		}
+	}
+	function input5() {
+		var into5=document.getElementById("ishave_pro_key_lab").value;
+		if((into5==1)||(into5==0))
+			{
+				return true;
+			}
+		else{
+			alert("只允许输入0或1，请重新输入！");
+			document.getElementById("ishave_pro_key_lab").value="";
+			return false;
+		}
+	}
+	function input6() {
+		var into6=document.getElementById("ishave_pro_base").value;
+		if((into6==1)||(into6==0))
+			{
+				return true;
+			}
+		else{
+			alert("只允许输入0或1，请重新输入！");
+			document.getElementById("ishave_pro_base").value="";
+			return false;
+		}
+	}
+	function box() {	
+		var num1 = input1();
+		var num2 = input2();
+		var num3 = input3();
+		var num4 = input4();
+		var num5 = input5();
+		var num6 = input6();
+		if(num1&&num2&&num3&&num4&&num5&&num6){
+			var aa=confirm("确定要保存修改吗？");
+			if(aa){
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+		else{
+			return false;
+		}			
+	}
+	function box2(){
+		var ss=box();
+		if(ss){
+			return true; 
+		}else{
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+<div class="main">
+<form method="post" action="__URL__/update"  onSubmit="return box();">
+
+<?php  foreach ($list as $key_1=>$val ){ ?>
+<?php  foreach ($listime as $key_time=>$val_time ){ ?>
+<div class="header" style="width:100%;margin:0;padding:0;" >
+	<span style="float:left">申报单位（代码）：</span><input style="border-bottom:1px solid #aaa;width:60px;float:left"  readonly value="河南大学" /><font style="float:left">（10475）</font><br/>
+	<span style="float:left">申报学科（代码）：</span><input style="border-bottom:1px solid #aaa;width:60px;float:left" name="des_name" value="<?php  echo $val['des_name']; ?>"/>
+	<font style="float:left">（</font><input type="text" size="10"style="width:35px;margin-bottom:2px; float:left" name="des_no" value="<?php echo $val['des_no']; ?>"/><font style="float:left">）</font>	
+</div>
+<div style="width:100%;margin-top:25px;margin-bottom:10px;padding:0;">
+	<span style="float:left">学科级别：</span>
+	<select name="rank" class="querySelect" style="float:left;">
+		<?php if($val['des_rank'] == 1){ ?>
+			<option value="1">一级学科</option>
+		<?php }else if($val['des_rank'] == 2){ ?>
+			<option  value="2">二级学科</option>
+		<?php } ?>
+			<option value="1">一级学科</option>
+			<option  value="2">二级学科</option>
+ 	</select>
+</div>
+<table width="100%"  cellspacing="0" cellpadding="4">
+  <tr style="background:url(__PUBLIC__/images/KeyDiscipline_edit1.jpg) repeat-x;height:50px;">
+    <td class="w6"><b>项目</b></td>
+    <td class="w6"><b>统计时间</b></td>
+    <td  colspan="10"><img src="__PUBLIC__/images/KeyDiscipline_header.jpg"/></td>
+  </tr>
+  <tr>
+    <td class="td1 w10" rowspan="2" style="background:url(__PUBLIC__/images/KeyDiscipline_edit2.jpg); font-weight:bold;">基本状况</td>
+    <td rowspan="2"><input size="6" class="time inputsaveunderline timelength" onclick="SelectDate(this, 'yyyy-MM-dd')" name="basic_time" value="<?php echo $val_time['basic_time'] ;?>" /></td>
+    <td class="td2" >是否博士点①</td>
+    <td ><input  size="7"   id="is_doctor" onchange="input1()" name="is_doctor" value="<?php echo $val['is_doctor']; ?>"/></td>
+    <td class="td2" >是否硕士点②</td>
+    <td ><input class="inputstyle"  size="7" id="is_master" onchange="input2()" name="is_master" value="<?php echo $val['is_master']; ?>"/></td>
+    <td class="td2" colspan="2">是否省级重点学科③</td>
+    <td><input size="6" id="is_pro_key" onchange="input3()" name="is_pro_key"/ value="<?php echo $val['is_pro_key']; ?>"></td>
+    <td class="td2" colspan="2">是否设有省级特聘教授岗位④</td>
+    <td><input size="6" id="ishave_pro_teach_job" onchange="input4()" name="ishave_pro_teach_job" value="<?php echo $val['ishave_pro_teach_job']; ?>"/></td>
+  </tr>
+  <tr>
+    <td class="td2" colspan="4">是否有省部级以上重点实验室等⑤</td>
+    <td><input size="15"  id="ishave_pro_key_lab" onchange="input5()" name="ishave_pro_key_lab" value="<?php echo $val['ishave_pro_key_lab'];?>"/></td>
+    <td class="td2" colspan="4">是否有省部级以上科研，人才培养基地等⑥</td>
+    <td><input size="6" id="ishave_pro_base" onchange="input6()" name="ishave_pro_base" value="<?php echo $val['ishave_pro_base'];?>"/></td>
+  </tr>
+  <tr>
+    <td class="td1" rowspan="2"style="background:url(__PUBLIC__/images/KeyDiscipline_edit2.jpg)">学术队伍</td>
+    <td rowspan="2"><input size="6" class="time inputsaveunderline timelength" onclick="SelectDate(this, 'yyyy-MM-dd')" name="study_troop" value="<?php echo $val_time['study_troop'];?>" /></td>
+    <td class="td2" colspan="2">教授（或相当专业技术职务）</td>
+    <td class="td2" colspan="2">副教授（或相当专业技术职务）</td>
+    <td class="td2" colspan="2">讲师（或想当专业技术职务）</td>
+    <td class="td2">两院院士</td>
+    <td class="td2">省级特聘教授</td>
+    <td class="td2">具有博士学位</td>
+    <td class="td2">具有硕士学位</td>
+  </tr>
+  <?php  foreach ($listroops as $key_troops=>$val_troops ){ ?>
+  <tr>
+    <td colspan="2"><input class="inputstyle" name="professor" value="<?php echo $val_troops['professor'];?>"/>人</td>
+    <td colspan="2"><input class="inputstyle" name="associate_professor" value="<?php echo $val_troops['associate_professor'];?>"/>人</td>
+    <td colspan="2"><input class="inputstyle" name="lecturer" value="<?php echo $val_troops['lecturer'];?>"/>人</td>
+    <td class="tdwidth"><input class="inputstyle" name="yuanshi" value="<?php echo $val_troops['yuanshi'];?>"/>人</td>
+    <td class="tdwidth"><input class="inputstyle" name="special_professor" value="<?php echo $val_troops['special_professor'];?>"/>人</td>
+    <td class="tdwidth"><input class="inputstyle" name="docter" value="<?php echo $val_troops['docter'];?>"/>人</td>
+    <td class="tdwidth"><input class="inputstyle" name="master" value="<?php echo $val_troops['master'];?>"/>人</td>
+  </tr>
+  <?php } ?>
+  
+  <?php  foreach ($listscistudy as $key_study=>$val_study ){ ?>
+  <tr>
+    <td class="td1" rowspan="8"style="background:url(__PUBLIC__/images/KeyDiscipline_edit2.jpg)">科学研究</td>
+    <td rowspan="6"><input size="6" class="time inputsaveunderline timelength" onclick="SelectDate(this, 'yyyy-MM-dd')" name="science_study_start" value="<?php echo $val_time['science_study_start'];?>" /><br />--<br />
+    <input size="6" class="time inputsaveunderline timelength" onclick="SelectDate(this, 'yyyy-MM-dd')" name="science_study_end" value="<?php echo $val_time['science_study_end'];?>" /></td>
+    <td class="td2" colspan="2">核心期刊发表论文</td>
+    <td colspan="2"><input  class="inputstyle" name="core_article" value="<?php echo $val_study['core_article'];?>"/>篇</td>
+    <td class="td2" colspan="2">SCI/EI/ISTP收录</td>
+    <td  style="width:100px;"><input class="inputstyle" name="sci" value="<?php echo $val_study['sci'];?>"/>篇</td>
+    <td class="td2" colspan="2">出版学术专著、译著</td>
+    <td style="width:100px;"><input class="inputstyle" name="publish_article" value="<?php echo $val_study['publish_article'];?>"/>部</td>
+  </tr>
+  <tr>
+    <td class="td2" colspan="2">获国家级奖</td>
+    <td colspan="2"><input class="inputstyle" name="national_award" value="<?php echo $val_study['national_award'];?>"/>项</td>
+    <td class="td2" colspan="2">省部级奖</td>
+    <td><input class="inputstyle" name="province_award" value="<?php echo $val_study['province_award'];?>"/>项</td>
+    <td class="td2" colspan="2">其他科研奖</td>
+    <td><input class="inputstyle" name="other_award" value="<?php echo $val_study['other_award'];?>"/>项</td>
+  </tr>
+  <tr>
+    <td class="td2" colspan="2">获发明专利</td>
+    <td colspan="2"><input class="inputstyle" name="own_invent_patent" value="<?php echo $val_study['own_invent_patent'];?>"/>项</td>
+    <td class="td2" colspan="2">科研成果转让</td>
+    <td><input class="inputstyle" name="science_result" value="<?php echo $val_study['science_result'];?>"/>项</td>
+    <td class="td2" colspan="2">直接经济效益</td>
+    <td><input class="inputstyle" name="direct_economy" value="<?php echo $val_study['direct_economy'];?>"/>万</td>
+  </tr>
+  <tr>
+    <td class="td2" colspan="3">科研经费合计</td>
+    <td colspan="2"><input class="inputstyle" name="all_science_funds" value="<?php echo $val_study['all_science_funds'];?>"/>万元</td>
+    <td class="td2" colspan="3">年平均</td>
+    <td colspan="2"><input class="inputstyle" name="year_average" value="<?php echo $val_study['year_average'];?>"/>万元</td>
+  </tr>
+  <tr>
+    <td class="td2" rowspan="2">已完成科研项目
+    <?php echo $val_study["over_local_govermment_project"]+$val_study["over_other_national_project"]+$val_study["over_national_science_education"]+$val_study["over_national_socity_project"]; ?>项
+    
+    </td>
+    
+    <td class="td2" rowspan="3">其中</td>
+    <td class="td2" colspan="2">国家发改委，科技部，教育部项目</td>
+    <td class="td2"colspan="2">国家自然科学、社会科学基金项目</td>
+    <td class="td2"colspan="2">国务院其他各部门项目及国防重大项目</td>
+    <td class="td2">地方政府项目</td>
+    <td class="td2">企事业单位委托项目</td>
+  </tr>
+  <tr>
+    <td colspan="2"><input class="inputstyle" name="over_national_science_education" value="<?php echo $val_study['over_national_science_education'];?>"/>项</td>
+    <td colspan="2"><input class="inputstyle" name="over_national_socity_project" value="<?php echo $val_study['over_national_socity_project'];?>"/>项</td>
+    <td colspan="2"><input class="inputstyle" name="over_other_national_project" value="<?php echo $val_study['over_other_national_project'];?>"/>项</td>
+    <td><input class="inputstyle" name="over_local_govermment_project" value="<?php echo $val_study['over_local_govermment_project'];?>"/>项</td>
+    <td><input class="inputstyle" name="over_company_project" value="<?php echo $val_study['over_company_project'];?>"/>项</td>
+  </tr>
+  <tr>
+    <td rowspan="2"><input size="6" class="time inputsaveunderline timelength" onclick="SelectDate(this, 'yyyy-MM-dd')" name="science_study_end2" value="<?php echo $val_time['science_study_end2'];?>" /></td>
+    <td class="td2">目前承担科研项目
+    <?php echo $val_study["in_company_project"]+$val_study["in_local_govermment_project"]+$val_study["in_other_national_project"]+$val_study["in_national_socity_project"]+$val_study["in_national_science_education"]; ?>项
+    
+    </td>
+    <td colspan="2"><input class="inputstyle" name="in_national_science_education" value="<?php echo $val_study['in_national_science_education'];?>"/>项</td>
+    <td colspan="2"><input class="inputstyle" name="in_national_socity_project" value="<?php echo $val_study['in_national_socity_project'];?>"/>项</td>
+    <td colspan="2"><input class="inputstyle" name="in_other_national_project" value="<?php echo $val_study['in_other_national_project'];?>"/>项</td>
+    <td><input class="inputstyle" name="in_local_govermment_project" value="<?php echo $val_study['in_local_govermment_project'];?>"/>项</td>
+    <td><input class="inputstyle" name="in_company_project" value="<?php echo $val_study['in_company_project'];?>"/>项</td>
+  </tr>
+  <tr>
+    <td class="td2" colspan="3">目前承担科研项目经费合计</td>
+    <td colspan="2"><input class="inputstyle" name="in_have_project_funds" value="<?php echo $val_study['in_have_project_funds'];?>"/>万元</td>
+    <td class="td2" colspan="3">人均</td>
+    <td colspan="2"><input class="inputstyle" name="person_average" value="<?php echo $val_study['person_average'];?>"/>万元</td>
+  </tr>
+  <?php } ?>
+  
+  <tr>
+    <td class="td1" rowspan="5"style="background:url(__PUBLIC__/images/KeyDiscipline_edit2.jpg);">人才培养</td>
+    <td rowspan="5"><p><input size="6" class="time inputsaveunderline timelength" onclick="SelectDate(this, 'yyyy-MM-dd')" name="people_start" value="<?php echo $val_time['people_start'];?>" /><br />
+    <br /><input size="6" class="time inputsaveunderline timelength" onclick="SelectDate(this, 'yyyy-MM-dd')" name="people_end" value="<?php echo $val_time['people_end'];?>" /></p>
+    </td>
+    
+  
+  <td class="td2" rowspan="2">招收博士生</td>
+    <td class="td2" rowspan="2">授予博士学位</td>
+    <td class="td2" colspan="2">招收硕士生</td>
+    <td class="td2" colspan="2">授予硕士</td>
+    <td class="td2" colspan="2" rowspan="2">或省级以上教学成果奖</td>
+    <td class="td2" colspan="2" rowspan="2">出版教材</td>
+  </tr>
+  
+  
+  <tr>
+    <td class="td2">学术学位</td>
+    <td class="td2">专业学位</td>
+    <td class="td2">学术学位</td>
+    <td class="td2">专业学位</td>
+  </tr>
+  <tr>
+    <td><input size="4" name="get_doctor" value="<?php echo $val['get_doctor'];?>"/>人</td>
+    <td><input size="4" name="give_doctor_degree" value="<?php echo $val['give_doctor_degree'];?>"/>人</td>
+    <td><input size="4" name="get_academic_master" value="<?php echo $val['get_academic_master'];?>"/>人</td>
+    <td><input size="4" name="get_professional_master" value="<?php echo $val['get_professional_master'];?>"/>人</td>
+    <td><input size="6" name="give_academic_master" value="<?php echo $val['give_academic_master'];?>"/>人</td>
+    <td><input size="6" name="give_professional_master" value="<?php echo $val['give_professional_master'];?>"/>人</td>
+    <td colspan="2"><input size="8" name="get_pro_teach_prize" value="<?php echo $val['get_pro_teach_prize'];?>"/>项</td>
+    <td colspan="2"><input size="8" name="publish_book" value="<?php echo $val['publish_book'];?>"/>部</td>
+  </tr>
+  <tr>
+    <td class="td2" colspan="4">在学期间在国内外核心学术刊物上发表论文</td>
+    <td class="td2" colspan="3">在学期间出版专著，译著</td>
+    <td class="td2" colspan="3">在学期间科研成果获省（部）级以上奖励</td>
+  </tr>
+  <tr>
+    <td colspan="4"><input size="3" name="key_magazine_public" value="<?php echo $val['key_magazine_public'];?>"/>篇</td>
+    <td colspan="3"><input size="3" name="publish_monographs" value="<?php echo $val['publish_monographs'];?>"/>部</td>
+    <td colspan="3"><input size="3" name="get_pro_prize" value="<?php echo $val['get_pro_prize'];?>"/>项</td>
+  </tr>
+  <tr>
+    <td class="td1" rowspan="5"style="background:url(__PUBLIC__/images/KeyDiscipline_edit2.jpg)">学术交流与合作</td>
+    <td rowspan="5"><input size="6" class="time inputsaveunderline timelength" onclick="SelectDate(this, 'yyyy-MM-dd')" name="chat_start" value="<?php echo $val_time['chat_start'];?>" /><br />
+    --<br /><input size="6" class="time inputsaveunderline timelength" onclick="SelectDate(this, 'yyyy-MM-dd')" name="chat_end" value="<?php echo $val_time['chat_end'];?>" /></td>
+    <td class="td2" colspan="3">举办国际学术会议</td>
+    <td class="td2" colspan="2">举办全国性学术会议</td>
+    <td class="td2" colspan="3">出境参加国际会议</td>
+    <td class="td2" colspan="2">参加全国性学术会议</td>
+  </tr>
+  <tr>
+    <td colspan="3"><input size="8" name="hold_intl_meeting" value="<?php echo $val['hold_intl_meeting'];?>"/>次</td>
+    <td colspan="2"><input size="8" name="hold_inland_meeting" value="<?php echo $val['hold_inland_meeting'];?>"/>次</td>
+    <td colspan="3"><input size="8" name="join_out_meeting" value="<?php echo $val['join_out_meeting'];?>"/>人次</td>
+    <td colspan="2"><input size="8" name="join_in_meeting" value="<?php echo $val['join_in_meeting'];?>"/>人次</td>
+  </tr>
+  <tr>
+    <td class="td2" colspan="3">出境进修学者</td>
+    <td class="td2" colspan="2">接收境外进修学者</td>
+    <td class="td2"colspan="3">派出国内进修学者</td>
+    <td class="td2"colspan="2">接收国内进修学者</td>
+  </tr>
+  <tr>
+    <td colspan="3"><input size="8" name="go_scholar" value="<?php echo $val['go_scholar'];?>"/>人</td>
+    <td colspan="2"><input size="8" name="get_outland_scholar" value="<?php echo $val['get_outland_scholar'];?>"/>人</td>
+    <td colspan="3"><input size="8" name="inland_scholar" value="<?php echo $val['inland_scholar'];?>"/>人</td>
+    <td colspan="2"><input size="8" name="get_inland_scholar" value="<?php echo $val['get_inland_scholar'];?>"/>人</td>
+  </tr>
+  <tr>
+    <td class="td2" colspan="3">中外合作完成科研项目</td>
+    <td colspan="2"><input size="7" name="cod_project" value="<?php echo $val['cod_project'];?>"/>项</td>
+    <td class="td2" colspan="3">中外合作在研科研项目</td>
+    <td colspan="2"><input size="7" name="co_project" value="<?php echo $val['co_project'];?>"/>项</td>
+  </tr>
+  <tr>
+    <td class="td1" rowspan="5"style="background:url(__PUBLIC__/images/KeyDiscipline_edit2.jpg)">现有条件</td>
+    <td rowspan="2"><input size="6" class="time inputsaveunderline timelength" onclick="SelectDate(this, 'yyyy-MM-dd')" name="now1" value="<?php echo $val_time['now1'];?>" /></td>
+    <td class="td2" colspan="3">本学科中外文藏书合计</td>
+    <td colspan="2"><input size="6" name="store_books" value="<?php echo $val['store_books'];?>"/>万册</td>
+    <td class="td2" colspan="3">拥有中外文期刊</td>
+    <td colspan="2"><input size="6" name="have_magazine" value="<?php echo $val['have_magazine'];?>"/>种</td>
+  </tr>
+  <tr>
+    <td class="td2" colspan="6">本学科仪器设备总值</td>
+    <td colspan="4"><input size="8" name="facility_value" value="<?php echo $val['facility_value'];?>"/>万元</td>
+  </tr>
+  <tr>
+    <td rowspan="3"><input size="6" class="time inputsaveunderline timelength" onclick="SelectDate(this, 'yyyy-MM-dd')"name="now_start" value="<?php echo $val_time['now_start'];?>" /><br />
+    <br /><input size="6" class="time inputsaveunderline timelength" onclick="SelectDate(this, 'yyyy-MM-dd')" name="now_end" value="<?php echo $val_time['now_end'];?>"  /></td>
+    <td class="td2" colspan="6">学校对本学科的经费投入总计</td>
+    <td colspan="4"><input size="8" name="school_give_money" value="<?php echo $val['school_give_money'];?>"/>万元</td>
+  </tr>
+  <tr>
+    <td class="td2" colspan="6">省对本学科的经费投入总计</td>
+    <td colspan="4"><input size="8" name="pro_give_money" value="<?php echo $val['pro_give_money'];?>"/>万元</td>
+  </tr>
+  <tr>
+    <td class="td2" colspan="6">其他经费投入总计</td>
+    <td colspan="4"><input size="8" name="other_give_money"- value="<?php echo $val['other_give_money'];?>"/>万元</td>
+  </tr>
+  
+  <tr>
+    <td class="td1" colspan="2" rowspan="2"style="background:url(__PUBLIC__/images/KeyDiscipline_edit2.jpg)">第一学科带头人简况</td>
+    <td class="td2">姓名</td>
+    <td class="td2">性别</td>
+    <td class="td2" colspan="2">出生年月</td>
+    <td class="td2" >最后学历或学位</td>
+    <td class="td2">专业技术职务</td>
+    <td class="td2">在研省部级以上项目数</td>
+    <td class="td2">在研经费（万元）</td>
+    <td class="td2" colspan="2">博导/硕导</td>
+  </tr>
+  <tr>
+  <?php if($listresear[0][name]!= NULL){ ?>
+    <td>
+    	<select name="option">
+    				<option value={$listresear[0][id]}>{$listresear[0][name]}</option>
+		   		<?php foreach ($listresear1 as $key_people=>$val_people ){ ?>
+		   			<option value={$val_people['id']}>{$listresear1[$key_people][name]}</option>
+		   		<?php } ?>
+		   </select> 
+ 	</td>
+    <td><input class="inputstyle" name="sex" value={$listresear[0][sex]} /></td>
+    <td colspan="2"><input class="time inputsaveunderline timelength" style="width:80px;"  name="birthday" value={$listresear[0][birthday]} /></td>
+    <td><textarea style="width:140px;height:80px;font-size:12px;padding-top:15px;line-height:15px;" name="graduate_record">{$listresear[0][graduate_record]}</textarea></td>
+    <td><input class="inputstyle" name="position" value={$listresear[0][position]} /></td>
+    <td><input class="inputstyle" name="won_pro_level" value={$listresear[0][won_pro_level]} /></td>
+    <td><input class="inputstyle" name="control_money" value={$listresear[0][control_money]} /></td>
+    <td colspan="2"><input class="inputstyle" name="job" value={$listresear[0][job]} /></td>
+    <?php } else { ?>
+    <td>
+		   <select name="option">
+		   		<?php foreach ($listresear1 as $key_people=>$val_people ){ ?>
+		   			<option value={$val_people['id']}><?php echo $val_people['name'] ?></option>
+		   		<?php } ?>
+		   </select> 
+    </td>
+    <td><input class="inputstyle" name="sex"/></td>
+    <td colspan="2"><input class="time inputsaveunderline timelength" style="width:80px;"  name="birthday" /></td>
+    <td><textarea style="width:140px;height:80px;font-size:12px;padding-top:15px;line-height:15px;" name="graduate_record"> </textarea></td>
+    <td><input class="inputstyle" name="position" /></td>
+    <td><input class="inputstyle" name="won_pro_level" /></td>
+    <td><input class="inputstyle" name="control_money" /></td>
+    <td colspan="2"><input class="inputstyle" name="job" /></td>
+    <?php } ?>
+   </tr>
+  <tr>
+    <td class="td1" colspan="2" rowspan="4"style="background:url(__PUBLIC__/images/KeyDiscipline_edit2.jpg)">经费使用</td>
+    <td colspan="2">对应年份(年)</td>
+    <td class="td2" colspan="4">计划经费使用情况</td>
+    <td class="td2" colspan="4">实际经费使用情况</td>
+  </tr>
+  	<?php  foreach ($listmoney as $key_money=>$val_money ){ ?>
+  	 <tr>
+    <td colspan="2"><input class="inputsaveunderline" size="6" class="time" name="time[]" value="<?php echo $val_money['time']?>"  /></td>
+    <td colspan="4"><input class="inputstyle" name="plan_use[]" value="<?php echo $val_money['plan_use']?>"/>万元</td>
+    <td colspan="4"><input class="inputstyle" name="reality_use[]" value="<?php echo $val_money['reality_use']?>"/>万元</td>
+ 	 </tr>
+ 	<?php } ?>
+  <tr>
+		<td style="height:28px;" colspan="12" style="text-align:left">注：①②③④⑤⑥各栏目中，如果“是”，请填写“1”，如果“否”，请填写“0”；⑤中含工程研究中心，文献中心</td>
+	  </tr>
+   <?php } ?>
+  <?php } ?>
+  </table>
+  <?php  if($_SESSION['power'] == 2 | $_SESSION['power'] == 3) { ?>
+  <p align="center">
+		  <a class="button_1"  style="text-decoration:none;"  href=""><input type="submit" value="保存" class="button"/></a>
+		  <a class="button_1"  style="text-decoration:none;" ><input type="reset" value="重置"  style="margin-left:10px;" class="button" />
+		  <a onClick="javascript:history.back()" class="button_1" style="text-decoration:none;"><input type="button" style="margin-left:10px;"  value="返回" class="button"/></a>
+	 </p>
+   <?php } ?>
+</form>
+</div>
+</body>
+</html>

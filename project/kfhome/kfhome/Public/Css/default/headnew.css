@@ -1,0 +1,514 @@
+html {
+	margin: 0px; padding: 0px; font-family: "Microsoft YaHei", "Î¢ÈíÑÅºÚ", "Segoe UI", "Arial"; font-size: 12px;
+}
+body {
+	margin: 0px; padding: 0px; font-family: "Microsoft YaHei", "Î¢ÈíÑÅºÚ", "Segoe UI", "Arial"; font-size: 12px;
+}
+h1 {
+	margin: 0px; padding: 0px; border: currentColor;
+}
+h2 {
+	margin: 0px; padding: 0px; border: currentColor;
+}
+h3 {
+	margin: 0px; padding: 0px; border: currentColor;
+}
+h4 {
+	margin: 0px; padding: 0px; border: currentColor;
+}
+h5 {
+	margin: 0px; padding: 0px; border: currentColor;
+}
+h6 {
+	margin: 0px; padding: 0px; border: currentColor;
+}
+ul {
+	margin: 0px; padding: 0px; border: currentColor;
+}
+li {
+	margin: 0px; padding: 0px; border: currentColor;
+}
+img {
+	margin: 0px; padding: 0px; border: currentColor;
+}
+.div10 {
+	height: 10px; line-height: 10px; clear: both;
+}
+.div03 {
+	height: 3px; line-height: 3px; clear: both;
+}
+.div101 {
+	height: 1px; line-height: 1px; clear: both;
+}
+.div5 {
+	background: rgb(204, 204, 204); height: 5px; line-height: 5px; clear: both;
+}
+.pd {
+	margin-right: 10px; margin-left: 10px;
+}
+.div254 {
+	height: 254px; line-height: 254px; clear: both;
+}
+.div268 {
+	height: 268px; line-height: 268px; clear: both;
+}
+.div100 {
+	height: 100px; line-height: 100px; clear: both;
+}
+.div100new {
+	height: 160px; line-height: 100px; clear: both;
+}
+a {
+	color: rgb(51, 51, 51); text-decoration: none;
+}
+a:hover {
+	color: rgb(255, 0, 0); text-decoration: none;
+}
+a:visited {
+	color: rgb(51, 51, 51); text-decoration: none;
+}
+.white {
+	color: rgb(255, 255, 255);
+}
+.white a {
+	color: rgb(255, 255, 255); text-decoration: none;
+}
+.white a:hover {
+	color: rgb(255, 0, 0); text-decoration: none;
+}
+.white a:visited {
+	color: rgb(255, 255, 255); text-decoration: none;
+}
+.under {
+	margin-left: 10px;
+}
+.under a:link {
+	color: rgb(51, 51, 51); text-decoration: underline;
+}
+.under a:hover {
+	color: rgb(255, 0, 0); text-decoration: underline;
+}
+.under a:visited {
+	color: rgb(51, 51, 51); text-decoration: underline;
+}
+.deep_red01 {
+	color: rgb(166, 23, 7);
+}
+.deep_red01 a {
+	color: rgb(166, 23, 7); text-decoration: none;
+}
+.deep_red01 a:hover {
+	color: rgb(255, 0, 0); text-decoration: none;
+}
+.deep_red01 a:visited {
+	color: rgb(166, 23, 7); text-decoration: none;
+}
+.lan {
+	color: rgb(0, 0, 204);
+}
+.lan a:link {
+	color: rgb(0, 0, 204); text-decoration: underline;
+}
+.lan a:hover {
+	color: rgb(255, 0, 0); text-decoration: underline;
+}
+.lan a:visited {
+	color: rgb(0, 0, 204); text-decoration: underline;
+}
+.green {
+	color: rgb(7, 132, 10);
+}
+.green a {
+	color: rgb(7, 132, 10); text-decoration: none;
+}
+.green a:hover {
+	color: rgb(255, 0, 0); text-decoration: none;
+}
+.green a:visited {
+	color: rgb(7, 132, 10); text-decoration: none;
+}
+.more {
+	float: right;
+}
+.more a:link {
+	color: rgb(79, 79, 79); text-decoration: underline;
+}
+.more a:hover {
+	color: rgb(255, 0, 0); text-decoration: underline;
+}
+.more a:visited {
+	color: rgb(0, 0, 255); text-decoration: underline;
+}
+.wenzi_h3 {
+	color: rgb(153, 153, 153); line-height: 35px; padding-left: 5px; font-family: "Î¢ÈíÑÅºÚ","ËÎÌå"; font-size: 16px; font-weight: bold; float: left;
+	
+}
+.in_search_index_ {
+	width: 120px; height: 16px; color: rgb(169, 169, 169);
+}
+.in_search_index2_ {
+	width: 120px; height: 16px; color: rgb(0, 0, 0);
+}
+.more02 {
+	margin-top: 10px; margin-right: 5px; float: right;
+}
+.more02 a:link {
+	color: rgb(102, 102, 102); text-decoration: none;
+}
+.more02 a:hover {
+	color: rgb(255, 0, 0); text-decoration: none;
+}
+.more02 a:visited {
+	color: rgb(102, 102, 102); text-decoration: none;
+}
+.red {
+	color: rgb(255, 0, 0);
+}
+.wenzi_h3 {
+	color: rgb(153, 153, 153); line-height: 35px; padding-left: 5px; font-family: "Î¢ÈíÑÅºÚ","ËÎÌå"; font-size: 16px; font-weight: bold; float: left;
+}
+.headbg {
+	background: rgb(242, 242, 242); width: 100%; height: 39px;
+}
+.head {
+	margin: 0px auto; width: 987px; line-height: 39px;
+}
+.headleft {
+	width: 407px; float: left;
+}
+.headright {
+	width: 580px; text-align: right; float: right;
+}
+.font14 {
+	font-size: 14px; font-weight: bold;
+}
+.f14 {
+	font-size: 14px;
+}
+.f16 {
+	color: rgb(51, 51, 51); font-family: "Î¢ÈíÑÅºÚ","ËÎÌå"; font-size: 16px; font-weight: bold;
+}
+.txt_search {
+	border: 1px solid rgb(204, 204, 204); width: 96px; height: 16px; line-height: 16px; margin-left: 5px;
+}
+.btn02 {
+	background: url("../../Images/default/Xingzheng/btn02.jpg") repeat-x; border: currentColor; height: 18px; color: rgb(255, 255, 255); line-height: 18px; padding-right: 3px; padding-left: 3px; margin-left: 10px; cursor: pointer;
+}
+.bg1 {
+	background: url("../../Images/default/Xingzheng/whhome4.png") no-repeat rgb(248, 247, 240); margin: 0px auto; clear: both; min-width: 987px;background-position:center; 
+}
+.bg2 {
+	background: url("../../Images/default/Xingzheng/whhome1.png") no-repeat rgb(248, 247, 240); margin: 0px auto; clear: both; min-width: 987px; background-position:center; 
+}
+.bg3 {
+	background: url("../../Images/default/Xingzheng/whhome3.png") no-repeat rgb(248, 247, 240);  margin: 0px auto; clear: both; min-width: 987px; background-position:center; 
+}
+.bg4 {
+	background: url("../../Images/default/Xingzheng/smzj.jpg") no-repeat rgb(248, 247, 240); margin: 0px auto; clear: both; min-width: 987px; background-position:center; 
+}
+.bg5 {
+	background: url("../../Images/default/Xingzheng/smzj03.JPG") no-repeat rgb(248, 247, 240); margin: 0px auto; clear: both; min-width: 987px;  background-position:center; 
+}
+.bg6 {
+	background: url("../../Images/default/Xingzheng/smzj.jpg") no-repeat rgb(248, 247, 240); margin: 0px auto; clear: both; min-width: 987px;  background-position:center;
+}
+.bg7 {
+	background: url("../../Images/default/Xingzheng/smzj03.JPG") no-repeat rgb(248, 247, 240); clear: both;  background-position:center; 
+}
+.bg8 {
+	background: url("../../Images/default/Xingzheng/smzj03.JPG") no-repeat rgb(248, 247, 240);  clear: both; min-width: 987px;background-position:center;
+}
+.bg9 {
+	background: url("../../Images/default/Xingzheng/smzj.jpg") no-repeat rgb(248, 247, 240); clear: both; min-width: 987px;background-position:center;
+}
+.bg10 {
+	background: url("../../Images/default/Xingzheng/smzj01.jpg") no-repeat rgb(248, 247, 240); margin: 0px auto; clear: both; min-width: 987px;background-position:center;
+}
+.bgChar1 {
+	background: url("../../Images/default/Xingzheng/char1.png") no-repeat rgb(248, 247, 240); margin: 0px auto; clear: both; min-width: 107px;
+}
+.bgChar2 {
+	background: url("../../Images/default/Xingzheng/char2.gif") no-repeat rgb(248, 247, 240); margin: 0px auto; clear: both; min-width: 107px;
+}
+.mainbg0 {
+	background: url("../../Images/default/Xingzheng/mainbg0.jpg") no-repeat center top rgb(248, 247, 240); margin: 0px auto; clear: both; min-width: 987px;
+}
+.mainbg {
+	margin: 0px auto; clear: both; min-width: 987px; background-color: rgb(248, 247, 240);
+}
+.mainbg02 {
+	background: url("../../Images/default/Xingzheng/mainbg02.jpg") no-repeat rgb(248, 247, 240); margin: 0px auto; clear: both; min-width: 987px;
+}
+.mainbg01 {
+	background: url("../../Images/default/Xingzheng/mainbg01.jpg") no-repeat rgb(248, 247, 240); margin: 0px auto; clear: both; min-width: 987px;
+}
+.main {
+	background: rgb(255, 255, 255); margin: 0px auto; width: 985px; overflow: hidden;
+}
+.main_pd {
+	background: rgb(255, 255, 255); margin: 0px auto; padding: 5px 10px 10px; width: 967px; overflow: hidden; border-top-color: rgb(222, 222, 222); border-top-width: 1px; border-top-style: solid;
+}
+.nav1 {
+	margin: 0px auto; width: 987px; overflow: hidden;
+}
+.navleft1 {
+	margin: 0px auto; width: 397px; float: left;
+}
+.navleft1 img {
+	margin-top: 15px; margin-left: 10px;
+}
+
+.navright1 {
+width: 60px;
+padding-top: 25px;
+margin-bottom: 1px;
+float: right;
+}
+.navright1 ul {
+	margin: 0px; padding: 0px; list-style-type: none;
+}
+.navright1 ul li {
+	width: 94px; height: 44px; text-align: center; padding-top: 12px; margin-left: 1px; float: left; list-style-type: none;
+}
+.orage {
+	background: rgb(237, 106, 42);
+}
+.nav {
+	margin: 0px auto; width: 1007px; overflow: hidden;
+}
+.navleft {
+	margin: 0px auto; width: 397px; float: left;
+}
+.navleft img {
+	margin-top: 15px; margin-left: 10px;
+}
+.navright {
+	width: 595px; padding-top: 59px; margin-bottom: 1px; float: right;
+}
+.navright ul {
+	margin: 0px; padding: 0px; list-style-type: none;
+}
+.navright ul li {
+	width: 84px; height: 44px; text-align: center; padding-top: 12px; margin-left: 1px; float: left; list-style-type: none;
+}
+.deep_red {
+	background: rgb(141, 50, 50);
+}
+.deep_lan {
+	background: rgb(59, 94, 116);
+}
+.deep_yellow {
+	background: rgb(212, 146, 42);
+}
+
+.deep_purple {
+	background:#5e5976;
+}
+.deep_green {
+	background: rgb(84, 101, 47);
+}
+
+.deep_green {
+	background: rgb(84, 101, 47);
+}
+.deep_blue {
+	background:#50a1df;
+}
+.deep_Purple{
+	background:#5e5976;
+}
+.zw_left {
+	background: rgb(255, 255, 255); width: 714px; overflow: hidden; padding-right: 10px; padding-left: 10px; float: left;
+}
+.zw_right {
+	background: rgb(246, 243, 226); padding: 0px 7px 7px; width: 235px; height: 543px; margin-top: 0px; float: right;
+}
+.bread {
+	background: rgb(85, 85, 85); margin: 0px auto; width: 987px; height: 23px; color: rgb(255, 255, 255); line-height: 23px; clear: both;
+}
+.bread img {
+	margin-top: 5px; margin-right: 10px; margin-left: 10px; float: left;
+}
+.bread a:link {
+	color: rgb(255, 255, 255); text-decoration: none;
+}
+.bread a:hover {
+	color: rgb(255, 0, 0); text-decoration: none;
+}
+.bread a:visited {
+	color: rgb(255, 255, 255); text-decoration: none;
+}
+.bread_wh {
+	background: rgb(85, 85, 85); margin: 0px auto; width: 987px; height: 23px; color: rgb(255, 255, 255); line-height: 23px; clear: both;
+}
+.bread_wh a:link {
+	color: rgb(255, 255, 255); text-decoration: none;
+}
+.bread_wh a:hover {
+	color: rgb(255, 0, 0); text-decoration: none;
+}
+.bread_wh a:visited {
+	color: rgb(255, 255, 255); text-decoration: none;
+}
+.zhwyw {
+	height: 30px; line-height: 30px;
+}
+.zhwyw_img {
+	margin: 0px auto; border: 1px solid rgb(153, 153, 153); width: 250px; height: 108px;
+}
+.zhwyw_ul ul {
+	margin: 0px; padding: 0px; clear: both; list-style-type: none;
+}
+.zhwyw_ul ul li {
+	background: url("../../Images/default/Xingzheng/i01.jpg") no-repeat left 7px; line-height: 20px; padding-bottom: 6px; padding-left: 13px; margin-bottom: 8px; border-bottom-color: rgb(167, 183, 174); border-bottom-width: 1px; border-bottom-style: dotted; list-style-type: none;
+}
+.zhwyw_ul ul .li_none {
+	border: currentColor;
+}
+.btn01 {
+	background: url("../../Images/default/Xingzheng/btn01.jpg") repeat-x; border: 1px solid rgb(148, 148, 148); height: 20px; text-align: center; color: rgb(51, 51, 51); line-height: 20px; padding-right: 5px; padding-left: 5px; font-size: 12px; cursor: pointer;
+}
+.btn03_left {
+	background: url("../../Images/default/Xingzheng/btn03_left.jpg") no-repeat; width: 2px; height: 26px; margin-left: 15px; float: left;
+}
+.btn03 {
+	background: url("../../Images/default/Xingzheng/btn03.jpg") repeat-x; height: 26px; color: rgb(255, 255, 255); line-height: 26px; padding-right: 15px; padding-left: 15px; font-size: 14px; float: left; cursor: pointer;
+}
+.btn03_right {
+	background: url("../../Images/default/Xingzheng/btn03_right.jpg") no-repeat; width: 2px; height: 26px; float: left;
+}
+.btn04_left {
+	background: url("../../Images/default/Xingzheng/btn04_left.jpg") no-repeat; width: 2px; height: 26px; margin-left: 5px; float: left;
+}
+.btn04 {
+	background: url("../../Images/default/Xingzheng/btn04.jpg") repeat-x; height: 26px; color: rgb(255, 255, 255); line-height: 26px; padding-right: 15px; padding-left: 15px; font-size: 14px; float: left; cursor: pointer;
+}
+.btn04_right {
+	background: url("../../Images/default/Xingzheng/btn04_right.jpg") no-repeat; width: 2px; height: 26px; float: left;
+}
+.btn05 {
+	background: url("../../Images/default/Xingzheng/btn05.jpg") no-repeat; border: currentColor; width: 97px; height: 26px; text-align: left; color: rgb(164, 0, 0); line-height: 26px; padding-left: 10px; font-size: 13px; font-weight: bold; margin-left: 10px; cursor: pointer;
+}
+.btn06 {
+	background: rgb(242, 244, 243); border: 1px solid rgb(202, 204, 203); width: 96px; height: 28px; text-align: center; line-height: 28px; font-size: 14px; margin-top: 10px; margin-left: 10px; float: left; cursor: pointer;
+}
+.btn07_left {
+	background: url("../../Images/default/Xingzheng/btn07_left.jpg") no-repeat; width: 5px; height: 34px; margin-left: 4px; float: left;
+}
+.btn07 {
+	background: url("../../Images/default/Xingzheng/btn07.jpg") repeat-x; height: 34px; color: rgb(51, 51, 51); line-height: 34px; padding-right: 3px; padding-left: 3px; font-size: 14px; float: left; cursor: pointer;
+}
+.btn07_right {
+	background: url("../../Images/default/Xingzheng/btn07_right.jpg") no-repeat; width: 5px; height: 34px; float: left;
+}
+.btn08 {
+	background: url("../../Images/default/Xingzheng/btn08.jpg") repeat-x; border: 0px solid rgb(204, 204, 204); width: 134px; height: 50px; text-align: center; color: rgb(100, 100, 100); line-height: 50px; font-family: "Î¢ÈíÑÅºÚ","ËÎÌå"; font-size: 15px; font-weight: bold; margin-top: 6px; margin-left: 7px; float: left; cursor: pointer;
+}
+.btn09 {
+	border: 0px solid rgb(204, 204, 204); width: 108px; height: 50px; color: rgb(100, 100, 100); margin-top: 6px; margin-right: 3px; margin-left: 3px; float: left; cursor: pointer;
+}
+.btn001 {
+	border: 0px solid rgb(204, 204, 204); width: 134px; height: 57px; color: rgb(100, 100, 100); margin-top: 1px; margin-right: 3px; margin-left: 3px; float: left; cursor: pointer;
+}
+.btn09bg {
+	float: left;
+}
+.btn09left {
+	background: url("../../Images/default/Xingzheng/btn_left.gif") no-repeat; width: 3px; height: 31px; margin-left: 10px; float: left;
+}
+.btn09con {
+	background: url("../../Images/default/Xingzheng/btn_con.gif") repeat-x; height: 31px; text-align: center; color: rgb(0, 0, 0); line-height: 31px; overflow: hidden; padding-right: 10px; padding-left: 10px; font-size: 14px; float: left;
+}
+.btn09right {
+	background: url("../../Images/default/Xingzheng/btn_right.gif") no-repeat; width: 3px; height: 31px; margin-right: 10px; float: left;
+}
+.btn10 {
+	background: url("../../Images/default/Xingzheng/login.png") no-repeat; border: currentColor; width: 85px; height: 34px; cursor: pointer;
+}
+.in_search {
+	background: url("../../Images/default/Xingzheng/search_bg.jpg") no-repeat; padding: 8px 10px 2px 30px; border: currentColor; width: 509px; height: 19px; color: rgb(0, 0, 0); margin-top: 5px; margin-left: 10px; float: left;
+}
+.btn_search {
+	background: url("../../Images/default/Xingzheng/search.jpg") no-repeat; border: currentColor; width: 77px; height: 37px; margin-top: 3px; margin-left: 10px; float: left;
+}
+.in_search_index {
+	background: url("../../Images/default/Xingzheng/search_bg_index.jpg") no-repeat; padding: 8px 10px 2px 30px; border: currentColor; width: 400px; height: 19px; color: rgb(169, 169, 169); margin-top: 5px; margin-left: 10px; float: left;
+}
+.in_search_index2 {
+	background: url("../../Images/default/Xingzheng/search_bg_index.jpg") no-repeat; padding: 8px 10px 2px 30px; border: currentColor; width: 400px; height: 19px; color: rgb(0, 0, 0); margin-top: 5px; margin-left: 10px; float: left;
+}
+.in_search_index2_ {
+	width: 120px; height: 16px; color: rgb(0, 0, 0);
+}
+.xuxian {
+	margin: 0px; padding: 0px; height: 1px; line-height: 1px; clear: both; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: dotted;
+}
+.xian {
+	margin: 0px; padding: 0px; height: 1px; line-height: 1px; clear: both; border-bottom-color: rgb(222, 222, 222); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.in_txt11 {
+	border: 1px solid rgb(169, 169, 169); width: 160px; height: 16px;
+}
+.in_txt11_ {
+	border: 1px solid rgb(169, 169, 169); width: 120px; height: 16px;
+}
+.in_txt {
+	border: 1px solid rgb(169, 169, 169); width: 140px; height: 16px;
+}
+.in_txt01 {
+	border: 1px solid rgb(169, 169, 169); width: 200px; height: 16px;
+}
+.in_login {
+	border: 1px solid rgb(163, 163, 163); width: 176px; height: 27px; line-height: 27px; margin-left: 10px;
+}
+.in_black {
+	width: 200px; height: 18px; line-height: 18px;
+}
+.pd {
+	padding-right: 5px; padding-left: 5px;
+}
+.dian {
+	background: url("../../Images/default/Xingzheng/dian.gif") no-repeat left; padding-left: 10px;
+}
+.news_pic {
+	text-align: center; line-height: 30px; clear: both;
+}
+.news_pic img {
+	border: 1px solid rgb(153, 153, 153); width: 216px; height: 160px;
+}
+.footbg {
+	background: url("../../Images/default/Xingzheng/footbg.gif") repeat-x; height: 138px; line-height: 23px;
+}
+.footbg a:link {
+	color: rgb(165, 8, 3); text-decoration: none;
+}
+.footbg a:hover {
+	color: rgb(255, 0, 0); text-decoration: none;
+}
+.footbg a:visited {
+	color: rgb(165, 8, 3); text-decoration: none;
+}
+#andyscroll {
+	background: rgb(255, 255, 255); padding: 0px 5px; width: 710px; height: 270px; text-align: left; overflow: hidden;
+}
+#andyscroll a {
+	font: 12px/18px tahoma; width: 100%; color: rgb(0, 0, 0); text-decoration: none; float: left; display: block; font-size-adjust: none; font-stretch: normal;
+}
+#andyscroll a:hover {
+	font: 12px/18px tahoma; color: rgb(255, 102, 0); font-size-adjust: none; font-stretch: normal;
+}
+.deep_purple {
+	background:#5e5976;
+}
+.deep_blue {
+	background:#50a1df;
+}
+.deep_green {
+	background: rgb(84, 101, 47);
+}
+
+
+.top{background:url(../../Images/default/Xingzheng/w.png) repeat-x; height:120px; width:100%;}
+.top_pic{background:url(../../Images/default/Xingzheng/h_01.png) no-repeat center; height:112px; width:100%;}
+
+.top_title{width:1004px; margin:0 auto; padding-top:24px;}

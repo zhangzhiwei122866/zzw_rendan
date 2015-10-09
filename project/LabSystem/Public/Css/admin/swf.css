@@ -1,0 +1,16 @@
+div.fieldset{margin:10px 0;padding:20px 10px;}
+div.fieldset span.legend{position:relative;background-color:#FFF;padding:3px;top:-30px;font:700 14px Arial,Helvetica,sans-serif;color:#73b304;}
+div.flash{width:555px;margin:10px 5px;border-color:#D9E4FF;}
+.progressWrapper{width:555px;overflow:hidden;}
+.progressContainer{margin:5px;padding:4px;border:solid 1px #E8E8E8;background-color:#F7F7F7;overflow:hidden;position:relative;}
+a.progressCancel{font-size:0;display:block;height:14px;width:14px;position:absolute;right:10px;top:10px; background-image:url(../../Images/common/cancelbutton.gif);background-repeat:no-repeat;background-position:-14px 0px;}
+a.progressCancel:hover{background-position:0 0;}
+.message{margin:1em 0;padding:10px 20px;border:solid 1px #FFDD99;background-color:#FFFFCC;overflow:hidden;}
+.image_pic{height:83px;margin-right:8px;float:left;display:inline; overflow:hidden;width:113px;background:url(../../Images/common/photoup_default.gif) no-repeat center center;}
+.image_desc{width:360px;height:76px;border:1px solid #DBDBDB;float:left;display:inline;}
+.progressBarInProgress,.progressBarComplete,.progressBarError{font-size:0;width:0%;height:2px;background-color:blue;margin-top:2px;}
+.progressBarComplete{width:100%;background-color:green;visibility:hidden;}
+.progressBarError{width:100%;background-color:red;visibility:hidden;}
+.progressBarStatus{margin-top:2px;width:337px;font-family:Arial;}
+.swfupload{vertical-align:top;}
+#button-div{display: none;}

@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<import type='css' file="Css.admin.admin" />
+<title>后台管理</title>
+</head>
+
+<body>
+<div class="main">	    
+    <div style="width:48%" class="col_2 left">
+        <h6>我的个人信息</h6>
+        <div class="content">
+            <p>您好，admin</p>
+            <p>所属角色：超级管理员</p>
+            <div class="bk20 hr"></div>
+            <p>上次登录时间：2013-04-11 18:26:21</p>
+            <p>上次登录IP：172.20.92.114</p>
+        </div>
+    </div>
+    <div class="col_2">
+        <h6>工作室公告</h6>
+        <div class="content">
+            <p>创新开发工作室测试版上线啦！\(^o^)/~</p>
+            <div class="bk20 hr"></div>	
+        </div>
+    </div>	
+    <div class="clear"></div>
+    <div style="width:48%" class="col_2 left">
+        <h6>快捷方式</h6>
+        <div id="admin_panel" class="content"></div>
+    </div>
+    <div class="col_2">
+        <h6>系统信息</h6>
+        <div class="content">
+            <p>操作系统：<?php echo PHP_OS;?> </p>
+            <p>服务器软件：<?php echo apache_get_version ();?></p>
+            <p>MySQL 版本：5.1.39-ndb-7.0.9-cluster-gpl</p>
+            <p>上传文件：<?php echo ini_get('upload_max_filesize');?></p>	
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div style="width:48%" class="col_2 left">
+        <h6>本项目开发团队</h6>
+        <div class="content">
+            <p>版权所有：创新开发工作室</p>
+            <p>总 策 划：胡俊奇</p>
+            <p>开发与支持：胡俊奇、王斌、臧文学、高帅星、罗海燕、张啸辰、王明亮、张志伟、赵冠华、武杰</p>
+            <p>官方网站：<a target="_blank" href="http://www.duxiaokong.com/">http://www.duxiaokong.com/</a></p>
+        </div>
+    </div>
+    <div class="col_2">
+        <h6>安全提示</h6>
+        <div style="color:#ff0000;" class="content">
+            <p>※ 强烈建议您将网站根目录设置为644（linux/unix）或只读（NT）</p>
+            <p>※ 强烈建议您网站上线后，关闭 DEBUG （前台SQL错误提示）</p>
+            <div class="bk20 hr"></div>	
+        </div>
+    </div>
+    <div class="clear"></div>	
+</div>
+</body>
+</html>

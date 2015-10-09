@@ -1,0 +1,431 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>记录我们的爱情吧</title>
+<link href="/Public/images/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" href="/Public/css/record.css" />
+<link rel="stylesheet" type="text/css" href="/Public/css/lrtk.css" />
+<script type="text/javascript" src="/Public/Js/jquery1.js"></script>
+<script type="text/javascript" src="/Public/Js/record.js"></script>
+<script type="text/javascript" src="/Public/Js/wenzi.js"></script>
+<script type="text/javascript" src="/Public/Js/js.js"></script>
+<script type="text/javascript" src="/Public/Js/jquery.KinSlideshow-1.2.1.min.js"></script>
+<script>
+$(function(){
+	   //插件
+	 
+	   $(".content2").myWords({ //输入框字数
+	        obj_opts:"textarea",
+	        obj_Maxnum:200,//要是只能输入140个字  那这里就是280
+	        obj_Lnum:".sns-num"
+	    });
+	})
+</script>
+<style type="text/css">
+.bt{width:270px;height:40px;border: solid 2px #f2c4de;background: #FBFBFB;text-align: center;}
+.btcenter{text-align: center;clear: left;padding: 4px 0px 0px;}
+.sffocus {background: #f2c4de; border: 1px solid #1D95C7;}
+.zishu input:focus {background:url(/public/images/space_icons1.png);color:gray;}
+</style>
+</head>
+<body>
+<div id="container">
+	<div id="Javascript.Div1" class="header1" >
+		<div class="page">
+			<div class="chl-poster simple" id="header">
+				<div id="site-nav">
+					<UL class="quick-menu">
+					  <LI><A href="../Index/index">首页</A> </LI>
+					  <LI class="services menu-item last">
+						  <div class="menu">
+							  <A class="menu-hd" href="#" target=_top style="margin-top:-15px;padding-top:17px;border-radius:3px;">爱记录<B style="margin-top:15px;"></B></A> 
+							  <div class="menu-bd" style="WIDTH: 100px; HEIGHT: 147px; _width: 2000px;margin-top:18px;border-radius:3px;">
+								  <div class="menu-bd-panel">
+									  <DL style="margin-top:-20px;">
+										<DT>
+											<img src="/public/images/write.png"style="height:20px;width:20px;margin-right:5px;float:left;" /><A href="write" style="display:block;height:20px;float:left;">写篇日志</A>
+									  </DL>
+									  <DL>
+										<DT>
+										<img src="/public/images/upload.png" style="height:20px;width:20px;margin-right:5px;float:left;"><A href="upload_img" style="display:block;height:20px;float:left;">上传图片</A> 
+									  </DL>
+									  <DL>
+										<DT>
+										<img src="/public/images/question.png" style="height:20px;width:20px;margin-right:5px;float:left;"><A href="question" style="display:block;height:20px;float:left;">情感咨询</A> 
+										</DT>
+										</DL>
+									  <DL>
+										<DT>
+										<img src="/public/images/help.png" style="height:20px;width:20px;margin-right:5px;float:left;"><A href="help" style="display:block;height:20px;float:left;">帮助中心</A> 
+									  </DL>
+									  <DL class=last>
+									  </DL>
+								  </div>
+								  <S class=r></S><S class=rt></S><S class=lt></S><S class=b style="WIDTH: 169px"></S><S class="b b2" style="WIDTH: 169px"></S><S class=rb></S><S class=lb></S>
+							  </div>
+						  </div>
+					  </LI>
+					  <LI style="padding-left:20px;">
+					  	<A href="">我的空间</A> 
+					  </LI>
+					  <LI class="services menu-item last" style="padding-top:2px;">
+					  	<A href="">我的空间</A>
+					  </LI>
+				    </UL>
+				</div>
+			</div>
+		</div>
+		<div class="inp">
+		  		<form action="record" method="post" name="myform" id="myform" >
+			  		<div class="input">
+					  		<input type="text" name="select" class="grayTips"  value="请输入您想查询的内容" style="height:24px;width:185px;border:0;border-radius:1px;">
+			  		</div>
+				  	<div class="select2">
+						<a href="#" onclick="document.getElementById('myform').submit();"><img src="/Public/images/input_button.png" alt="点击搜索" title="点击搜索" style="border-radius:4px;"></a>  		
+				  	</div>
+				  	
+				</form>	
+		</div>
+	</div>
+	<div id="main" class="mainContent">
+		<div id="mainContent1">
+			<div class="content2">
+				<div id="p">
+					<p>想畅想什么吗，想让某人知道什么吗，想就来写点吧</p>
+				</div>
+			<form action="" method="post" id="form1">	
+				<div id="content3">
+					<div class="per-wbox">
+						<textarea name="feeling" id="content1"class="beizhu"></textarea>
+					</div>
+				</div>
+				<div class="zishu">
+					<p>
+				   	 <span class="sns-num">还能输入<em>100</em>个字</span>
+				   	 <input type="submit" class="btn"  value="发 表"  />
+	   				</p>
+	   				<hr noshade="noshade" style="width:87%;color:#f2c4de;margin:10px auto;"/>
+				</div>
+			</form>
+			</div>
+			<div id="center">
+				<div class="ta">
+					<ul class="menu0" id="menu0">
+					   <li onclick="setTab(0,0)" class="hover">全部动态</li>
+					   <li onclick="setTab(0,1)">好友动态</li>
+					   <li onclick="setTab(0,2)">特别关心</li>
+					   <li onclick="setTab(0,3)">我的动态</li>
+					</ul>
+				</div>	
+	    		<div class="ma">
+	        		<div class="main" id="main0">
+					   <ul class="block">
+						   <li>
+						   <volist name="rec" id="a">
+							   <div id="con">
+							   	<div id="co">
+									   <div id="con1">
+									   		<img src="/Public/images/touxiang1.png" >
+									   </div>
+									   <div id="jiechu_friend">
+									   		<a href="jiechu_friend"><img src="/public/images/jiechu_friend.png"></a>
+									   </div>
+								</div>
+							   	<div id="con2">
+							   		<div id="con4">
+								   		<div id="shijian">
+								   			<span style="text-align:left;">{$a.user_time}</span>
+								   		</div>
+								   		<div id="con3">
+								   			<span style="line-height:40px;">{$a.record_title}</span>
+								   		</div>
+							   		</div>
+							   		<div id="neirong">
+							   			<div id="neirong1" class="t">
+							   				<span>
+												{$a.record_content}
+							   				</span>
+							   			</div>
+							   			<div id="neirong2">
+							   				<span>
+							   					<a href="zan?id={$a.record_id}">赞</a>&nbsp;&nbsp;
+								   				<a href="pinglun?id={$a.record_id}">评论</a>
+								   				&nbsp;&nbsp;
+								   				<a href="zhuanbo?id={$a.record_id}">转播</a>&nbsp;&nbsp;
+							   				</span>
+							   			</div>
+							   		</div>
+							   		<hr noshade="noshade" style="color:#f2c4de;margin-top:40px;border-style:dashed;margin-left:-100px;"><br/>
+							   	</div>
+							   </div> <br/>
+							   </volist>
+						   </li>
+						  {$record_page}
+					   </ul>
+					   <ul>
+					   	   <volist name="friend" id="fri">
+						   <li>
+						   	<div id="friend_con">
+						   		<div id="friend_con1">
+						   			{$fri.record_title}
+						   		</div>
+						   		<div id="friend1">
+							   		<div id="friend">
+								   		<div id="friend_con2">
+								   			<img src="/public/images/touxiang1.png">
+								   		</div>
+								   		<div id="quxiao_focus">
+								   			<a href="quxiao_focus"><img src="/public/images/quxiao.png"></a>
+								   		</div>
+							   		</div>
+							   		<div id="friend_con3">
+							   			<div id="friend_shijian">
+							   				<span>{$fri.user_time}</span>
+							   			</div>
+							   			<div id="friend_neirong" class="t">
+							   				<span>
+							   					{$fri.record_content}
+							   				</span>
+							   			</div>
+							   			<div id="friend_pinglun">
+							   				<span>
+							   				<a href="zan?id={$fri.record_id}">赞</a>&nbsp;&nbsp;
+								   				<a href="pinglun?id={$fri.record_id}">评论</a>
+								   				&nbsp;&nbsp;
+								   				<a href="zhuanbo?id={$fri.record_id}">转播</a>&nbsp;&nbsp;
+							   				</span>
+							   			</div>
+							   		</div>
+						   		</div> 
+						   	</div>
+						   	
+						   </li>
+						   </volist>
+						   {$friend_page}
+					   </ul>
+					   <ul>
+					   	   <volist name="special" id="special_fri">
+						   <li>
+						   	<div id="con_other" >
+						   		<div id="other">
+						   			<div id="other8">
+							   			<div id="other5">
+								   			<span style="text-align:left;">{$special_fri.user_time}</span>
+								   		</div>
+								   		<div id="other6">
+								   			<span style="text-align:left;">{$special_fri.record_title}</span>
+								   		</div>
+							   		</div>
+							   		<div id="other9">
+								   		<div id="other7" class="t">
+								   			<span>
+								   				{$special_fri.record_content}
+								   			</span>
+								   		</div>
+								   		<div id="other10">
+								   			<span>
+								   			<a href="zan?id={$special_fri.record_id}">赞</a>&nbsp;&nbsp;
+								   				<a href="pinglun?id={$special_fri.record_id}">评论</a>
+								   				&nbsp;&nbsp;
+								   				<a href="zhuanbo?id={$special_fri.record_id}">转播</a>&nbsp;&nbsp;
+							   				</span>
+								   		</div>
+							   		</div>
+						   		</div>
+						   		<div id="other2">
+							   		<div id="other1">
+							   			<img src="/public/images/touxiang1.png"style="height:90px;width:90px;">
+							   		</div>
+							   		<div id="other3">
+							   			<a href="addfriend"><img src="/public/images/add_friend.png"style="height:20px;width:100px;"></a>
+							   		</div>
+							   		<div id="other4">
+							   			<a href="addfocus"><img src="/public/images/focus.png"style="height:20px;width:100px;"></a>
+							   		</div>
+						   		</div>
+						   	</div>
+						   </li>
+						   
+						   </volist>
+						   {$special_page}
+					   </ul>
+					   <ul>
+						   <li>
+							   nihaoma
+						   </li>
+					   </ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="mainContent2">
+			<div id="right1">
+				<div id="right2">
+					<a href="change"><img src="/Public/images/touxiang1.png" style="height:60px;width:60px;border-radius:5px;"></a>
+				</div>
+				<div id="right3">
+					<span id="p"><?php echo $_SESSION['username'];?></span><br/>
+					<span id="p">等级:<?php echo $_SESSION['grade'];?></span><br/>
+					<span id="p">积分:<?php echo $_SESSION['integral'];?></span>
+				</div>
+				<div id="right4">
+					<div id="img">
+						<div id="img1">
+							<img src="/public/images/change.png">
+						</div>
+						<div id="span">
+							<span id="p" style="margin-left:35px;margin-top:15px;"><a href="change">修改个人资料</a></span>
+						</div>
+					</div>
+					<div id="img2">
+						<div id="img1">
+							<img src="/public/images/work.png">
+						</div>
+						<div id="span">
+							<span id="p" style="margin-left:35px;margin-top:15px;"><a href="change">查看今天任务</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="right5">
+				<div id="right7">
+					<div id="right6">
+						<a href="jilu">赶快填写吧</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<div id="tbox">
+	<a id="gotop" href="javascript:void(0)"></a>
+	<a id="jianyi" target="_blank" href="guestbook"></a>
+</div>
+<div id="online_qq_layer">
+	<div id="online_qq_tab">
+		<div class="online_icon">
+			<a title id="floatShow" style="display: block;" href="javascript:void(0);">&nbsp;</a>
+		<a title id="floatHide" style="display: none;" href="javascript:void(0);">&nbsp;</a>
+		</div>
+	</div>
+<div id="onlineService">
+	<div class="online_windows overz">
+		<div class="online_w_top"></div>
+		<div class="online_w_c overz">
+			<div class="online_bar expand" id="onlineSort1">
+				<h2><a onclick="changeOnline(1)">域名/虚拟主机</a></h2>
+			<div class="online_content overz" id="onlineType1">
+				<ul class="overz">
+					<li>
+					<a onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&amp;sid=785452392&amp;o=sc.chinaz.com&amp;q=7', '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');" class="qq_icon">
+					企业QQ交谈</a></li>
+					<li>企业QQ： 
+					<a onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&amp;sid=785452392&amp;o=sc.chinaz.com&amp;q=7', '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');">
+					785452392</a></li>
+				</ul>
+			 </div>
+		 </div>
+		 <div class="online_bar collapse" id="onlineSort2">
+			<h2><a onclick="changeOnline(2)">企业邮局</a></h2>
+			<div class="online_content overz" id="onlineType2">
+				<ul class="overz">
+					<li>
+					<a onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&amp;sid=785452392&amp;o=sc.chinaz.com&amp;q=7', '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');" class="qq_icon">
+					企业QQ交谈</a></li>
+					<li>企业QQ： 
+					<a onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&amp;sid=785452392&amp;o=sc.chinaz.com&amp;q=7', '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');">
+					785452392</a></li>
+				</ul>
+			 </div>
+		 </div>
+		<div class="online_bar collapse" id="onlineSort3">
+			<h2><a onclick="changeOnline(3)">建站之星/网店</a></h2>
+			<div class="online_content overz" id="onlineType3">
+				<ul class="overz">
+					<li>
+					<a onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&amp;sid=785452392&amp;o=sc.chinaz.com&amp;q=7', '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');" class="qq_icon">
+					企业QQ交谈</a></li>
+					<li>企业QQ： 
+					<a onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&amp;sid=785452392&amp;o=sc.chinaz.com&amp;q=7', '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');">
+					785452392</a></li>
+				</ul>
+			 </div>
+		 </div>
+		 <div class="online_bar collapse" id="onlineSort4">
+			<h2><a onclick="changeOnline(4)">代理咨询</a></h2>
+			<div class="online_content overz" id="onlineType4">
+				<ul class="overz">
+					<li>
+					<a onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&amp;sid=785452392&amp;o=sc.chinaz.com&amp;q=7', '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');" class="qq_icon">
+					企业QQ交谈</a></li>
+					<li>企业QQ： 
+					<a onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&amp;sid=785452392&amp;o=sc.chinaz.com&amp;q=7', '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');">
+					785452392</a></li>
+				</ul>
+			 </div>
+		 </div>
+		 <div class="online_bar collapse" id="onlineSort5">
+			<h2><a onclick="changeOnline(5)">网站推广</a></h2>
+			<div class="online_content overz" id="onlineType5">
+				<ul class="overz">
+					<li>
+					<a href="javascript:void(0);" onclick="javascript:window.open('tencent://message/?uin=785452392&amp;Site=http://sc.chinaz.com&amp;Menu=yes;', '_blank');" class="qq_icon">
+					企业QQ交谈</a></li>
+					<li>企业QQ： 
+					<a href="javascript:void(0);" onclick="javascript:window.open('tencent://message/?uin=785452392&amp;Site=http://sc.chinaz.com&amp;Menu=yes;', '_blank');">
+					1006346386</a></li>
+				</ul>
+			</div>
+		 </div>
+		<div class="online_bar collapse" id="onlineSort6">
+			<h2><a onclick="changeOnline(6)">橙云主机(IDC)</a></h2>
+			<div class="online_content overz" id="onlineType6">
+				<ul class="overz">
+					<li>
+					<a class="qqlink" href="javascript:void(0);" onclick="javascript:window.open('tencent://message/?uin=785452392&amp;Site=http://sc.chinaz.com&amp;Menu=yes;', '_blank');">
+					<img src="../../images/qqs_1.gif" border="0">785452392</a></li>
+				</ul>
+				<ul class="overz">
+					<li>
+					<a class="qqlink" href="javascript:void(0);" onclick="javascript:window.open('tencent://message/?uin=1006346386&amp;Site=http://sc.chinaz.com&amp;Menu=yes;', '_blank');">
+					<img src="../../images/qqs_1.gif" border="0">1006346386</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="online_w_bottom">
+	</div>
+	</div>
+</div>
+</div>
+ <script>
+ $(function(){
+	 	//var o = document.getElementById("neirong1");
+	 	$('.t').each(function(i,v){
+			var o = $(this).get(0) ;
+			var s = o.innerHTML;
+			   var p = document.createElement("span");
+			   var n = document.createElement("a");
+			   p.innerHTML = s.substring(0,200);
+			   n.innerHTML = s.length > 200 ? ".....展开" : "";
+			   n.href = "###";
+			   n.onclick = function(){
+			     if (n.innerHTML == ".....展开"){
+			       n.innerHTML = ".....收起";
+			       p.innerHTML = s;
+			 	}else{
+			       n.innerHTML = ".....展开";
+			       p.innerHTML = s.substring(0,200);
+			     }
+			   }
+			   o.innerHTML = "";
+			   o.appendChild(p);
+			   o.appendChild(n);
+		 	})
+	   
+})
+
+</script>
+</div>
+</body>
+</html>

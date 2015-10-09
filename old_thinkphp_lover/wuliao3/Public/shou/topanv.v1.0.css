@@ -1,0 +1,64 @@
+#topnavbar{width:100%; height:41px; _height:35px; background:url(topnbg.png) 0 -30px repeat-x; position:fixed; _position:absolute; top:0; left:0; z-index:999; display:none;_top:expression(this.scrollTop=document.documentElement.scrollTop);}
+#scrollBar{width:50px; position:fixed;_position:absolute; right:30px; bottom:30px;}
+#scrollBar div{width:50px; height:50px; background:#333 url(up.gif) no-repeat; cursor:pointer;opacity:0.3;filter:alpha(opacity=30); margin-top:5px;border-radius:2px;}
+#scrollBar div#upcbar{background-position:13px 18px;}
+#scrollBar div#upcbar.down{background-position:13px -15px;}
+#scrollBar div#mobibox{background-position:10px -190px;}
+#ewmobi{width:100px; position:fixed;_position:absolute; right:100px; bottom:150px; text-align:center; background:#EEE; padding:5px; display:none;}
+#ewmobi img{width:90px; height:90px; border:5px #FFF solid; display:block; margin:5px 0 0;}
+#topnanv{height:35px; line-height:35px; font-size:14px; margin:0 auto;}
+#anvlfteb{float:left; height:35px; position:relative; padding:0 1px;}
+.defu a,.posbox a{display:block;padding:0 18px; color:#FFF; text-decoration:none;}
+.defu a:hover,.posbox a:hover{color:#FFF; text-decoration:none;}
+.defu{background:#111; float:left;}
+.posbox{position:relative; width:64px; float:left;}
+.posbox a{padding:0 23px 0 13px;}
+.posbox i{width:7px; height:4px; background:url(up.gif) 0 -70px no-repeat; position:absolute; top:15px; right:10px; overflow:hidden;}
+#topnanv .anvh a{background:#111;}
+#topnanv .anvh i{background-position:0 -75px;}
+.posiabox{position:absolute; top:32px; left:1px; display:none; padding-top:10px; background:url(loadpic.gif) -999px no-repeat;}
+#seledbox{width:114px;}
+#seledbox div{background:#FFF;box-shadow:0 0 8px #999; border:1px solid #999; font-size:12px; padding:5px 0; overflow:hidden;}
+#seledbox a{color:#444; text-decoration:none; width:100px; height:20px; overflow:hidden; display:block; line-height:20px; padding:6px 0 6px 12px; border-bottom:1px dotted #DDD;}
+#seledbox a:hover{background:#EEE;}
+#seledbox img{float:left; width:20px; height:20px; margin-right:8px;}
+#topseach{float:left; margin:6px 0 0 20px; height:21px; width:245px; background:url(topnbg.png) 0 -75px repeat-x;border-radius:10px;}
+#topsosel{float:left; font-size:12px; position:relative; height:21px;}
+#topsosel p{line-height:19px; padding:2px 15px 0 7px; background:url(up.gif) 58px -131px no-repeat; color:#666;}
+#topseach input{border:none; float:left; background:none; width:150px; height:20px; line-height:20px;}
+#tososubmt{width:25px; height:21px; float:left; background:url(up.gif) 0 -113px no-repeat; cursor:pointer;}
+#topselist{top:20px; left:0px; padding-top:13px; width:70px;}
+#topselist ul{background:#FFF;box-shadow:0 0 8px #999; border:1px solid #999;}
+#topselist li{color:#444; width:68px; height:25px; overflow:hidden; line-height:25px; text-align:center; border-bottom:1px dotted #DDD; cursor:pointer;}
+#topselist li.ho{background:#F2F2F2;}
+#topselist li.po{background:#EEE;}
+#tosearchhide{display:none;}
+#loginbtm{float:right; padding:0 15px; color:#FFF; background:#900; position:relative;}
+#logtebox{left:auto; right:0; width:252px; display:none;}
+#logtebox ul{width:250px; background:#FFF;box-shadow:0 0 8px #999; border:1px solid #999; padding:15px 0 0; color:#666; line-height:28px; font-size:12px;}
+#logtebox li{padding:0 30px;}
+#logtebox .padibt{padding:0 30px 10px; position:relative;}
+#logtebox .topinptxt{width:178px; height:28px; line-height:28px; border:1px solid #ddd; padding:0 5px;}
+#logtebox .err_login{border-color:#C00; background:#FFECEC;}
+#logtebox .ered{color:#C00;}
+#logtebox .wjmm{float:right;}
+#logtebox .wjmm a{color:#06C; text-decoration:none;}
+.usclose{width:13px; height:13px; background:url(up.gif) 3px -177px no-repeat; border:1px solid #CCC; overflow:hidden; position:absolute; right:7px; top:17px; cursor:pointer;}
+#toplogsub{width:190px; height:28px; border:1px solid #5E8E0B; background:url(topnbg.png) 0 0 repeat-x; color:#FFF;border-radius:2px; cursor:pointer; line-height:28px;}
+#logtebox li.logfot{background:#EEE; height:18px; padding:10px 10px 8px; line-height:18px;}
+#logtebox img{border:none; display:inline;}
+#topusers{float:right; padding-right:35px; line-height:33px; height:35px; font-size:12px; color:#FFF; position:relative;}
+#topusers p{position:absolute; right:0; top:3px;}
+#topusers p img{width:23px; height:23px; border:2px solid #FFF;}
+#topusers span{font-family:Arial, Helvetica, sans-serif;}
+#usercbox{left:auto;right:0;}
+.usercont{width:190px; background:#FFF;box-shadow:0 0 8px #999; border:1px solid #999; color:#666;}
+.usercont .ublue,.usercont a{color:#06C;}
+.usercont dl{padding:15px 15px 12px;}
+.usercont dt{float:left;}
+.usercont img{width:60px; height:60px;}
+.usercont dd{height:21px; line-height:21px; overflow:hidden; padding-left:10px; _padding-left:7px;}
+.ustbotm{height:30px; line-height:30px; background:#EEE; padding:0 8px;}
+.ustbotm .usxx{float:left; background:url(up.gif) 0 -147px no-repeat; padding-left:18px;}
+.ustbotm .red{color:#F00;}
+.ustbotm span.ublue{float:right;}

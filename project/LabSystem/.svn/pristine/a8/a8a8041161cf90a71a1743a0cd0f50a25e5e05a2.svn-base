@@ -1,0 +1,18 @@
+<?php
+/**
+ * 后台管理操作Action
+     * @author hjq
+     * @version 2013-4-16
+ */
+class AdminAction extends CommonAction
+{
+    /**
+     * 初始化操作
+     * @author hjq
+     * @version 2013-4-16
+     */
+    public function _initialize ()
+    {
+
+    }
+}

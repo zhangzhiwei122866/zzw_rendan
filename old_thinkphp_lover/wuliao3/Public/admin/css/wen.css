@@ -1,0 +1,7 @@
+@CHARSET "UTF-8";
+#kuang {width:1000px;height:auto;margin-left:15px;margin-top:15px;border:1px inset #CFF;min-height:500px;width:e&shy;XPression(document.body.clientWidth < 500? "500px": "auto" );}
+#tab{width:980px;height:470px;margin:10px 0px 10px 10px;border:1px;}
+
+
+.nei{border:2px outset #CCC;}
+.neirong{}

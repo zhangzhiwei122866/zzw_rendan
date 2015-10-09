@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<import type='css' file="Css.admin.equipment" />
+<title>仪器管理</title>			
+</head>
+<script  type="text/javascript">
+function doaction(){
+	if(confirm("确定要删除吗？")){
+		alert('删除成功！');
+			return true;
+		}
+	else{
+		return false;
+	}
+}
+</script>
+<body>
+	<div id="rightTop">
+    <p>实验室仪器仪器借用</p>
+    <ul class="subnav">
+    	<li><a href="/Admin/Equipment/addborrow">添加借用</a></li>
+    </ul>
+</div>
+	<div>
+		<table width="100%" cellspacing="0">
+			<tr class="tatr1">
+				<th width="4%">序号</th>
+				<th width="8%">设备编号</th>
+				<th width="8%">设备名称</th>
+				<th width="8%">借用人</th>
+				<th width="8%">现存地</th>
+				<th width="8%">审批人</th>
+				<th width="8%">保管人</th>
+				<th width="10%">借用日期</th>
+				<th width="10%">归还日期</th>
+				<th width="8%">借用原因</th>
+				<th width="10%">备注</th>
+				<th width="8%">操作</th>				
+			</tr>
+			<?php $i=1; foreach($list1 as $key => $val ){ ?>			
+				<tr class="tatr2"  style="text-align:center;">
+					<td><?php echo $i; ?></td>
+					<td><?php echo $val['equipment_number']; ?></td>
+					<td><?php echo $val['equipment_name']; ?></td>
+					<td><?php echo $val['borrow_man']; ?></td>
+					<td><?php echo $val['location']; ?></td>
+					<td><?php echo $val['approval_man']; ?></td>
+					<td><?php echo $val['manage_man']; ?></td>
+					<td><?php echo $val['borrow_date']; ?></td>
+					<td><?php echo $val['return_date']; ?></td>
+					<td><?php echo $val['borrow_reason']; ?></td>
+					<td><?php echo $val['remark']; ?></td>	
+					<td><a href="__URL__/editborrow?id=<?php echo $val['id']; ?>">更新</a>&nbsp;&nbsp;&nbsp;<a onclick="return doaction()" href="__URL__/deleteborrow?id=<?php echo $val['id']; ?>">删除</a></td>
+				</tr>			
+			<?php $i++; } ?>
+		</table>
+	</div>
+	<div style="float:right;">{$page}</div>
+</body>
+</html>

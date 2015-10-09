@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<import type='css' file="Css.admin.equipment" />
+<title>仪器管理</title>			
+</head>
+<script  type="text/javascript">
+function doaction(){
+	if(confirm("确定要删除吗？")){
+		alert('删除成功！');
+			return true;
+		}
+	else{
+		return false;
+	}
+}
+</script>
+<body>
+	<div id="rightTop">
+    <p>实验室仪器报修</p>
+    <ul class="subnav">
+    	<li><a href="/Admin/Equipment/addrepair">添加报修</a></li>
+    </ul>
+</div>
+	<div>
+		<table width="100%" cellspacing="0">
+			<tr class="tatr1">
+				<th width="4%">序号</th>
+				<th width="8%">设备编号</th>
+				<th width="10%">设备名称</th>
+				<th width="6%">管理人</th>
+				<th width="8%">实验室名称</th>
+				<th width="6%">维修费用</th>
+				<th width="6%">报修人</th>
+				<th width="6%">审批人</th>
+				<th width="10%">维修单位</th>
+				<th width="10%">故障</th>
+				<th width="10%">备注</th>
+				<th width="8%">操作</th>			
+			</tr>
+			<?php $i=1; foreach($list1 as $key => $val ){ ?>				
+				<tr class="tatr2"  style="text-align:center;">
+					<td><?php echo $i; ?></td>
+					<td><?php echo $val['equipment_number']; ?></td>
+					<td><?php echo $val['equipment_name']; ?></td>
+					<td><?php echo $val['manage_man']; ?></td>
+					<td><?php echo $val['lab_name']; ?></td>
+					<td><?php echo $val['repair_cost']; ?></td>
+					<td><?php echo $val['repair_man']; ?></td>
+					<td><?php echo $val['approval_man']; ?></td>
+					<td><?php echo $val['repair_department']; ?></td>
+					<td><?php echo $val['malfunction']; ?></td>
+					<td><?php echo $val['remark']; ?></td>	
+					<td><a href="__URL__/editrepair?id=<?php echo $val['id']; ?>">更新</a>&nbsp;&nbsp;&nbsp;<a onclick="return doaction()" href="__URL__/deleterepair?id=<?php echo $val['id']; ?>">删除</a></td>
+				</tr>			
+			<?php $i++; } ?>
+		</table>
+	</div>
+	<div style="float:right;">{$page}</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?php
+return array (
+  0 => 'lab_id',
+  1 => 'lab_name',
+  2 => 'lab_link',
+  3 => 'lab_intro',
+  4 => 'status',
+  '_autoinc' => true,
+  '_pk' => 'lab_id',
+  '_type' => 
+  array (
+    'lab_id' => 'int(11)',
+    'lab_name' => 'varchar(20)',
+    'lab_link' => 'varchar(100)',
+    'lab_intro' => 'text',
+    'status' => 'enum(\'1\',\'0\')',
+  ),
+);
+?>

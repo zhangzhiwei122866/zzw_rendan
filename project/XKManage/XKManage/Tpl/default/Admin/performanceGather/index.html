@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>绩效汇总</title>
+<import type='css' file="Css.admin.css" />
+<import type='Js' file="Js.calendar" />
+<style type="text/css">
+input{border-bottom:1px solid #ccc; text-align:center;height:16px;}
+.inputstyle{width:35px;text-align:center;}
+.inputsaveunderline{ }
+.timelength{width:75px;}
+.tdwidth{width:200px;}
+.td2{width:150px;background:#f1f1f1;}
+.header{width:600px;font-size:13px;}
+.tijiao{margin-left:800px;margin-top:10px;width:100px;height:40px;font-size:16px;font-weight:bold;}
+.w6{ width:3%;}
+table {
+	margin:auto;
+}
+td {
+	font-size:13px;
+	color: #204d79;
+}
+.button {
+	width:101px;
+	height:41px;
+	line-height:30px;
+	font-size:16px;
+	background:url(__PUBLIC__/images/botton.png);
+	border:none;
+	margin:5px auto;
+	cursor:pointer;
+}
+.button_1:hover input {
+	background:url(__PUBLIC__/images/botton_2.png);
+}
+p a input{color:#fff;font-weight:bold;}
+</style>
+</head>
+<body>
+
+<form method="post" action="__URL__/gather">
+<input type="hidden" name="des_id" value="<?php echo $list[0][des_id]; ?>"/>
+<input type="hidden" name="time2012" value="201212"/>
+<input type="hidden" name="time2015" value="201512"/>
+<table width="100%" cellspacing="0" cellpadding="4">
+  <tr>
+    <td width="2%" rowspan="38" scope="col" style="background:url(__PUBLIC__/images/KeyDiscipline_edit2.jpg)">学科点工作绩效</td>
+    <th height="122" colspan="5" scope="col" style="border-right:1px solid #b5cfee">
+    	<textarea  name="describe" style="height:122px;width:100%">
+    		<?php echo $list[0][describe]; ?>
+    	</textarea>
+    </th>
+  </tr>
+  <tr style="background:url(__PUBLIC__/images/KeyDiscipline_edit1.jpg) repeat-x;height:50px;">
+    <td colspan="3"><b>目标项目</b></td>
+    <td width="23%"><b>2012年12月</b></td>
+    <td width="20%"><b>2015年12月</b></td>
+  </tr>
+  <tr>
+    <td colspan="3">承担国家级科研项目(项)/经费(万元)</td>
+    <td><input name="guojiaji_jingfei12" type="text" value="<?php echo $list[0][guojiaji_jingfei]; ?>"/></td>
+    <td><input name="guojiaji_jingfei15" type="text" value="<?php echo $list[1][guojiaji_jingfei]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">承担省部级科研项目(项)/经费(万元)</td>
+    <td><input name="shengji_jingfei12" type="text" value="<?php echo $list[0][shengji_jingfei]; ?>"/></td>
+    <td><input name="shengji_jingfei15" type="text" value="<?php echo $list[1][shengji_jingfei]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">承担行业科研项目(项)/经费(万元)</td>
+    <td><input name="hangye_jingfei12" type="text" value="<?php echo $list[0][hangye_jingfei]; ?>"/></td>
+    <td><input name="hangye_jingfei15" type="text" value="<?php echo $list[1][hangye_jingfei]; ?>"/></td>
+  </tr>
+   <tr>
+    <td colspan="3">承担省级教学改革立项(项)/经费(万元)</td>
+    <td><input name="gaige_jingfei12" type="text" value="<?php echo $list[0][gaige_jingfei]; ?>"/></td>
+    <td><input name="gaige_jingfei15" type="text" value="<?php echo $list[1][gaige_jingfei]; ?>"/></td>
+  </tr>
+   <tr>
+    <td colspan="3">与企业、政府部门的合同项目(项)/经费(万元)</td>
+    <td><input name="hetong_jingfei12" type="text" value="<?php echo $list[0][hetong_jingfei]; ?>"/></td>
+    <td><input name="hetong_jingfei15" type="text" value="<?php echo $list[1][hetong_jingfei]; ?>"/></td>
+  </tr>
+  <tr>
+    <td width="26%" rowspan="2">合作科研项目</td>
+    <td colspan="2">国际(万美元)</td>
+ 	<td><input name="guojihezuo_jingfei12" type="text" value="<?php echo $list[0][guojihezuo_jingfei]; ?>"/></td>
+    <td><input name="guojihezuo_jingfei15" type="text" value="<?php echo $list[1][guojihezuo_jingfei]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="2">国内(万元)</td>
+	<td><input name="guoneihezuo_jingfei12" type="text" value="<?php echo $list[0][guoneihezuo_jingfei]; ?>"/></td>
+    <td><input name="guoneihezuo_jingfei15" type="text" value="<?php echo $list[1][guoneihezuo_jingfei]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">上述六项科研经费总和(万元)/人均年经费(万元)</td>
+    <td><input name="aboveanmount_jingfei12" type="text" value="<?php echo $list[0][aboveanmount_jingfei]; ?>"/></td>
+    <td><input name="aboveanmount_jingfei15" type="text" value="<?php echo $list[1][aboveanmount_jingfei]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">在国内外核心刊物发表论文(篇)</td>
+    <td><input name="kanwufabiao_amount12" type="text" value="<?php echo $list[0][kanwufabiao_amount]; ?>"/></td>
+    <td><input name="kanwufabiao_amount15" type="text" value="<?php echo $list[1][kanwufabiao_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">其中被SCI/SSCI/AHCI、EI收录的论文(篇)</td>
+    <td><input name="beishoulu_amount12" type="text" value="<?php echo $list[0][beishoulu_amount]; ?>"/></td>
+    <td><input name="beishoulu_amount15" type="text" value="<?php echo $list[1][beishoulu_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">出版专著(部)</td>
+    <td><input name="chuban_amount12" type="text" value="<?php echo $list[0][chuban_amount]; ?>"/></td>
+    <td><input name="chuban_amount15" type="text" value="<?php echo $list[1][chuban_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">获得专利(项)</td>
+    <td><input name="zhuanli_amount12" type="text" value="<?php echo $list[0][zhuanli_amount]; ?>"/></td>
+    <td><input name="zhuanli_amount15" type="text" value="<?php echo $list[1][zhuanli_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">获省部级以上教学成果奖励(项)</td>
+    <td><input name="jiaoxueprise_amount12" type="text" value="<?php echo $list[0][jiaoxueprise_amount]; ?>"/></td>
+    <td><input name="jiaoxueprise_amount15" type="text" value="<?php echo $list[1][jiaoxueprise_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">获省部级以上科研成果奖励(项)</td>
+    <td><input name="keyanprise_amount12" type="text" value="<?php echo $list[0][keyanprise_amount]; ?>"/></td>
+    <td><input name="keyanprise_amount15" type="text" value="<?php echo $list[1][keyanprise_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">获省部级以上质量工程项目(特色专业、教学团队、实验教学示范中心、精品课程等)(项)</td>
+    <td><input name="beyondshengji_amount12" type="text" value="<?php echo $list[0][beyondshengji_amount]; ?>"/></td>
+    <td><input name="beyondshengji_amount15" type="text" value="<?php echo $list[1][beyondshengji_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">被企业采用的科研成果(项)</td>
+    <td><input name="beicaiyong_amount12" type="text" value="<?php echo $list[0][beicaiyong_amount]; ?>"/></td>
+    <td><input name="beicaiyong_amount15" type="text" value="<?php echo $list[1][beicaiyong_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">科技成果转让费用(万元)</td>
+    <td><input name="zhuangrang_fieyong12" type="text" value="<?php echo $list[0][zhuangrang_fieyong]; ?>"/></td>
+    <td><input name="zhuangrang_fieyong15" type="text" value="<?php echo $list[1][zhuangrang_fieyong]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">科技成果转让为企业创造的增值(万元)</td>
+    <td><input name="zengzhi_profit12" type="text" value="<?php echo $list[0][zengzhi_profit]; ?>"/></td>
+    <td><input name="zengzhi_profit15" type="text" value="<?php echo $list[1][zengzhi_profit]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">被政府部门、事业单位采用的研究成果(项)</td>
+    <td><input name="beused_amount12" type="text" value="<?php echo $list[0][beused_amount]; ?>"/></td>
+    <td><input name="beused_amount15" type="text" value="<?php echo $list[1][beused_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">产学研合作单位(个)</td>
+    <td><input name="hezuo_amount12" type="text" value="<?php echo $list[0][hezuo_amount]; ?>"/></td>
+    <td><input name="hezuo_amount15" type="text" value="<?php echo $list[1][hezuo_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">培养博士生(人)</td>
+    <td><input name="boshi_amount12" type="text" value="<?php echo $list[0][boshi_amount]; ?>"/></td>
+    <td><input name="boshi_amount15" type="text" value="<?php echo $list[1][boshi_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">培养硕士生(人)</td>
+    <td><input name="yanjiusheng_amount12" type="text" value="<?php echo $list[0][yanjiusheng_amount]; ?>"/></td>
+    <td><input name="yanjiusheng_amount15" type="text" value="<?php echo $list[1][yanjiusheng_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">引进高层次人才(人)</td>
+    <td><input name="gaoceng_amount12" type="text" value="<?php echo $list[0][gaoceng_amount]; ?>"/></td>
+    <td><input name="gaoceng_amount15" type="text" value="<?php echo $list[1][gaoceng_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">上岗特聘教授(人)</td>
+    <td><input name="tepin_amount12" type="text" value="<?php echo $list[0][tepin_amount]; ?>"/></td>
+    <td><input name="tepin_amount15" type="text" value="<?php echo $list[1][tepin_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">省级青年骨干教师、科技创新人才等(人)</td>
+    <td><input name="gugan_amount12" type="text" value="<?php echo $list[0][gugan_amount]; ?>"/></td>
+    <td><input name="gugan_amount15" type="text" value="<?php echo $list[1][gugan_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">为企业和其他机构培训人员(人)</td>
+    <td><input name="peixun_amount12" type="text" value="<?php echo $list[0][peixun_amount]; ?>"/></td>
+    <td><input name="peixun_amount15" type="text" value="<?php echo $list[1][peixun_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">国家或省级重点实验室(个)</td>
+    <td><input name="zhongdianshiyanshi_amount12" type="text" value="<?php echo $list[0][zhongdianshiyanshi_amount]; ?>"/></td>
+    <td><input name="zhongdianshiyanshi_amount15" type="text" value="<?php echo $list[1][zhongdianshiyanshi_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">国家(教育部、省)工程中心(个)</td>
+    <td><input name="gongcheng_amount12" type="text" value="<?php echo $list[0][gongcheng_amount]; ?>"/></td>
+    <td><input name="gongcheng_amount15" type="text" value="<?php echo $list[1][gongcheng_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">新增博士点数量(个)</td>
+    <td><input name="boshidian_amount12" type="text" value="<?php echo $list[0][boshidian_amount]; ?>"/></td>
+    <td><input name="boshidian_amount15" type="text" value="<?php echo $list[1][boshidian_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">省重点学科开放实验室(个)</td>
+    <td><input name="openshiyanshi_amount12" type="text" value="<?php echo $list[0][openshiyanshi_amount]; ?>"/></td>
+    <td><input name="openshiyanshi_amount15" type="text" value="<?php echo $list[1][openshiyanshi_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">购置万元以上仪器设备(件、台)</td>
+    <td><input name="yiqi_amount12" type="text" value="<?php echo $list[0][yiqi_amount]; ?>"/></td>
+    <td><input name="yiqi_amount15" type="text" value="<?php echo $list[1][yiqi_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">仪器设备总值(万元)</td>
+    <td><input name="shebei_price12" type="text" value="<?php echo $list[0][shebei_price]; ?>"/></td>
+    <td><input name="shebei_price15" type="text" value="<?php echo $list[1][shebei_price]; ?>"/></td>
+  </tr>
+  <tr>
+    <td rowspan="4">订购图书资料(含电子版)</td>
+    <td width="13%" rowspan="2">图书(册)</td>
+    <td width="16%">中文</td>
+    <td><input name="chinesebook_amount12" type="text" value="<?php echo $list[0][chinesebook_amount]; ?>"/></td>
+    <td><input name="chinesebook_amount15" type="text" value="<?php echo $list[1][chinesebook_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td>外文</td>
+    <td><input name="foreignbook_amount12" type="text" value="<?php echo $list[0][foreignbook_amount]; ?>"/></td>
+    <td><input name="foreignbook_amount15" type="text" value="<?php echo $list[1][foreignbook_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td rowspan="2">期刊(种)</td>
+    <td>中文</td>
+    <td><input name="chineseqikan_amount12" type="text" value="<?php echo $list[0][chineseqikan_amount]; ?>"/></td>
+    <td><input name="chineseqikan_amount15" type="text" value="<?php echo $list[1][chineseqikan_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td>外文</td>
+    <td><input name="foreignqikan_amount12" type="text" value="<?php echo $list[0][foreignqikan_amount]; ?>"/></td>
+    <td><input name="foreignqikan_amount15" type="text" value="<?php echo $list[1][foreignqikan_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="4">建设或改造实验室用房面积(平方米)</td>
+    <td><input name="yongfangmianji12" type="text" value="<?php echo $list[0][yongfangmianji]; ?>"/></td>
+    <td><input name="yongfangmianji15" type="text" value="<?php echo $list[1][yongfangmianji]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="4">建设教学、实验基地(个)</td>
+    <td><input name="shiyanjidi_amount12" type="text" value="<?php echo $list[0][shiyanjidi_amount]; ?>"/></td>
+    <td><input name="shiyanjidi_amount15" type="text" value="<?php echo $list[1][shiyanjidi_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td width="2%" rowspan="11" scope="col" style="background:url(__PUBLIC__/images/KeyDiscipline_edit2.jpg)">学科点国内外学术交流</td>
+    <td colspan="3">出国进修/合作研究(人次)</td>
+    <td><input name="jinxiu_amount12" type="text" value="<?php echo $list[0][jinxiu_amount]; ?>"/></td>
+    <td><input name="jinxiu_amount15" type="text" value="<?php echo $list[1][jinxiu_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">应邀出国讲学(人次)</td>
+    <td><input name="chuguospeech_amount12" type="text" value="<?php echo $list[0][chuguospeech_amount]; ?>"/></td>
+    <td><input name="chuguospeech_amount15" type="text" value="<?php echo $list[1][chuguospeech_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">应邀国内讲学(人次)</td>
+    <td><input name="guoneispeech_amount12" type="text" value="<?php echo $list[0][guoneispeech_amount]; ?>"/></td>
+    <td><input name="guoneispeech_amount15" type="text" value="<?php echo $list[1][guoneispeech_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">主(承、协)办国际学术会议(次)</td>
+    <td><input name="guojihuiyi_amount12" type="text" value="<?php echo $list[0][guojihuiyi_amount]; ?>"/></td>
+    <td><input name="guojihuiyi_amount15" type="text" value="<?php echo $list[1][guojihuiyi_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">主(承、协)办国内学术会议(次)</td>
+    <td><input name="guoneihuiyi_amount12" type="text" value="<?php echo $list[0][guoneihuiyi_amount]; ?>"/></td>
+    <td><input name="guoneihuiyi_amount15" type="text" value="<?php echo $list[1][guoneihuiyi_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">国内学术合作机构(个)</td>
+    <td><input name="guoneijigou_amount12" type="text" value="<?php echo $list[0][guoneijigou_amount]; ?>"/></td>
+    <td><input name="guoneijigou_amount15" type="text" value="<?php echo $list[1][guoneijigou_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">国外学术合作机构(个)</td>
+    <td><input name="guowaijigou_amount12" type="text" value="<?php echo $list[0][guowaijigou_amount]; ?>"/></td>
+    <td><input name="guowaijigou_amount15" type="text" value="<?php echo $list[1][guowaijigou_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="3">国内学者来讲学(人次)</td>
+    <td><input name="guoneijiang_amount12" type="text" value="<?php echo $list[0][guoneijiang_amount]; ?>"/></td>
+    <td><input name="guoneijiang_amount15" type="text" value="<?php echo $list[1][guoneijiang_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td height="37" colspan="3">国外学者来讲学(人次)</td>
+    <td><input name="guowaijiang_amount12" type="text" value="<?php echo $list[0][guowaijiang_amount]; ?>"/></td>
+    <td><input name="guowaijiang_amount15" type="text" value="<?php echo $list[1][guowaijiang_amount]; ?>"/></td>
+  </tr>
+  <tr>
+    <td colspan="2" rowspan="2">参加学术会议(人次)</td>
+    <td>国际</td>
+    <td><input name="guojihuiyi12" type="text" value="<?php echo $list[0][guojihuiyi]; ?>"/></td>
+    <td><input name="guojihuiyi15" type="text" value="<?php echo $list[1][guojihuiyi]; ?>"/></td>
+  </tr>
+  <tr>
+    <td>国内</td>
+    <td><input name="guoneihuiyi12" type="text" value="<?php echo $list[0][guoneihuiyi]; ?>"/></td>
+    <td><input name="guoneihuiyi15" type="text" value="<?php echo $list[1][guoneihuiyi]; ?>"/></td>
+  </tr>
+  <tr>
+    <td width="2%" rowspan="2" scope="col" style="background:url(__PUBLIC__/images/KeyDiscipline_edit2.jpg)">经费投入</td>
+    <td height="41" colspan="3">学校投入经费(万元)</td>
+    <td><input name="xuexiaotouru12" type="text" value="<?php echo $list[0][xuexiaotouru]; ?>"/></td>
+    <td><input name="xuexiaotouru15" type="text" value="<?php echo $list[1][xuexiaotouru]; ?>"/></td>
+  </tr>
+  <tr>
+    <td height="34" colspan="3">学科点经费投入(万元)</td>
+    <td><input name="xuekediantouru12" type="text" value="<?php echo $list[0][xuekediantouru]; ?>"/></td>
+    <td><input name="xuekediantouru15" type="text" value="<?php echo $list[1][xuekediantouru]; ?>"/></td>
+  </tr>
+  <tr>
+    <th colspan="6" scope="col" style="border:1px solid #b5cfee">
+	<textarea name="describe_canzhaoxi" style="height:100px;width:100%">
+		<?php echo $list[0][describe_canzhaoxi]; ?>
+	</textarea>
+	</th>
+  </tr>
+  <tr>
+    <th colspan="6" scope="col" style="border:1px solid #b5cfee">
+    <textarea name="describe_function" style="height:500px;width:100%">
+    	<?php echo $list[0][describe_function]; ?>
+    </textarea>
+    </th>
+  </tr>
+</table>
+ <?php  if($_SESSION['power'] == 2 | $_SESSION['power'] == 3) { ?>
+  <p align="center">
+		  <a class="button_1"  style="text-decoration:none;"  href=""><input type="submit" value="保存" class="button"/></a>
+		  <a class="button_1"  style="text-decoration:none;" ><input type="reset" value="重置"  style="margin-left:10px;" class="button" />
+		  <a onClick="javascript:history.back()" class="button_1" style="text-decoration:none;"><input type="button" style="margin-left:10px;"  value="返回" class="button"/></a>
+	 </p>
+   <?php } ?>
+</form>
+</body>
+</html>

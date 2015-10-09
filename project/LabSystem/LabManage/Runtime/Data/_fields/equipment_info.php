@@ -1,0 +1,35 @@
+<?php
+return array (
+  0 => 'id',
+  1 => 'number',
+  2 => 'name',
+  3 => 'lab_number',
+  4 => 'academy_number',
+  5 => 'type_name',
+  6 => 'lab_name',
+  7 => 'value',
+  8 => 'status',
+  9 => 'buy_time',
+  10 => 'location',
+  11 => 'use_people',
+  12 => 'manage_people',
+  '_autoinc' => true,
+  '_pk' => 'id',
+  '_type' => 
+  array (
+    'id' => 'int(11) unsigned',
+    'number' => 'int(11) unsigned',
+    'name' => 'varchar(50)',
+    'lab_number' => 'int(11)',
+    'academy_number' => 'int(11)',
+    'type_name' => 'varchar(50)',
+    'lab_name' => 'varchar(50)',
+    'value' => 'int(11) unsigned',
+    'status' => 'varchar(10)',
+    'buy_time' => 'date',
+    'location' => 'varchar(50)',
+    'use_people' => 'varchar(30)',
+    'manage_people' => 'varchar(30)',
+  ),
+);
+?>

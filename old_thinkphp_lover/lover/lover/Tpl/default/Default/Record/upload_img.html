@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>情侣之家--上传我们的点点滴滴</title>
+<link href="/Public/images/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/upload_img.css">
+<link rel="stylesheet" type="text/css" href="/public/css/upload.css">
+<link rel="stylesheet" type="text/css" href="/public/css/upload_right.css">
+<script type="text/javascript" src="/Public/Js/jquery1.js"></script>
+<script type="text/javascript" src="/Public/Js/upload.js"></script>
+<script type="text/javascript" src="/Public/Js/upload_right.js"></script>
+<SCRIPT>
+$(function(){		
+	$('input').customInput();
+});
+</SCRIPT>
+</head>
+<body>
+<div id="container1" style="margin:0px;padding:0px;">
+	<div id="Javascript.Div1" class="he" >
+		<div class="page">
+			<div class="chl-poster simple" id="header">
+				<div id="site-nav">
+					<UL class="quick-menu">
+					  <LI><A href="__URL__/record">首页</A> </LI>
+					  <LI class="services menu-item last">
+						  <div class="menu">
+							  <A class="menu-hd" href="#" target=_top style="margin-top:-15px;padding-top:17px;border-radius:3px;">爱记录<B style="margin-top:15px;"></B></A> 
+							  <div class="menu-bd" style="WIDTH: 100px; HEIGHT: 147px; _width: 2000px;margin-top:18px;border-radius:3px;">
+								  <div class="menu-bd-panel">
+									  <DL style="margin-top:-20px;">
+										<DT>
+											<img src="/public/images/write.png"style="height:20px;width:20px;margin-right:5px;float:left;" /><A href="write" style="display:block;height:20px;float:left;">写篇日志</A>
+									  </DL>
+									  <DL>
+										<DT>
+										<img src="/public/images/upload.png" style="height:20px;width:20px;margin-right:5px;float:left;"><A href="upload_img" style="display:block;height:20px;float:left;">上传图片</A> 
+									  </DL>
+									  <DL>
+										<DT>
+										<img src="/public/images/question.png" style="height:20px;width:20px;margin-right:5px;float:left;"><A href="question" style="display:block;height:20px;float:left;">情感咨询</A> 
+										</DT>
+										</DL>
+									  <DL>
+										<DT>
+										<img src="/public/images/help.png" style="height:20px;width:20px;margin-right:5px;float:left;"><A href="help" style="display:block;height:20px;float:left;">帮助中心</A> 
+									  </DL>
+									  <DL class=last>
+									  </DL>
+								  </div>
+								  
+							  </div>
+						  </div>
+					  </LI>
+					  <LI style="padding-left:20px;">
+					  	<A href="">我的空间</A> 
+					  </LI>
+					  <LI class="services menu-item last" style="padding-top:2px;">
+					  	<A href="">我的空间</A>
+					  </LI>
+				    </UL>
+				</div>
+			</div>
+		</div>
+		<div class="inp1">
+	  		<form action="record" method="post" name="myform" id="myform" >
+		  		<div class="input1">
+				  	<input type="text" name="select" style="height:24px;width:185px;border:0;border-radius:1px;">
+		  		</div>
+			  	<div class="select3">
+					<a href="#" onclick="document.getElementById('myform').submit();"><img src="/Public/images/input_button.png" alt="点击搜索" title="点击搜索" style="border-radius:4px;"></a>  		
+			  	</div>
+			</form>	
+		</div>
+	</div>
+	<div style="margin:0 auto;height:auto;width:945px;">
+			<div id="main" class="mainContent">
+			<form id="form1" action="upload_save" method="post" enctype="multipart/form-data">
+				<div id="mainContent1">
+					<div id="upload1">
+<script type="text/javascript" src="__PUBLIC__/swfupload/swfupload.js"></script>
+<script type="text/javascript" src="__PUBLIC__/swfupload/plugins/swfupload.swfobject.js"></script>
+<script type="text/javascript" src="__PUBLIC__/swfupload/plugins/swfupload.queue.js"></script>
+<script type="text/javascript" src="__PUBLIC__/swfupload/fileprogress.js"></script>
+<script type="text/javascript" src="__PUBLIC__/swfupload/handlers.js"></script>
+							<div class="col-left">
+								<div class="bd-create-case">
+							      <div style="height:48px;width:180px;margin:10px auto;">
+							      	<div style="height:48px;width:48px;float:left;">
+							      		<img src="/public/images/upload_image.png">
+							      	</div>
+							      	<div style="height:48px;width:130px;float:right;">
+							      		<h1>上传图片</h1>
+							      	</div>
+							      </div>
+							      <div class="bd-work-wrap">
+								      	<select name="album" id="sele" onchange=opt()> 
+								      		<option  value="0" > &nbsp;请选择相册&nbsp;</option>
+									      	<volist name="albumid" id="a" >
+												<option  value="{$a.album_id}" > &nbsp;{$a.album_name}&nbsp;</option>
+											</volist>
+									  	</select>
+								      <div class="case-que-hd"> <span class="filename" style="padding-left:5px;">图片文件名</span> <span class="filesize">大小</span> <span class="filedel">删除?</span> </div>
+								      <div class="fieldset flash" id="fsUploadProgress"></div>
+								      <div class="case-que-foot" id="que-foot"> <span class="filename">共添加<i id="totalnum"></i>张图片 <a href="javascript:;" id="continue-add">继续添加图片</a></span> <span class="filedel">文件大小：<i id="totalsize"></i></span> </div>
+								      <div id="upload-btn"><span id="spanButtonPlaceHolder"></span></div>
+								      <div id="upload-start" style="display:block;margin:40px auto;">
+								      	<input  class="btn" type="button"  value="开始上传" id="upload" style="margin-left:2px;"> &nbsp;&nbsp; 
+									     <input id="btnCancel" type="button" class="btn" value="取消上传" onclick="swfu.cancelQueue();"> &nbsp;&nbsp; 
+									     <input  class="btn"  value="确认提交" type="submit" style="margin-left:2px;">
+									     
+								      </div>
+								      <p id="upload-tips" style="margin:10px auto;width:100%;text-align:center;padding-left:0px;">
+								      	提示：每次最多可以批量上传二十张照片,格式支持 jpg&nbsp;&nbsp;gif&nbsp;&nbsp;png&nbsp;&nbsp;jpeg,单张图片最大不超过2M,不能上传带有中文的图片名称
+								      </p>
+							   	 </div>
+								</div>
+							</div>						
+						</div>
+					</div>
+				<div id="mainContent2">
+						<fieldset style="margin:80px auto;padding-top:10px;margin-left:20px;">
+							<input type="radio" name="opinions" id="totally" value="0" />
+							<label for="totally">只有自己可见</label>
+							
+							<input type="radio" name="opinions" id="no-way" value="1" />
+							<label for="no-way">只有好友可见</label>
+							
+							<input type="radio" name="opinions" id="whats-caddyshack" value="2" />
+							<label for="whats-caddyshack">只有他(她)可见</label>
+							
+							<input type="radio" name="opinions" id="no-way1" value="3" />
+							<label for="no-way1">所有人可见</label>
+						</fieldset>
+					</div>	
+						</form>
+				</div>
+	</div>
+</div>
+<script type="text/javascript">
+function opt(){
+	var op=document.getElementById("sele").value;
+	
+	}
+	
+	
+var swfu, WID = "13";
+window.onload = function() {
+	var conf = {
+		flash_url :  "/Public/swfupload/swfupload.swf",
+		upload_url :  "__URL__/upload",
+		//POST信息中上传文件的name值
+		file_post_name : "FileData",
+		//一个包含值对的object类型数据，每个文件上传的时候，其中的值对都会被一同发送到服务端
+		post_params: {
+			"user_id":"<?php echo $_SESSION['id'];?>"
+		},
+		file_size_limit : "2 MB",
+		file_upload_limit:'20',
+		file_types : "*.jpg;*.gif;*.png;*.jpeg",
+		file_types_description : "Web Image Files",
+		file_upload_limit : 100,
+		file_queue_limit : 0,
+		custom_settings : {
+			progressTarget : "fsUploadProgress",
+			cancelButtonId : "btnCancel"
+		},
+		debug :false,
+
+		// Button settings
+		button_image_url :"/Public/swfupload/images/upload-btns.png",
+		button_width : "97",
+		button_height : "29",
+		button_placeholder_id : "spanButtonPlaceHolder",
+		button_action : SWFUpload.BUTTON_ACTION.SELECT_FILES,
+
+		// The event handler functions are defined in handlers.js
+		file_queued_handler : fileQueued,
+		file_queue_error_handler : fileQueueError,
+		file_dialog_complete_handler : fileDialogComplete,
+		upload_start_handler : uploadStart,
+		upload_progress_handler : uploadProgress,
+		upload_error_handler : uploadError,
+		upload_success_handler : uploadSuccess,
+		upload_complete_handler : uploadComplete,
+		queue_complete_handler : queueComplete	// Queue plugin event
+	};
+	
+	swfu = new SWFUpload(conf);
+};
+
+//上传
+$('#upload').click(function(){
+	var temp = document.getElementsByName("opinions");
+	  for(var i=0;i<temp.length;i++)
+	  {
+	     if(temp[i].checked)
+	           var intHot = temp[i].value; 
+	  }
+	  
+		var album=document.getElementById("sele").value;
+		if(album==0||intHot==null){
+			alert("请先选择相册和照片的权限");
+		}else{
+			swfu.startUpload();
+		}
+	  
+})
+//继续添加
+$('#continue-add').click(function(){
+	//alert("1");
+	$('#que-foot').show();
+	$('#upload-btn').css({'opacity':1,'height':30});
+	$('#upload-btn object').css({'height':29});
+	
+})
+</script>							
+</body>
+</html>

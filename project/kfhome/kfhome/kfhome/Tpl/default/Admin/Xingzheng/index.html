@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<import type='css' file="Css.admin.admin" />
+<title>实验室一览</title>
+</head>
+
+<body>
+	<div id="rightTop">
+    <p>各部门基本信息</p>
+    <ul class="subnav">
+    	<li><a href="__URL__/index">部门列表</a></li>
+    	<li><a href="__URL__/add">添加部门</a></li>
+    </ul>
+</div>
+<div class="mrightTop">
+	<form method="post" enctype="multipart/form-data" action="__URL__/check">
+		类别：<select name="option" class="querySelect">
+				<option value="">未选择</option>
+			<volist name="list"  id="vo">
+				<option  value="{$vo.gd_id}">{$vo.dep_name}</option>
+			</volist>
+	 	</select>
+		<input type="submit" value="查询" class="formbtn searchbtn" />
+	</form>
+</div>
+<div class = "tdare">
+<table width="100%" cellspacing="0" class="dataTable">
+		<tr class="tatr1">
+			<th width="20" class="firstCell"><input type="checkbox" class="checkall"  id = "cklab" onclick="javascript:selectAll(this,'checklab')"/></th>
+			<th>政府名称</th>
+			<th>政府网址</th>
+			<th>政府类型</th>
+			<th>政府电话</th>
+			<th>基本操作</th>
+		</tr>
+		<volist name="list" id="vo" >
+		<tr class="tatr2" style="text-align:center;">
+			<td class="firstCell">
+				<input type="checkbox"   value="{$vo.lab_id}"  name="checklab[]" class="checkitem"  />
+			</td>
+			<td><span title="点击编辑" ><a href="__URL__/update?gd_id={$vo.gd_id}">{$vo.dep_name}</a></span></td>
+			<td><span title="点击进入该网站" ><a href="{$vo.dep_url}"  target=_blank >{$vo.dep_url}</a></span></td>
+			<td><span><a href="">{$vo.type_name}</a></span></td>
+			<td class="ajaximg"><span>{$vo.phone}</span></td>
+			<td class="handler"><span><a href="__URL__/update?gd_id={$vo.gd_id}">编辑</a> |<a href="__URL__/delete?gd_id={$vo.gd_id}">删除</a></span></td>
+		</tr>
+		</volist>
+	</table>
+	<div id="dataFuncs">
+		<div class="pt10 pl10" id="batchAction">
+		<label for="cklab" >全选/取消</label>
+		<input type="button" presubmit="confirm('你确定要删除它吗？');" uri="__URL__/delete?" name="gd_id" value="删除" class="formbtn batchButton" />
+		</div>
+		<div class="pageLinks">
+		{$page}
+		</div>
+	</div>
+	</div>
+<import file="Js.jquery,Js.index" />
+<script type="text/javascript">
+function selectAll(obj, name){
+	if (name == null) {
+		name = 'checklab';
+		//alert("ddd");
+	}
+	var elems = obj.getElementsByTagName("input");
+	//alert(elems.length); 
+	for ( var i = 0; i < elems.length; i++) {
+		if (elems[i].name == name || elems[i].name == name + "[]") {
+			elems[i].checked = obj.checked;
+		}
+	}
+}
+</script>
+</body>
+</html>

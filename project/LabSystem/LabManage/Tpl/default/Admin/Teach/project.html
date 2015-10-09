@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<import type='css' file="Css.admin.admin" />
+<import file="Js.jquery" />
+<title>实验室一览</title>
+<script type="text/javascript">
+/*$(document).ready(function() {
+  $('select[name = lesson_name]').bind("change" ,function(){
+		var shinumber = $('select[name = lesson_name]').serialize();
+		$.get('__URL__/ajhuo4',shinumber,function(cc){
+			//alert(shinumber);
+			if(cc.status == 0){
+				$('select[name = option_name]').val("没有这个编号").css("color","red");
+			}else{
+				$('select[name = lesson_teacher]').first().val(cc.data[0]['teacher_name']).css("color","black");
+			}
+		},'json')
+		
+	});
+});
+$(document).ready(function() {
+	  $('select[name = lesson_teacher]').bind("change" ,function(){
+			var shinumber1 = $('select[name = lesson_teacher]').serialize();
+			$.get('__URL__/ajhuo6',shinumber1,function(cc1){
+				//alert("1");
+				if(cc1.status == 0){
+					$('select[name = option_number]').val("没有这个编号").css("color","red");
+				}else{
+					//alert(cc1.data[0]['lesson_name']);
+					$('select[name = lesson_name]').first().val(cc1.data[0]['lesson_name']).css("color","black");
+				}
+			},'json')
+		});
+	});*/
+function doaction(){
+if(confirm("确定要删除吗？"))
+{
+alert('删除成功！');
+return true;
+}else
+{
+return false;
+}
+}
+</script>
+</head>
+<body>
+	<div id="rightTop">
+    <p>实验课项目管理</p>
+    <ul class="subnav">
+    	<li><a href="__URL__/project">项目列表</a></li>
+    	<li><a href="__URL__/project_add">添加项目</a></li>
+    </ul>
+</div>
+<div class="mrightTop">
+	<form method="get" enctype="multipart/form-data" action="__URL__/project_query">
+		实验课名称：
+		<select name="lesson_name" class="querySelect">
+			<volist name="lis"  id="vo">
+				<option  value="{$vo.lesson_number}">{$vo.lesson_name}</option>
+			</volist>
+	 	</select>
+	 	实验课任课教师名称：
+		<select name="lesson_teacher" class="querySelect">
+			<volist name="list"  id="voli1">
+				<option>{$voli1.teacher_name}</option>
+			</volist>
+	 	</select>
+		<input type="submit" value="查询" class="formbtn searchbtn" />
+	</form>
+</div>
+<div class = "tdare">
+	<table width="100%" cellspacing="0" class="dataTable">
+		<tr class="tatr1">
+			<th width="10%"  class="firstCell" >序号</th>
+			<th width="10%">实验室名称</th>
+			<th width="10%">实验课名称</th>
+			<th width="20%">实验课任课教师</th>
+			<th width="10%">实验项目名称</th>
+			<th width="10%">实验课项目性质</th>
+			<th width="20%">实验课项目所需课时</th>
+			<th width="10%">基本操作</th>
+		</tr>	
+		
+		 <?php $a = 0;if($list1):?>
+            <?php foreach($list1 as $key => $vol ): ?> 
+		<tr class="tatr2" style="text-align:center;">
+			<td><?php echo str_replace ("0", "", $vol['lesson_id']); ?></td>
+			<td><a href="../labList/info?lab_id=<?php echo $vol['lesson_id'];?>"><?php echo $vol['lab_name'];?></a></td>
+			<td><a href=""><?php echo $vol['lesson_name'];?></a></td>
+			<td><?php echo $vol['teacher_name'];?></td>
+			<td><?php echo $vol['name'];?></td>
+			<td><?php echo $vol['character'];?></td>
+			<td><?php echo $vol['period'];?></td>
+			<td><a href="__URL__/project_redact?lab_id=<?php echo $vol['lesson_id'];?>">编辑</a> | <a  onclick="return doaction()" href="__URL__/delete1?lab_id=<?php echo $vol['lesson_id'];?>">删除</a></td>
+		</tr>
+		<?php $a = $a + 1 ;endforeach; ?>
+		 <?php endif; ?>
+	</table>
+	<div class="pageLinks">
+	{$page}
+	</div>
+	</div>
+<import file="Js.jquery,Js.index" />
+</body>
+</html>

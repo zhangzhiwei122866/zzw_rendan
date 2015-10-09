@@ -1,0 +1,41 @@
+@CHARSET "UTF-8";
+body,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,code,del,dfn,em,q,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead{margin:0;padding:0;word-wrap:break-word;}
+body,html{padding:0;margin:0;font:12px/1.5 Arial,"宋体",Verdana,sans-serif;color:#000;background-color:#FFF;}
+textarea{font-size:12px;}
+table{border-collapse:collapse;border-spacing:0;}
+img{border:none}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+ul,ol,li{list-style-type:none;}
+.left{float:left;display:inline;}
+.right{float:right;display:inline;}
+.clear{width:100%;height:0;font-size:0;float:none;overflow:hidden;clear:both;}
+.hidden{display:none;}
+.invisible{visibility:hidden;}
+a{color:#3D6BAC;text-decoration:none;}
+a:hover{color:#264D84;text-decoration:underline;  cursor: pointer; }
+
+
+/***上侧***/
+#rightTop{border-top:2px solid #fff;border-bottom:1px solid #C1DFF3;height:50px;background:#f0f7ff;margin-left:2px;padding:0 20px;}
+#rightTop p{line-height:22px;float:left;color:#444;padding-top:15px;}
+#rightTop p strong{margin-left:20px;margin-right:10px;}
+.subnav{float:left;margin-left:20px;padding-top:15px;}
+.subnav li{margin:0 10px;}
+.subnav li,.subnav li a{float:left;display:inline;height:20px;line-height:20px;color:#fff;text-decoration:none;background:url(../../Images/admin/btn_1.png) no-repeat;}
+.subnav li a{background:url(../../Images/admin/btn_2.png) no-repeat right 0;padding:0 12px;}
+.subnav li.on,.subnav li.on a{background-image:none;}
+.subnav li span{font-weight:bold;color:#444;position:relative;top:1px;}
+/*****基本信息表******/
+.tdare{margin-left:2px;padding:0 5px 60px 5px;background:#fbfdff;}
+.tdare td{padding:10px 0;}
+.tdare th a,.tdare td a{color:#234f8d;}
+.tdare th a:hover,.tdare td a:hover{color:#12325f;}
+.dataTable th,.dataTable td{color:#444;text-align:left;vertical-align:middle;}
+.dataTable th{line-height:30px;border-bottom:1px solid #BBDBF1;padding:10px 0 4px}
+.dataTable td{padding:10px 0;border-bottom:1px dotted #BBDBF1;empty-cells:show;}
+.dataTable .firstCell{padding-left:25px;}
+.tatr1{background-color:#5A85B2;}
+.ajaximg{padding-left:4%;}
+.tatr2 td {background:#f0f7ff}
+.tatr2 td span{margin-left:43%;}
+.tatr2 td {background: none repeat scroll 0 0 #F0F7FF;border-bottom: 1px solid #B5CFEE;}

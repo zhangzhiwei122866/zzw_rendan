@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>添加报修</title>
+<import type='Js' file="Js.calendar" />
+</head>
+<style type="text/css">
+textarea{font-size:12px;}
+input{border-bottom:1px solid #ccc;text-align:center;height:16px;}
+table {margin:auto;}
+.addtable{border-collapse:collapse;width:70%;border: solid 1px #000;text-align:center;}
+td { border:solid 1px #b5cfee;text-align:center;padding:10px 0;background: none repeat scroll 0 0 #F0F7FF;}
+p a input{color:#fff;font-weight:bold;}
+.td2{width:200px;}
+.td1{width:300px;background-color:#fff;}
+</style>
+
+<body>
+<form method="post"  action="__URL__/insertborrow" >
+
+	<div>
+		<table class="addtable">
+			<tr>
+				<td  class="td2">设备编号</td><td  class="td1"><input type="text" name="equipment_number" style="width:100%;border:0px;"/></td>
+				<td  class="td2">设备名称</td><td  class="td1"><input type="text" name="equipment_name" style="width:100%;border:0px;"/></td>
+				<td class="td2">借用人</td><td name="" class="td1"><input type="text" name="borrow_man" style="width:100%;border:0px;"/></td>
+				<td class="td2">现存地</td><td name="" class="td1"><input type="text" name="location" style="width:100%;border:0px;"/></td>
+			</tr>
+			<tr>
+				<td class="td2">审批人</td><td name="" class="td1"><input type="text" name="approval_man" style="width:100%;border:0px;"/></td>
+				<td class="td2">保管人</td><td name="" class="td1"><input type="text" name="manage_man" style="width:100%;border:0px;"/></td>
+				<td class="td2">借用日期</td><td name="" class="td1"><input onclick="SelectDate(this, 'yyyy-MM-dd')" name="borrow_date" value="0000-00-00" readonly="readonly" style="width:100%;border:0px;"/></td>
+				<td class="td2">归还日期</td><td name="" class="td1"><input onclick="SelectDate(this, 'yyyy-MM-dd')" name="return_date" value="0000-00-00" readonly="readonly" style="width:100%;border:0px;"/></td>
+			</tr>
+			<tr>
+				
+				<td class="td2" colspan="1">借用原因</td><td colspan="3" name="" class="td1"><input type="text" name="borrow_reason" style="width:100%;border:0px;"/></td>
+				<td class="td2" colspan="1">备注（选填）</td><td colspan="3" name="" class="td1"><input type="text" name="remark" style="width:100%;border:0px;"/></td>
+				
+			</tr>
+			<tr>
+				<td style="width:250px;" colspan="4"><input type="submit" value="提交" style="border:0px;background-color:#F0F7FF;cursor:pointer;" /></td>
+				<td style="width:250px;" colspan="4"><a href="__URL__/borrow" ><input value="返回" style="border:0px;background-color:#F0F7FF;cursor:pointer;" /></a></td>
+			</tr>
+		</table>
+	</div>
+</form>
+
+</body>
+</html>

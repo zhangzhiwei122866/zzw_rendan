@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<import type='css' file="Css.admin.admin" />
+<import file="Js.jquery,Js.index,Js.managercheck" />  
+<import type='Js' file="Js.calendar" />
+<title>后台管理</title>
+<style type="text/css">
+.center{height:auto;width:75%;margin-left:15%;margin-top:30px;margin-bottom:5px;}
+input{height:52px;width:99%;border:0px}
+.sele{height:52px;width:99%;border:0px;text-align:center;padding-top:18px;}
+</style>
+<script>
+$(document).ready(function() {
+	  $('input[name = manager_name]').bind("change" ,function(){
+		  //alert("1");
+			var shinumber = $('input[name = manager_name]').serialize();
+			$.get('__URL__/only2',shinumber,function(cc){
+				//alert("2");
+				if(cc.status != 0){
+					$('input[name = manager_name]').val("此老师姓名存在").css("color","red");
+				}else{
+					
+				}
+			},'json')
+		});
+		
+	});
+$(document).ready(function() {
+	  $('input[name = manager_number]').bind("change" ,function(){
+		  //alert("1");
+			var shinumber = $('input[name = manager_number]').serialize();
+			$.get('__URL__/only3',shinumber,function(cc){
+				//alert("2");
+				if(cc.status != 0){
+					$('input[name = manager_number]').val("此老师工号存在").css("color","red");
+				}else{
+					
+				}
+			},'json')
+		});
+		
+	});
+$(document).ready(function() {
+	  $('select[name = lab_name]').bind("change" ,function(){
+			var shinumber = $('select[name = lab_name]').serialize();
+			$.get('__URL__/ajhuo7',shinumber,function(cc){
+				//alert(shinumber);
+				if(cc.status == 0){
+					$('select[name = lab_number]').val("没有这个编号").css("color","red");
+				}else{
+					$('select[name = lab_number]').first().val(cc.data[0]['name']).css("color","black");
+				}
+			},'json')
+			
+		});
+	});
+	$(document).ready(function() {
+		  $('select[name = lab_number]').bind("change" ,function(){
+				var shinumber1 = $('select[name = lab_number]').serialize();
+				$.get('__URL__/ajhuo8',shinumber1,function(cc1){
+					if(cc1.status == 0){
+						$('select[name = lab_name]').val("没有这个编号").css("color","red");
+					}else{
+						$('select[name = lab_name]').first().val(cc1.data[0]['number']).css("color","black");
+					}
+				},'json')
+				
+			});
+		});
+</script>
+</head>
+<body>
+	<div id="rightTop">
+    <p>实验室管理员个人信息管理</p>
+    <ul class="subnav">
+    	<li><a href="__URL__/lab_manager">管理员列表</a></li>
+    	<li><a href="__URL__/manager_add">添加管理员</a></li>
+    </ul>
+</div>
+<div class="center">
+	<form name="registerf" method="post" enctype="multipart/form-data" action="__URL__/manager_insert">
+		<table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#c1dff3">
+		  <tr>
+		    <td width="16%" height="52" align="center" valign="middle">管理员工号</td>
+		    <td width="16%" align="center">
+		    	<input name="manager_number" type="text" value=""/>
+		    </td>
+		    <td width="16%" align="center" valign="middle">管理员姓名</td>
+		    <td width="16%" align="center">
+		    	<input name="manager_name" type="text" value=""/>
+		    </td>
+		    <td width="16%" height="52" align="center" valign="middle">实验室编号</td>
+		    <td width="16%" align="center">
+		    	<select name="lab_number" class="sele">
+		    		<volist name="lab_list" id="lis">
+		    		<option value="{$lis.name}">{$lis.number}</option>
+		    		</volist>
+		    	</select>
+		    </td>
+		    
+		  </tr>
+		  <tr>
+		  	<td height="52" align="center" valign="middle">管理员性别</td>
+		    <td align="center">
+		    	<fieldset style="border:0px;width:49%;height:52px;float:left;">
+		    	<input name="sex" type="radio" value="男" checked="checked" style="width:40%;float:left; "/><span style="display:block;float:left;margin-top:20px">男</span>
+		    	</fieldset>
+		    	<fieldset style="border:0px;width:49%;height:52px;float:right;">
+		    	<input name="sex" type="radio" value="女" style="width:40%;float:left; "/><span style="display:block;float:left;margin-top:20px">女</span>
+		   		</fieldset>
+		    </td>
+		  	<td height="52" align="center" valign="middle">出生日期</td>
+		    <td align="center">
+		    	<input name="birthday" type="text" class="time inputsaveunderline timelength" onclick="SelectDate(this, 'yyyy-MM-dd')" value="0000-00-00" style="text-align:center;" />
+		    </td>
+		    <td height="52" align="center" valign="middle">实验室名称</td>
+		    <td align="center">
+		    	<select name="lab_name" class="sele">
+		    		<volist name="lab_list" id="lis">
+		    		<option value="{$lis.number}">{$lis.name}</option>
+		    		</volist>
+		    	</select>
+		    </td>
+		   
+		  </tr>
+		  <tr>
+		   <td align="center" valign="middle">所属学科</td>
+		    <td align="center">
+		    	<input name="subject" type="text" />
+		    </td>
+		    <td height="52" align="center" valign="middle">文化程度</td>
+		    <td align="center">
+		    	<input name="education" type="text" />
+		    </td>
+		    <td align="center" valign="middle">国内培训</td>
+		    <td align="center">
+		    	<input name="inland_train" type="text" />
+		    </td>
+		  </tr>
+		  <tr>
+		  	<td align="center" valign="middle">国外培训</td>
+		    <td align="center">
+		    	<input name="foreign_train" type="text" />
+		    </td>
+		  	<td align="center" valign="middle">录入时间</td>
+		    <td align="center">
+		    	<input name="enter_time" type="text" class="time inputsaveunderline timelength" onclick="SelectDate(this, 'yyyy-MM-dd')" value="0000-00-00" style="text-align:center;" />
+		    </td>
+		  	<td height="52" align="center" valign="middle">
+		    	备注
+		    </td>
+		    <td height="52"  align="center" valign="middle">
+		    	<textarea name="remark" style="border:0px;line-height:2"></textarea>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td height="52" colspan="6" align="center" valign="middle">
+		    <input type="submit" value="提交" name="Submit" disabled="disabled" style="float:left;width:30%;margin-left:16%;cursor:pointer;background-color:white;"/>
+		    <input type="reset" value="重置"  style="float:right;width:30%;margin-right:16%;cursor:pointer;background-color:white;"/>
+		    </td>
+		  </tr>
+		</table>
+	</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<import type='css' file="Css.admin.admin" />
+<title></title>
+</head>
+<body>
+<div id="rightTop">
+    <p>数据库分卷还原</p>
+   <!-- <ul class="subnav">
+        <li><a href="__URL__/typeList">资源类型</a></li>
+        <li><a href="__URL__/add">添加类型</a></li>
+    	<li><a href="__URL__/resourceList">资源列表</a></li>
+    	<li><a href="__URL__/addResource">添加资源</a></li>
+    </ul> --> 
+</div>
+<div class = "tdare">
+	<table width="100%" cellspacing="0" class="dataTable">
+	<form action="__URL__/del" method="post">
+		<tr class="tatr1">
+			<th width="10%" class="firstCell">编号</th>
+			<th width="20%">表名</th>
+			<th width="10%">卷号</th>
+			<th width="15%">文件大小</th>
+			<th width="25%">备份时间</th>
+			<th width="20%">操作</th>
+		</tr>		
+		<?php $i=1; foreach($list as $key=>$val){ ?>		
+		<tr class="tatr2" style="text-align:center;">
+			<td class="firstCell">
+				<input type="checkbox"  name="id[]"  value="<?php echo $val['filename'];?>"  class="checkitem"  />{$i}
+			</td>
+			<td><?php echo $val['filename'];?></td>
+			<td><?php echo $val['number'];?></td>
+			<td><?php echo $val['filesize'];?>M</td>
+			<td><?php echo $val['maketime'];?></td>
+			<td><a href="__URL__/backin?id=<?php echo $val['pre'];?>" onClick="return confirm('导入数据会删除现在数据库的所有信息,请确定是否导入?')">导入</a> | <a href="__URL__/backdown?id=<?php echo $val['filename'];?>">下载</a> | <a href="__URL__/backdel?id=<?php echo $val['filename'];?>" onClick="return confirm('确定删除?')">删除</a> </td>										
+		</tr>
+		<?php $i++; } ?>
+		<tr class="tatr2" style="text-align:center;">
+			<td colspan="6"><input type="button" class="bginput" id="checkall" value="全选/取消"/> 
+	      					<input type="submit" name="submit" value="批量删除" class="bginput"/></td>									
+		</tr>		
+	</form>	
+	</table>
+	</div>
+<import file="Js.jquery,Js.index" />
+<script type="text/javascript">
+$("#checkall").click(function(){
+	$("input[name='id[]']").each(function(){
+		if(this.checked == false){
+			this.checked = true;
+		}
+		else{
+			this.checked = false;
+		}			
+	});
+});
+</script>
+</body>
+</html>

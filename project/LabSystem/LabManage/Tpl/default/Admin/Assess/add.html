@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<import type='css' file="Css.admin.admin" />  
+<title>后台管理</title>
+</head>
+<body>
+	<div id="rightTop">
+    <p>实验室管理</p>
+    <ul class="subnav">
+    	<li><a href="__URL__/labList">实验室列表</a></li>
+    	<li><a href="__URL__/add">添加实验室</a></li>
+    </ul>
+</div>
+<div class="info">
+	<form method="post" enctype="multipart/form-data" action="__URL__/insert">
+		<table class="infoTable">
+			<tr>
+				<th class="pt10">名称:</th>
+				<td class="pt10 wordSpacing5">
+					<input type="text" name="lab_name" id="nav_name"  value= class="infoTableInput" />					
+				</td>
+			</tr>
+			<tr>
+				<th class="pt10">链接地址:</th>
+				<td class="pt10 wordSpacing5">
+					<input type="text" value="http://" name="lab_link"  id="nav_link"  class="infoTableInput" />	
+					<label class="field_notice">URL地址，例如：http://www.taobao.com/</label>	
+				</td>
+			</tr>
+				<tr>
+				<th class="pt10">实验室简介:</th>
+				<td class="pt10 wordSpacing5">
+					<textarea type="text"  name="lab_intro" id="nav_link" class="infoTableInput" ></textarea>	
+				</td>
+			</tr>
+			<tr>
+				<th class="pt10">状态:</th>
+				<td class="pt10 wordSpacing5">
+					<input type="radio" value="1"  name="status" id="status_on" checked="checked" />
+					<label for="status_on">开放</label>
+					<input type="radio" value="0"  name="status" id="status_off"  />
+					<label for="status_off">不开放</label>
+				</td>
+			</tr>
+			<tr>
+				<th></th>
+				<td class="ptb20">
+					<input type="hidden" name="nav_id" value="{$vo.nav_id}" />
+					<input type="submit" value="提交" name="Submit" class="formbtn" />
+					<input type="reset" value="重置" style="margin-left:10px;" name="Submit2" class="formbtn" />
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+
+</body>
+</html>

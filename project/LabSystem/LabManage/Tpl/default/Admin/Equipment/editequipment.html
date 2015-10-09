@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>添加仪器</title>
+<import type='Js' file="Js.calendar" />
+</head>
+<style type="text/css">
+textarea{font-size:12px;}
+input{border-bottom:1px solid #ccc;text-align:center;height:16px;}
+table {margin:auto;}
+.addtable{border-collapse:collapse;width:70%;border: solid 1px #000;text-align:center;}
+td { border:solid 1px #b5cfee;text-align:center;padding:10px 0;background: none repeat scroll 0 0 #F0F7FF;}
+p a input{color:#fff;font-weight:bold;}
+.td2{width:200px;}
+.td1{width:300px;background-color:#fff;}
+</style>
+<script  type="text/javascript">
+function doaction(){
+	if(confirm("确定要修改吗？")){
+		alert('修改成功！');
+			return true;
+		}
+	else{
+		return false;
+	}
+}
+</script>
+<body>
+<form method="post"  action="__URL__/submitequipment" >
+	<div>
+	
+		<table class="addtable">
+		<volist name="info" id="inf">
+		
+				<tr>
+				<td  class="td2">设备编号</td><td class="td1"><input type="text" name="number" value="{$inf.number}" style="width:100%;border:0px;"/></td>
+				<td  class="td2">设备名称</td><td class="td1"><input type="text" name="name" value="{$inf.name}"  style="width:100%;border:0px;"/></td>
+				<td class="td2">设备类型</td><td class="td1"><input type="text"  name="type_name" value="{$inf.type_name}" style="width:100%;border:0px;"/></td>
+				<td class="td2">实验室名称</td><td class="td1"><input type="text"  name="lab_name" value="{$inf.lab_name}"  style="width:100%;border:0px;"/></td>
+			</tr>
+			<tr>
+				<td class="td2">实验室编号</td><td class="td1"><input type="text"  name="lab_number"  value="{$inf.lab_number}" style="width:100%;border:0px;"/></td>
+				<td class="td2">学院编号</td><td class="td1"><input type="text"  name="academy_number"  value="{$inf.academy_number}" style="width:100%;border:0px;"/></td>
+				<td class="td2">仪器价值</td><td class="td1"><input type="text"  name="value" value="{$inf.value}" style="width:100%;border:0px;"/></td>
+				<td class="td2">仪器状态</td><td class="td1"><input type="text" name="status" value="{$inf.status}" style="width:100%;border:0px;"/></td>
+			</tr>
+			<tr>
+				<td class="td2">购买日期</td><td class="td1"><input name="buy_time" onclick="SelectDate(this, 'yyyy-MM-dd')" readonly="readonly" style="border:0px;" value="{$inf.buy_time}"/></td>
+				<td class="td2">存储地</td><td class="td1"><input type="text"  name="location" value="{$inf.location}" style="width:100%;border:0px;"/></td>
+				<td class="td2">领用人</td><td class="td1"><input type="text" name="use_people" value="{$inf.use_people}" style="width:100%;border:0px;"/></td>
+				<td class="td2">管理人</td><td class="td1"><input type="text" name="manage_people" value="{$inf.manage_people}" style="width:100%;border:0px;"/></td>
+			</tr>
+			<tr>
+				<td style="width:250px;" colspan="4"><input type="submit"   onclick="return doaction()" value="提交" style="border:0px;background-color:#F0F7FF;cursor:pointer;" /></td>
+				<td style="width:250px;" colspan="4"><a href="__URL__/index" ><input value="返回" style="border:0px;background-color:#F0F7FF;cursor:pointer;" /></a></td>
+			</tr>
+			<input type="hidden" name="id" value={$inf.id} />
+			</volist>
+		</table>
+	</div>
+</form>
+
+</body>
+</html>

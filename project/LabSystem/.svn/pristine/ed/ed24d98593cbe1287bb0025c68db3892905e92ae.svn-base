@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>后台登录</title>
+<style type="text/css">
+html, body, div, p, a, img,form, label, table, tbody, tr, th, td, input {margin: 0;padding: 0;}
+img {border:0px;}
+html.hasFontSmoothing-false body {font-family: Tahoma,Arial,Helvetica,STHeiti;}
+body {background:url(__PUBLIC__/Images/admin/login_bg.png) #d7edf3 repeat-x;}
+a{text-decoration:none;}
+.wrap {margin:0px auto;width:980px;height:610px;background:url(__PUBLIC__/Images/admin/login_bg2.png) no-repeat;position:relative;font-size:12px;font-family:Arial, "宋体";color:#2C86AE;}
+.Logo{height:25px;width:210px;float:left;padding-top:210px;padding-left:190px;font-size:13px;}
+.adminLogin{height:40px;width:220px;float:left;padding-top:210px;margin-left:220px;background:url(__PUBLIC__/Images/admin/login_tip.png) no-repeat scroll 80% 90% transparent;}
+.reg_form{padding-left:300px;padding-top:260px;margin:0 auto;}
+.formInfo th{height:60px;align:left;font-size:16px;}
+.formInfo td .inputText{float:left;-moz-border-radius:3px 3px 3px 3px;background-color:#FFFFFF;border:1px solid #CCCCCC;font-size:14px;height:16px;line-height:16px;padding:11px 5px;width:230px;margin-left:7px;}
+.formInfo td .input{float:left;-moz-border-radius:3px 3px 3px 3px;background-color:#FFFFFF;border:1px solid #CCCCCC;font-size:14px;height:16px;line-height:16px;padding:11px 5px;width:100px;margin-left:7px;}
+#pass{float:left;width:120px;height:30px;margin:3px 0 3px 8px;}
+#pass_a{float:left;}
+#pass_b{padding-top:22px;}
+.formInfo th{word-spacing:15px;padding-right:8px;}
+.formInfo td a{color:#94B3BB;}
+.formInfo td a:hover{color:#2F93AF;}
+.formInfo td a label{padding-top:11px;float:left;padding-left:5px;}
+#LoginBotton {border:0 none;width:128px;height:58px;background:url(__PUBLIC__/Images/admin/login_btn.png) no-repeat;margin-left:6px;float:left;cursor:pointer;padding:0;}
+.foot {position:absolute;left:0px;bottom:20px;color:#9bbfc8;width:100%;text-align:center;font-size:12px;word-spacing:15px;}
+.foot a {color:#408c9e;}
+.foot a:hover {color:#09C;}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+     <div class="Logo">用户登录</div>
+     <div class="adminLogin"></div>
+<form class="reg_form" action="__URL__/doLogin" method="post">
+	<table cellspacing="0" cellpadding="0" border="0" align="0" class="formInfo">
+    	<tbody>
+        	<tr>
+            	<th>邮 箱</th>
+                <td>
+                	<input id="email" class="inputText" type="text" tabindex=1 value="" size="28" name="email" />
+                </td>
+            </tr>          
+            <tr>
+            	<th>密 码</th>
+                <td>
+                	<input id="password" class="inputText" type="password" tabindex=2 value="" size="28" name="password" />
+                    <a href="#"><label class="note">打开软件盘</label></a>
+                </td>
+            </tr>
+			<th></th>
+				<td><button id="LoginBotton"   tabindex=4  align="right"></button><a href="#"><label class="note" id="pass_b">? 系统帮助</label></a></td>
+        </tbody>
+    </table>
+</form>
+<div class="foot">
+<a href="#">使用手册</a> <a href="#" >常见问题</a> <a href="#">客服服务</a> <a href="#">官方论坛</a> <a href="#">联系我们</a> <a href="#">赞助商</a>
+</div>
+</div>   
+</body>
+</html>

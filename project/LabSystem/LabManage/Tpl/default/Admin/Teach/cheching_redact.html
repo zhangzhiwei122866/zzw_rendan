@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<import type='css' file="Css.admin.admin" />
+<import file="Js.jquery,Js.index,Js.chechingcheck1" />  
+<import type='Js' file="Js.calendar" />
+<title>后台管理</title>
+<style type="text/css">
+.center{height:auto;width:75%;margin-left:15%;margin-top:30px;margin-bottom:5px;}
+input{height:52px;width:99%;border:0px}
+.sele{height:52px;width:99%;border:0px;text-align:center;padding-top:18px;}
+</style>
+<script>
+function doaction(){
+if(confirm("确定要修改吗？"))
+{
+alert('修改成功！');
+return true;
+}else
+{
+return false;
+}
+}
+</script>
+</head>
+<body>
+	<div id="rightTop">
+    <p>教学管理</p>
+    <ul class="subnav">
+    	<li><a href="__URL__/index">实验室列表</a></li>
+    	<li><a href="__URL__/add">添加实验室</a></li>
+    </ul>
+</div>
+<div class="center">
+	<form name="registerf" method="post" enctype="multipart/form-data" action="__URL__/cheching_xiugai">
+		<table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#c1dff3">
+		<volist name="list1" id="lis2">
+		<input name="cheching_id" type="hidden" value="{$lis2.cheching_id}"/>
+		  <tr>
+		    <td width="16%" height="52" align="center" valign="middle">实验课名称</td>
+		    <td width="16%" align="center">
+		    	<select name="lesson_name" class="sele">
+		    		<option>{$lis2.lesson_name}</option>
+		    		<volist name="lis" id="list">
+		    		<option value="{$list.lesson_number}">{$list.lesson_name}</option>
+		    		</volist>
+		    	</select>
+		    </td>
+		    <td width="16%" align="center" valign="middle">实验室名称</td>
+		    <td width="16%" align="center">
+		    	<select name="lab_name" class="sele">
+		    		<option>{$lis2.cheching_lab_name}</option>
+		    		<volist name="lab_list" id="lis">
+		    		<option value="{$lis.number}">{$lis.name}</option>
+		    		</volist>
+		    	</select>
+		    </td>
+		    <td width="16%" height="52" align="center" valign="middle">实验室编号</td>
+		    <td width="16%" align="center">
+		    	<select name="lab_number" class="sele">
+		    		<option>{$lis2.cheching_lab_number}</option>
+		    		<volist name="lab_list" id="lis">
+		    		<option value="{$lis.name}">{$lis.number}</option>
+		    		</volist>
+		    	</select>
+		    </td>
+		    
+		  </tr>
+		  <tr>
+		  	<td height="52" align="center" valign="middle">实验室项目名称</td>
+		    <td align="center">
+		    	<select name="project_name" class="sele">
+		    		<option>{$lis2.name}</option>
+		    		<volist name="project_list" id="lis">
+		    		<option value="{$lis.number}">{$lis.name}</option>
+		    		</volist>
+		    	</select>
+		    </td>
+		  	<td height="52" align="center" valign="middle">上课班级</td>
+		    <td align="center">
+		    	<input name="class" type="text" value="{$lis2.class}"/>
+		    </td>
+		    <td height="52" align="center" valign="middle">上课日期</td>
+		    <td align="center">
+		    	<input name="lesson_date" type="text" class="time inputsaveunderline timelength" onclick="SelectDate(this, 'yyyy-MM-dd')" value="{$lis2.date}" style="text-align:center;" />
+		    </td>
+		   
+		  </tr>
+		  <tr>
+		   <td align="center" valign="middle">上课时间</td>
+		    <td align="center">
+		    	<input name="lesson_time" type="text" value="{$lis2.class_time}"/>
+		    </td>
+		    <td height="52" align="center" valign="middle">实验课任课教师姓名</td>
+		    <td align="center">
+		    	<input name="teacher_name" type="text" value="{$lis2.teacher_name1}"/>
+		    </td>
+		    <td align="center" valign="middle">班长姓名</td>
+		    <td align="center">
+		    	<input name="monitor" type="text" value="{$lis2.monitor}"/>
+		    </td>
+		  </tr>
+		  <tr>
+		  	<td align="center" valign="middle">出勤人数</td>
+		    <td align="center">
+		    	<input name="attendence" type="text" value="{$lis2.attendence}"/>
+		    </td>
+		  	<td align="center" valign="middle">缺勤人数</td>
+		    <td align="center">
+		    	<input name="absence" type="text" value="{$lis2.absence}"/>
+		    </td>
+		  	<td height="52" align="center" valign="middle">
+		    	备注
+		    </td>
+		    <td height="52"  align="center" valign="middle">
+		    	<textarea name="remark" style="border:0px;line-height:2">{$lis2.remark}</textarea>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td height="52" colspan="6" align="center" valign="middle">
+		    <input type="submit" value="提交" name="Submit" onclick="return doaction()" style="float:left;width:30%;margin-left:16%;cursor:pointer;background-color:white;"/>
+		    <input type="reset" value="重置"  style="float:right;width:30%;margin-right:16%;cursor:pointer;background-color:white;"/>
+		    </td>
+		  </tr>
+		  </volist>
+		</table>
+	</form>
+</div>
+
+</body>
+</html>

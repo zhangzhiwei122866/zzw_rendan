@@ -1,0 +1,79 @@
+
+/*************************** 公用样式 *****************************/
+body,object,iframe,h1,h2,h3,h4,h5,h6,blockquote,pre,a,abbr,acronym,address,code,del,dfn,em,q,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead{margin:0;padding:0;word-wrap:break-word;}
+body,html{padding:0;margin:0;}
+textarea{font-size:12px;}
+body{background-color:#f2c4de;text-align:center;}
+table{border-collapse:collapse;border-spacing:0;}
+img{border:none;width:100%;height:100%;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}h1{font-size:34px;}h2{font-size:26px;}h3{font-size:18px; }h4{font-size:16px;}h5{font-size:14px;}h6{font-size:12px;}
+input,label,img,th{vertical-align:top;}
+address,cite,dfn,em,var{font-style:normal;}
+ul,ol,li{list-style-type:none;}
+img,div{border:0px;margin:0px;padding:0px;}
+a:link{text-decoration:none;}
+.left{ float:left; display:inline;}
+.right{ float:right; display:inline;}
+.clear{width:100%;height:0;font-size:0;float:none;overflow:hidden;clear:both;}
+marquee{font-size: 100%; line-height: 1;font-weight: bold; font-family: Arial, Tahoma, sans-serif;color:#e95e95;text-align:center;}
+
+/*******************************第一部分**********************************/
+.zong{background:url(../images/b.jpg) repeat scroll 0 0 transparent;width:1366px;height:620px; margin:0 auto;text-align:left; display:block;z-index:5; overflow:hidden;}
+.zon{height:94%; width:87%;margin-left:4.5%;margin-top:15px;}
+.zhongjian{width:1188px;height:186px;}
+.button{height:63px;width:510px;margin-left:340px;margin-top:71px;overflow: hidden;}
+.e{width:227px; height:185px; margin-left:960px;margin-top:-240px;overflow: hidden;}
+#work {float:left;list-style:none;height:63px;width:510px;overflow: hidden;}
+#work li {float:left;display:block;display:inline;margin-left:20px;}
+#work li a {border:none;}
+#work a {margin-bottom:0;}
+#work li .show{display:block;}
+#work li .hide {height: 0;overflow: hidden;background:url(../images/button2.jpg) no-repeat fixed;}
+#work li:hover .hide {cursor: pointer;height: 63px;width:150px;}
+#work li:hover .show {height: 0;overflow: hidden;}
+.e .show{display:block;}
+.e .hide {height: 0;overflow: hidden;background:url(../images/e6.jpg) no-repeat fixed;}
+.e:hover .hide {cursor: pointer;height: 185px;width:227px;}
+.e:hover .show {height: 0;overflow: hidden;}
+
+ a:link{color: #e95e95} a:visited{color: #e95e95} a:hover{color: #e221ae} a:active{color:#e221ae}
+/*******************************第二部分**********************************/
+.f{height:300px;width:87%;}
+.f1{height:300px;width:485px;margin-left:13px;}
+.f2{height:300px;width:601px;margin-left:583px;margin-top:-300px;border:1px solid #eb5594;border-radius:10px;}
+.f3{height:300px;width:371px;border-right:5px solid #f2c4de;border-radius:10px;background:url("../images/f77.png");}
+.f4{height:300px;width:230px;float:right;margin-top:-300px;list-style:none;}
+.f4 li{margin-top:15px;}
+.f5{height:48px;width:230px;}
+#f6{height:48px;width:48px;background:url(../images/f4.png);margin-left:30px;}
+#f6_1{height:48px;width:48px;background:url(../images/f5.png);margin-left:30px;}
+#f6_2{height:48px;width:48px;background:url(../images/f6.png);margin-left:30px;}
+#f6_3{height:48px;width:48px;background:url(../images/f7.png);margin-left:30px;}
+.f7{height:48px;width:160px;float:right;margin-top:-48px;}
+.f7 p{font-size: 100%; font-weight: bold;line-height: 1; font-family: Arial, Tahoma, sans-serif;padding-left:13px;}
+/*********************************最后的一部分*********************************/
+.g{height:50px;width:87%;margin-left:65px;text-align:center;margin-top:40px;}
+.g p{font-size: 80%;color:#e95e95; font-weight: bold;line-height: 1; font-family: Arial, Tahoma, sans-serif;}
+ a:link {color: #e95e95}     /* 未访问的链接 */a:visited {color: #e95e95}  /* 已访问的链接 */a:hover {color: #e221ae}    /* 当有鼠标悬停在链接上 */
+a:active {color: #e95e95}   /* 被选择的链接 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

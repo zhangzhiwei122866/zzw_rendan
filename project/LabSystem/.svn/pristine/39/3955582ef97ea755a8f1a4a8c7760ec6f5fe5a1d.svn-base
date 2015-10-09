@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<import type='css' file="Css.admin.admin" />
+<title>后台管理</title>
+</head>
+<body>
+<div id="head">
+    <div id="logo"><a href="#nogo"><img src="__PUBLIC__/Images/admin/logo.gif" alt="实验室管理系统" /></a></div>
+    <div id="menu">
+    <span>您好，<strong>{$_SESSION['username']}</strong>  <a href="/Admin/public/logout">[退出]</a>&nbsp;&nbsp;<a href="/Default/Index/index" target="_blank">[网站首页]</a></span>
+         <a href="" class="menu_btn1" id="iframe_refresh">刷新</a>
+        <a href="" class="menu_btn2" id="clear_cache">更新缓存</a>
+        <a href="#" id="back_btn"><img src="__PUBLIC__/Images/admin/tiring_room_nav.gif" alt="后台导航" /></a> 
+    </div>
+    <ul id="nav">
+    	<li><a id="control" href="#nogo" class="link actived">控制台</a></li>
+        <li><a id="set" href="#nogo" class="link">实验室一览</a></li>
+        <li><a id="case" href="#nogo" class="link">实验教学</a></li>
+        <li><a id="user" href="#nogo" class="link">教学资源</a></li>
+        <li><a id="album" href="#nogo" class="link">管理体制</a></li>
+        <li><a id="album" href="#nogo" class="link">实验室运行</a></li>
+    </ul>
+    <div class="back_nav">
+        <div class="back_nav_list">   
+            <dl>
+                <dt>设置</dt>            
+                <dd><a href="#nogo">网站设置</a></dd>
+                <dd><a href="#nogo">网站设置</a></dd>
+                <dd><a href="#nogo">网站设置</a></dd>
+                <dd><a href="#nogo">网站设置</a></dd>
+                <dd><a href="#nogo">网站设置</a></dd>
+            </dl>
+            <dl>
+                <dt>设置</dt>    
+                <dd><a href="#nogo">网站设置</a></dd>
+                <dd><a href="#nogo">网站设置</a></dd>
+                <dd><a href="#nogo">网站设置</a></dd>
+                <dd><a href="#nogo">网站设置</a></dd>
+                <dd><a href="#nogo">网站设置</a></dd>
+            </dl>
+        </div>
+        <div class="close_float"><img src="__PUBLIC__/Images/icon/close2.gif" alt="关闭" /></div>
+    </div>
+    <div id="headBg"></div>
+</div>
+<div id="content">
+    <div id="left">
+		<div id="leftMenus">
+		   <dl class="submenu" id="control_0">
+				<dt><span class="ico1">控制台</span></dt>
+				<dd><a href="/Admin/Index/main" target="workspace">欢迎页面</a></dd>
+			</dl>
+			<dl class="submenu" id="set_0">
+				<dt><span class="ico1">实验室一览</span></dt>
+				<dd><a href="/Admin/LabList/labList"  target="workspace">实验室管理</a></dd>
+			</dl>
+			<dl class="submenu" id="case_0">
+				<dt><span class="ico1">实验教学</span></dt>
+				<dd><a href="" target="workspace">XXXX</a></dd>
+			</dl>
+			<dl class="submenu" id="user_0">
+				<dt><span class="ico1">教学资源</span></dt>
+				<dd><a href="" target="workspace">XXXX</a></dd>
+			</dl>
+			<dl class="submenu" id="album_0">
+				<dt><span class="ico1">管理体制</span></dt>
+				<dd><a href="" target="workspace">XXXX</a></dd>
+			</dl>
+			<dl class="submenu" id="article_0">
+				<dt><span class="ico1">实验室运行</span></dt>	
+				<dd><a href="" target="workspace">XXXX</a></dd>
+			</dl>
+			<dl id="history" class="history">
+				<dt><span class="ico2" id="historyText">操作历史</span></dt>
+				<dd><a href="#nogo" class="">关于我们</a></dd>
+				<dd><a href="#nogo" class="">关于我们</a></dd>
+				<dd><a href="#nogo" class="">关于我们</a></dd>
+				<dd><a href="#nogo" class="">关于我们</a></dd>
+			</dl>
+		</div>
+    </div>
+    <div id="right">
+        <iframe frameborder="0" border="0" id="workspace" style="display:none;" name="workspace" src="__URL__/main"></iframe>
+    </div>
+    <div class="clear"></div>
+</div>
+<import file="Js.jquery,Js.index" />
+</body>
+</html>

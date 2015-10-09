@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<import type='css' file="Css.admin.admin" />
+<title>实验室一览</title>
+<style type="text/css">
+.sele{height:52px;width:99%;border:0px;text-align:center;padding-top:18px;}
+input{height:52px;width:99%;border:0px}
+</style>
+</head>
+<body>
+	<div id="rightTop">
+    <p>各部门事项基本信息</p>
+    
+    <ul class="subnav">
+    	<li><a href="__URL__/project">事项列表</a></li>
+    	<li><a href="__URL__/project_add">添加事项</a></li>
+    </ul>
+</div>
+<div class="mrightTop">
+	<form method="post" enctype="multipart/form-data" action="__URL__/project_check">
+		类别：<select name="option" class="querySelect">
+				<option value="">未选择</option>
+			<volist name="list1"  id="vo1">
+				<option  value="{$vo1.gdp_id}">{$vo1.project_title}</option>
+			</volist>
+	 	</select>
+		<input type="submit" value="查询" class="formbtn searchbtn" />
+	</form>
+</div>
+<div class = "tdare" style="width:75%;margin:0 auto;margin-top:20px;">
+<form method="post" enctype="multipart/form-data" action="__URL__/project_query">
+<volist name="list" id="vo">
+<input type="hidden" value="{$vo.gdp_id}" name="gdp_id"/>
+<table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#c1dff3" align="center">
+   <tr>
+    <td width="23%" height="71" align="center">事项名称</td>
+    <td width="27%"><input type="text" name="project_title" value="{$vo.project_title}"/></td>
+    <td width="25%" align="center">所属单位</td>
+    <td width="25%">
+    <select name="dep_name" class="sele">
+				<option value="{$vo.dep_id}">{$vo.dep_name}</option>
+			<volist name="list2"  id="vo2">
+				<option  value="{$vo2.gd_id}">{$vo2.dep_name}</option>
+			</volist>
+	</select>
+    </td>
+  </tr>
+  <tr>
+    <td height="71" align="center">项目编号</td>
+    <td><input type="text" name="number" value="{$vo.number}" /></td>
+    <td align="center">项目状态</td>
+    <td>
+    
+    <select name="status" class="sele">
+    <if condition="$vo['status'] eq 0">
+		<option value="0">未通过</option>
+		<option  value="1">通过</option>
+	<else/>
+		<option  value="1">通过</option>
+		<option value="0">未通过</option>
+	</if>
+	</select>
+    </td>
+  </tr>
+  <tr>
+    <td height="71" align="center">添加时间</td>
+    <td colspan="3"><input type="text" name="time" value="{$vo.time}"/></td>
+  </tr>
+  <tr>
+    <td height="71" align="center">详细内容</td>
+    <td colspan="3"><input type="text" name="project_content" value="{$vo.project_content}"/></td>
+  </tr>
+  <tr>
+    <td height="71" colspan="4" align="center" valign="middle">
+		    <input type="submit" value="提交" name="Submit" style="float:left;width:30%;margin-left:16%;cursor:pointer;background-color:white;"/>
+		    <input type="reset" value="重置"  style="float:right;width:30%;margin-right:16%;cursor:pointer;background-color:white;"/>
+	</td>
+	
+  </tr>
+</table>
+</volist>
+</form>
+	</div>
+<import file="Js.jquery,Js.index" />
+</body>
+</html>

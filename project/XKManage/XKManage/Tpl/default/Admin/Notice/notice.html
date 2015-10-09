@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>公告信息</title>
+<style type="text/css">
+<!--
+p,div,tr,td,body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size: 12px
+}
+a{text-decoration:none}
+table {
+	margin:auto;
+}
+td {
+	font-size:10pt;
+	color: #000080;
+}
+.button {
+	width:101px;
+	height:41px;
+	color:#fff;
+	font-weight:bold;
+	line-height:30px;
+	font-size:16px;
+	background:url(__PUBLIC__/images/botton.png);
+	border:none;
+	margin:5px auto;
+	cursor:pointer;
+}
+.button_1:hover input {
+	background:url(__PUBLIC__/images/botton_2.png);
+}
+-->
+</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="30" background="__PUBLIC__/images/tab_05.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="12" height="30"><img src="__PUBLIC__/images/tab_03.gif" width="12" height="30" /></td>
+        <td><font>公告信息</font></td>
+        <td width="16"><img src="__PUBLIC__/images/tab_07.gif" width="16" height="30" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <table style="border-collapse: collapse;margin:20px auto;border:1px solid #B5CFEE;margin-top:0px;padding-left:100px" width="100%">
+  <tr>
+    <td width="100%" style="border:#6DB2ED 2px solid"><table style="border-collapse: collapse" width="100%" bgcolor="#ffffff">
+        <tr>
+          <td width="100%" height="auto" >
+              <center>
+              	<div style="height:70px;">
+            	<img style="margin-top:-10px;" border="0" src="__PUBLIC__/images/henu.png" width="50" height="50" align="absmiddle" />
+			 	<font  style="line-height:70px;font-family:Microsoft Yahei" size="5" color="#000" >公 告 详 情</font>
+			 	</div>
+			 </center>
+            <div style="margin-left: 20px; margin-right:20px; min-height:350px;height:auto; margin-top:15px；margin-bottom:20px;border-top:#B5CFEE 1px solid;border-bottom:#B5CFEE 1px solid" >&nbsp;&nbsp;&nbsp;
+            	<p style="margin:0 20px;color:#333;min-height:150px">{$list['notice_content']}</p>
+            	<p style="margin-top:10px;margin-right:20px;color:#666"  align=right >公告单位:  {$list['notice_company']}</p>
+       			<p style="margin-top:10px;margin-right:20px;margin-bottom:10px;color:#666" align=right>公告时间：  {$list['notice_time']}</p>
+            </div>
+            <br />
+            </td>
+        </tr>
+        <tr>
+          <td colspan=4 align="center" height="50"><a onClick="javascript:history.back()" class="button_1" style="text-decoration:none;">
+            <input type="button" value="返回" class="button"/>
+            </a></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+  </table>
+</body>
+</html>

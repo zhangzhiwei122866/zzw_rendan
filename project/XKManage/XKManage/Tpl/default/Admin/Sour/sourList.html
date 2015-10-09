@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>多酸化学</title>
+<style type="text/css">
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	color:#777;
+	font-size: 12px
+}
+img{border:none;}
+a{text-decoration:none}
+a{text-decoration:none}
+.head{color:#4f7396;font-size: 14px;font-weight:bold;}
+.STYLE1 {font-size: 13px;color:#333;}
+.STYLE4 {font-size: 12px;}
+
+</style>
+<script language="javascript">
+	function changeTable(o,a,b,c,d){
+		 var t=document.getElementById(o).getElementsByTagName("tr");
+		 for(var i=0;i<t.length;i++){
+		  t[i].style.backgroundColor=(t[i].sectionRowIndex%2==0)?a:b;
+		  t[i].onclick=function(){
+		   if(this.x!="1"){
+		    this.x="1";//本来打算直接用背景色判断，FF获取到的背景是RGB值，不好判断
+		    this.style.backgroundColor=d;
+		   }else{
+		    this.x="0";
+		    this.style.backgroundColor=(this.sectionRowIndex%2==0)?a:b;
+		   }
+		  }
+		  t[i].onmouseover=function(){
+		   if(this.x!="1")this.style.backgroundColor=c;
+		  }
+		  t[i].onmouseout=function(){
+		   if(this.x!="1")this.style.backgroundColor=(this.sectionRowIndex%2==0)?a:b;
+		  }
+		 }
+		}
+	
+</script>
+
+</head>
+<body style="background: url(/public/images/bg_left.gif) repeat-x;">
+<div style="width:100%;height:45px;margin-top:5px;border：15px;background:url(__PUBLIC__/images/researcherList_header.jpg) repeat-x;">
+		<div style="width:500px;margin-left:50px;font-size:20px;font-weight:bold;color:#497bbb;">
+			<img src="__PUBLIC__/images/researcherList_header1.jpg" style="margin-right:10px;margin-top:20px;"/><?php echo $list1[0][branch_name]; ?>研究人员列表
+		</div>
+	</div>
+<table width="100%" border="0" cellpadding="0" cellspacing="1"id="senfe" >	
+<!-- --------- 标头 ------------ -->
+	<tr>
+		<td width="3%" height="40"><div align="center"><span class="head">序号</span></div></td>
+		<td width="8%" height="40"><div align="center"><span class="head">姓名</span></div></td>
+		<td width="10%" height="40"><div align="center"><span class="head">出生年月</span></div></td>
+		<td width="15%" height="40"><div align="center"><span class="head">最后学历或学位</span></div></td>
+		<td width="10%" height="40"><div align="center"><span class="head">专业技术职务</span></div></td>
+		<td width="5%" height="40"><div align="center"><span class="head">目前指导博士</span></div></td>
+		<td width="5%" height="40"><div align="center"><span class="head">目前指导硕士</span></div></td>						         
+		<td width="10%" height="40"><div align="center"><span class="head">在研究项目数</span></div></td>
+		<td width="10%" height="40"><div align="center"><span class="head">在研究经费（万元）</span></div></td>
+		<td width="7%" height="40"><div align="center"><span class="head">备注</span></div></td>
+		<td width="15%" height="40"><div align="center"><span class="head">基本操作</span></div></td>		    	 
+	</tr>					
+	<!-- ------- 数据来输出 ----------- -->
+    <?php if ($list2): ?>
+    <?php $s = 0 ;$i=1; foreach ($list2  as $key => $val): ?>
+    <tr>
+        <td height="20" bgcolor="#FFFFFF">
+          <div align="center" class="STYLE1">
+            		<div align="center"><?php echo $i; ?></div>
+          </div>
+        </td>
+        <td height="40" ><div align="center"><span class="STYLE1"><a href="__GROUP__/Researcher/researcher?id=<?php echo $val['id']; ?>&study_branch=<?php echo $val['study_branch']; ?>"><?php echo $val['name']; ?></a></span></div></td>
+        <td height="40"><div align="center"><span class="STYLE1"><?php echo $val['birthday']; ?></span></div></td>
+        <td height="40"><div align="center"><span class="STYLE1" style="letter-spacing:1px;text-indent:7pt;"><?php echo $val['degree']; ?></span></div></td>
+        <td height="40" ><div align="center"><span class="STYLE1"><?php echo $val['position']; ?></span></div></td>
+        <td height="40"><div align="center"><span class="STYLE1"><?php echo $val['school_doctor']; ?></span></div></td>
+        <td height="40"><div align="center"><span class="STYLE1"><?php echo $val['school_master']; ?></span></div></td>
+        <td height="40"><div align="center"><span class="STYLE1"><?php  echo $count[$s];  ?></span></div></td>
+        <td height="40"><div align="center"><span class="STYLE1"><?php echo $money1[$s];  ?></span></div></td>
+        <td height="40"><div align="center"><span class="STYLE1"><?php  echo  $val['note']; ;?></span></div></td>
+        <td height="40">
+        <?php if($_SESSION['power'] == 2 | $_SESSION['power'] == 3):?>
+        	<div align="center">
+        		<span class="STYLE4">
+        			<a href="__GROUP__/Researcher/researcher?id=<?php echo $val['id']; ?>&study_branch=<?php echo $val['study_branch']; ?>" ><img src="__PUBLIC__/images/edt.gif" width="16" height="16"  border="0" />编辑</a>
+        			<a href="__GROUP__/Sour/de?id=<?php echo $val['id']; ?>&study_branch=<?php echo $val['study_branch']; ?>"   onclick="return confirm('确定将此记录删除?')"><img src="__PUBLIC__/images/del.gif" border="0" width="16" height="16" />删除</a> 
+        		</span>
+        	</div>
+        <?php endif;?></td>
+      </tr>
+           <?php $s++;$i++; endforeach; ?>
+           <?php else: ?>
+					<p style="background:url(/Public/images/admin/top_bj.gif) repeat-x;margin:0px;height:20px">暂时没有内容！</p>
+			<?php endif; ?>
+			<tr height="30px;">
+			  		<td height="20" colspan="3" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">教授总人数</span></div></td>
+					<td height="20" colspan="2"  bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">副教授总人数</span></div></td>
+					<td height="20"  colspan="3"  bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">博士总人数</span></div></td>
+					<td height="20"  colspan="2"  bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">硕士总人数</span></div></td>
+			  		<td height="20"  bgcolor="#FFFFFF"><div align="center"><span class="STYLE1"></span></div></td>
+			  </tr>
+			  <tr height="30px;">
+			  		<td height="20" colspan="3" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1"><?php echo $jia;?></span></div></td>
+					<td height="20" colspan="2"  bgcolor="#FFFFFF"><div align="center"><span class="STYLE1"><?php echo $fujia;?></span></div></td>
+					<td height="20"  colspan="3"  bgcolor="#FFFFFF"><div align="center"><span class="STYLE1"><?php echo $bosh;?></span></div></td>
+					<td height="20"  colspan="2"  bgcolor="#FFFFFF"><div align="center"><span class="STYLE1"><?php echo $shuosh;?></span></div></td>
+			  		<td height="20"  bgcolor="#FFFFFF"><div align="center"><span class="STYLE1"></span></div></td>
+			  </tr>
+       </table>
+								      
+						        </td>
+						        <td width="8" background="__PUBLIC__/images/tab_15.gif">&nbsp;</td>
+				      </tr>
+				    </table>
+		    </td>
+  </tr>
+ <!-- 。。 。。。。。。。。底部分页。。。。。。。。。 -->
+<div>
+	<table width="95%" height="20px;" style="width:95%;heigh:20px;margin-bottom:20px;" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			
+		    <td align="right"  style="color:#336699;">共<?php echo "$page";?></td>
+			
+		</tr>
+   	</table> 
+</div>
+<script language="javascript">
+	//changeTable("表格名称","奇数行背景","偶数行背景","鼠标经过背景","点击后背景");
+	changeTable("senfe","#fff","#f1f4f8","#cfc","#7ab9f0");
+	</script>
+</body>
+</html>

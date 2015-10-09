@@ -1,0 +1,2641 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script>
+	var contextPath = '/sgo';	
+	var userId = 'null';
+	var userLoginName = 'null';
+	var userName = 'null';
+	var userRoles = 'null';
+	var userGroupsId = 'null';
+	var userGroupsName = 'null';
+	
+	//è®¾ç½®Cookie
+	function setCookie(name,value,expires,path,domain,secure) { 
+  		document.cookie = name + "=" + escape (value) + 
+	    ((expires) ? "; expires=" + expires.toGMTString() : "") + 
+	    ((path) ? "; path=" + path : "") + 
+	    ((domain) ? "; domain=" + domain : "") + ((secure) ? "; secure" : ""); 
+	}
+	
+	//è·åCookie
+	function getCookie(name) { 
+	    var prefix = name + "=" 
+	    var start = document.cookie.indexOf(prefix) 
+	
+	    if (start==-1) { 
+	        return null; 
+	    } 
+	    
+	    var end = document.cookie.indexOf(";", start+prefix.length) 
+	    if (end==-1) { 
+	        end=document.cookie.length; 
+	    } 
+	
+	    var value=document.cookie.substring(start+prefix.length, end) 
+	    return unescape(value); 
+	}
+	
+	/** 页面公共链接 */
+	//到达中心
+	function showArrivalCenter(){
+		window.open(contextPath+'/pages/home/arriveCenter.jsp');
+	}
+	
+	//窗口分布
+	function showFloorLayout(){
+		window.open(contextPath+'/pages/home/floorLayout.jsp');
+	}
+	
+	//交通导航
+	function showCommunication() {
+		window.open(contextPath+'/pages/home/communication.jsp');
+	}
+	
+	//周边环境
+	function showAroundSite() {
+		window.open(contextPath+'/pages/home/aroundSite.jsp');
+	}
+</script>
+		<title>网上咨询-投诉受理</title>
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<link href="__PUBLIC__/Css/default/newsty.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript" src="__PUBLIC__/Js/jquery-1.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/Js/jquery.js"></script>
+		<link href="__PUBLIC__/Css/default/zhinan-bg.css" type="text/css" rel="stylesheet">
+		<link href="__PUBLIC__/Css/default/head-bg.css" type="text/css" rel="stylesheet">
+		<link href="__PUBLIC__/Css/default/zhinan.css" type="text/css" rel="stylesheet">
+		<link href="__PUBLIC__/Css/default/headnew.css" type="text/css" rel="stylesheet">
+		<style type="text/css">
+			.type_style_one {
+				width: 124px;
+				height: 25px;
+				float: left;
+				background-image: url(__PUBLIC__/Images/default/Xingzheng/zwxx_19.gif);
+				background-repeat: no-repeat;
+				padding-top: 12px;
+				text-align: center;
+			}
+			
+			.type_style_two {
+				width: 124px;
+				height: 25px;
+				float: left;
+				background-image: url(__PUBLIC__/Images/default/Xingzheng/zwxx_20.gif);
+				background-repeat: repeat-x;
+				padding-top: 12px;
+				text-align: center;
+			}
+			
+			.wenzi_h_one_ly {
+				width: 706px;
+				float: left;
+				margin: 0 auto;
+				margin-top: 5px;
+				background-image: url(__PUBLIC__/Images/default/Xingzheng/zwxx_20.gif);
+				background-repeat: repeat-x;
+			}
+			
+			.home_sty_leftboxxs {
+				width: 737px;
+				float: right;
+				display: inline;
+				background-image: url(__PUBLIC__/Images/default/Xingzheng/bg_09.gif);
+				background-repeat: repeat-y;
+			}
+			
+			body {
+				margin: 0;
+				font-size: 12px;
+			}
+		</style>
+		<script language="javascript" type="text/javascript">
+			function tabChangeInfo(id){
+				var isTab01 = document.getElementById("infoOne").style.display;
+				var isTab02 = document.getElementById("infoTwo").style.display;
+				var div01 = document.getElementById("onex").style.className;
+				var div02 = document.getElementById("twox").style.className;
+				if(id=="onex"){
+					if(isTab01!="nonex" && isTab02=="nonex"){
+						return;
+					}else{
+						document.getElementById("infoOne").style.display="inline";
+						document.getElementById("infoTwo").style.display="none";
+						$("#onex").removeClass("type_style_two");
+						$("#twox").removeClass("type_style_one");
+						$("#onex").addClass("type_style_one");
+						$("#twox").addClass("type_style_two");
+					}
+				}else{
+					if(isTab02!="none" && isTab01=="none"){
+						return;
+					}else{
+						document.getElementById("infoOne").style.display="none";
+						document.getElementById("infoTwo").style.display="inline";
+						$("#onex").removeClass("type_style_one");
+						$("#twox").removeClass("type_style_two");
+						$("#onex").addClass("type_style_two");
+						$("#twox").addClass("type_style_one");
+					}
+				}
+			}
+			function tabChangeType(id){
+				var dis01 = document.getElementById("divOne").style.display;
+				var dis02 = document.getElementById("divTwo").style.display;
+				var cla01 = document.getElementById("one").style.className;
+				var cla02 = document.getElementById("two").style.className;
+				if(id=="one"){
+					if(dis01!="none" && dis02=="none"){
+						return;
+					}else{
+						document.getElementById("divOne").style.display="inline";
+						document.getElementById("divTwo").style.display="none";
+						$("#one").removeClass("type_style_two");
+						$("#two").removeClass("type_style_one");
+						$("#one").addClass("type_style_one");
+						$("#two").addClass("type_style_two");
+					}
+				}else{
+					if(dis02!="none" && dis01=="none"){
+						return;
+					}else{
+						document.getElementById("divOne").style.display="none";
+						document.getElementById("divTwo").style.display="inline";
+						$("#one").removeClass("type_style_one");
+						$("#two").removeClass("type_style_two");
+						$("#one").addClass("type_style_two");
+						$("#two").addClass("type_style_one");
+					}
+				}
+			}
+			var checkCodeUrl = "";
+			//重新加载验证码图片
+			function reloadCheckCode(id){
+				var imgCheckCode = document.getElementById(id);
+				if(checkCodeUrl){
+					imgCheckCode.src = checkCodeUrl+"?nocache="+new Date().getTime();
+				}else{
+					checkCodeUrl = imgCheckCode.src;
+					imgCheckCode.src = checkCodeUrl+"?nocache="+new Date().getTime();
+				}
+			}
+			
+			//保存
+			function btnSubmitOne(){
+				//标题
+				var title = $("#txtTitle")[0].value;
+				//if(!title.trim()){
+				if(title.length==0){
+
+					$("#txtTitle")[0].focus();
+					alert("请输入咨询标题");
+					return;
+				}
+				//内容
+				var description = $("#txtDescription")[0].value;
+				//if(!description.trim()){
+				if(description.length==0){
+					$("#txtDescription")[0].focus();
+					alert("请输入咨询内容");
+					return;
+				}else if(description.length > 2000){
+					$("#txtDescription")[0].focus();
+					alert("咨询内容不能超过2000个字符");
+					return;
+				}
+				//受理部门
+				var deptValue = $("#comDept")[0].value;
+				//if(!deptValue.trim()){
+				if(deptValue.length==0){
+					$("#comDept")[0].focus();
+					alert("请选择受理部门");
+					return;
+				}
+				//姓名
+				var name = $("#txtName")[0].value;
+				//if(!name.trim()){
+				if(name.length==0){
+					$("#txtName")[0].focus();
+					alert("请输入咨询人");
+					return;
+				}
+				//手机号码
+				var telValue = $("#txtTel")[0].value;
+				if(isNaN(telValue) || telValue.length != 11){
+					$("#txtTel")[0].focus();
+					alert("请输入正确的手机号码");
+					return;
+				}
+				//验证码
+				if($("#txtCheckcode")[0].value.length != 4){
+					$("#txtCheckcode")[0].focus();
+					alert("请输入正确的验证码");
+					return;
+				}
+				$('#formQues').submit();
+			}
+			$(document).ready(function(){
+				//设置为异步提交表单
+				$('#formQues').submit(function() {
+					// 提交表单
+					$(this).ajaxSubmit(function(data){
+						if(data=="验证码错误，请重新输入"){
+							alert(data);
+							$("#txtCheckcode")[0].focus();
+							reloadCheckCode('imgCheckCodeOne');
+						}else{
+							$("#btnSave")[0].style.display = "none";
+							alert("您的问题已提交，请等待审核");
+							//window.location.reload(contextPath+"/egs/site/ias/IasConsultAction!getWszxAction.action?type=subject");
+							window.location.reload(contextPath+"/egs/site/ias/IasConsultAction!getAskQuesAction.action");
+						}
+			        });
+					return false;
+				});
+				
+				//设置为异步提交表单
+				$('#formTousu').submit(function() {
+					// 提交表单
+					$(this).ajaxSubmit(function(data){
+						if(data=="验证码错误，请重新输入"){
+							alert(data);
+							$("#validateCode")[0].focus();
+							reloadCheckCode('imgCheckCodeTwo');
+						}else{
+							$("#btnSave")[0].style.display = "none";
+							alert("您的问题已提交，请等待审核");
+							//window.location.reload(contextPath+"/egs/site/ias/IasConsultAction!getWszxAction.action?type=subject");
+							window.location.reload(contextPath+"/egs/site/ias/IasConsultAction!getAskQuesAction.action");
+						}
+			        });
+					return false;
+				});
+			});
+			function formSubmit(){
+				if(!volidateForm()) {
+					return;
+				}else{
+					$('#formTousu').submit();
+				}
+			}
+			function volidateForm(){
+				var mobRegx = /^[1][3-8]\d{9}$/;
+				var emailRegx = /^[a-zA-Z0-9_]+@[a-zA-Z0-9]+.[a-z][a-z.]{2,8}$/;
+				//标题
+				var title = $("#title")[0].value;
+				if(title.length==0){
+					$("#title")[0].focus();
+					alert("请输入投诉标题");
+					return false;
+				}
+				//内容
+				var contents = $("#contents")[0].value;
+				if(contents.length==0){
+					$("#contents")[0].focus();
+					alert("请输入投诉内容");
+					return false;
+				}else if(contents.length > 2000){
+					$("#contents")[0].focus();
+					alert("投诉内容不能超过2000个字符");
+					return false;
+				}
+				//受理部门
+				var tsDept = $("#tsDept")[0].value;
+				if(tsDept.length==0){
+					$("#tsDept")[0].focus();
+					alert("请选择投诉部门");
+					return false;
+				}
+				//姓名
+				var complainName = $("#complainName")[0].value;
+				if(complainName.length==0){
+					$("#complainName")[0].focus();
+					alert("请输入投诉人姓名");
+					return false;
+				}
+				//手机号码
+				var mobile = $("#mobile")[0].value;
+				if(isNaN(mobile) || mobile.length != 11){
+					$("#mobile")[0].focus();
+					alert("请输入正确的手机号码");
+					return false;
+				}
+				if(!mobRegx.test(mobile)){
+					$("#mobile")[0].focus();
+					alert("手机号码输入不正确");
+					return false;
+				}
+				//email
+				var email = $("#email")[0].value;
+				if(email.length==0){
+					$("#email")[0].focus();
+					alert("请输入正确的电子邮箱");
+					return false;
+				}
+				if(!emailRegx.test(email)){
+					$("#email")[0].focus();
+					alert("电子邮箱输入不正确");
+					return false;
+				}
+				//验证码
+				if($("#validateCode")[0].value.length != 4){
+					$("#validateCode")[0].focus();
+					alert("请输入正确的验证码");
+					return false;
+				}
+				return true;
+			}
+		</script>
+		<script type="text/javascript">
+			var contextPath = "/sgo";
+			//打开精彩推荐
+			function getDetailAnswer(quesId){
+				//递增问题点击率
+				addQuesClickCount(quesId);
+				
+				var url = contextPath + "/egs/site/ias/IasConsultAnswerAction!getDetailAnswerAction.action?quesId="+quesId;
+				window.open(url, "_blank");
+			}
+			
+			//打开待回复、最受关注问题
+			function getReplyQues(quesId, type){
+				//递增问题点击率
+				addQuesClickCount(quesId);
+				
+				var url = contextPath + "/egs/site/ias/IasConsultAnswerAction!getReplyQuesAction.action?quesId="+quesId+"&type="+type;
+				window.open(url, "_blank");
+			}
+			
+			//递增问题点击率
+			function addQuesClickCount(quesId){
+				$.ajax({
+					   type: "post",
+					   url: contextPath+"/egs/site/ias/IasConsultAction!addQuesClickCountAction.action",
+					   data: "quesId="+quesId,
+					   success: function(data){
+					   }
+					});
+			}
+			
+			//我要提问
+			function askQues(){
+				var url = contextPath + "/egs/site/ias/IasConsultAction!getAskQuesAction.action";
+				
+				if($("#txtQtClassId") && $("#txtQtClassId")[0] && $("#txtQtClassId")[0].value){
+					url += "?classId="+$("#txtQtClassId")[0].value;
+				}
+				window.location.href = url;
+			}
+			
+			//首页连接
+			function showIndex(){
+				window.location.href = contextPath + "/index.action";
+			}
+			
+			//周边环境
+			function showAroundSite() {
+				window.open(contextPath+'/pages/home/aroundSite.jsp');
+			}
+		</script>
+	</head>
+	<body>
+<script>
+function skip(){
+	$.ajax({
+	   type: "POST",
+	   url: "skip.action",
+	   success: function(msg){
+	   var json = eval("("+msg+")");
+	     //alert( json.logintype+"    "+json.key);
+	     window.open("http://192.168.1.157:8080/ssodt.jsp?key="+json.key+"&logintype="+json.logintype);
+	   }
+	});
+}
+
+function register(){
+	var url = "/sgo/pages/common/register_index.jsp";
+	window.location.href=url; 
+}
+</script>
+<div class="top">
+<div class="top_pic">
+<div class="nav">
+	<div class="navright">
+		<ul>
+			<li class="orage">
+				<a href="javascript:void(0)" onclick="showIndex();"><img src="__PUBLIC__/Images/default/Xingzheng/sy_03.gif"> </a>
+			</li>
+
+			<li class="deep_red">
+				 <a href="http://www.whhome.gov.cn/sgo/egs/site/cga/project/xzspAction.action" target="_blank"><img src="__PUBLIC__/Images/default/Xingzheng/xz_05.gif"> </a>
+			</li>
+
+			<li class="deep_lan">
+				<a href="http://59.175.199.12/" target="_blank"><img src="__PUBLIC__/Images/default/Xingzheng/home_07.gif"> </a>
+			</li>
+			
+			<li class="deep_purple "><a href="http://www.whhome.gov.cn/sgo/egs/site/cga/project/zjfwAction.action" target="_blank"><img src="__PUBLIC__/Images/default/Xingzheng/fuwu110_27.gif"> </a>
+			</li>
+
+ 			<li class="deep_yellow">
+				<a href="http://www.whhome.gov.cn/sgo/egs/site/cms/channelInfo/cmslist.action" target="_blank"><img src="__PUBLIC__/Images/default/Xingzheng/home_09.gif"> </a>
+			</li>
+
+			<li class="deep_blue"><a href="http://www.whhome.gov.cn/sgo/pages/index/activeChild.jsp" target="_blank"><img src="__PUBLIC__/Images/default/Xingzheng/fuwu110_271.gif"></a>
+			</li>
+
+			<li class="deep_green">
+				<a href="http://www.wpeh.com.cn/" target="_blank"><img src="__PUBLIC__/Images/default/Xingzheng/home_11.gif"> </a>
+			</li>
+		</ul>
+	</div>
+	
+ </div>
+ </div>
+</div>
+<script type="text/javascript">
+
+	//网上办事页面连接
+	function showProjectNet(){
+		window.location.href =  "/sgo/egs/site/cga/project/projectNet-list.action";
+	}
+	
+	//首页连接
+	function showIndex(){
+		window.location.href = "/sgo/index.action";
+	}
+	
+	//政务信息
+	function showCmsIndex(){
+		window.location.href = "/sgo/egs/site/cms/channelInfo/cmslist.action";
+	}
+//-->
+</script>
+
+		<input name="classId" value="" type="hidden">
+		<div class="mainbg0">
+		<div class="div254"></div>
+		<div class="home_sty_midbox1">
+			<div class="home_sty_leftboxxs">
+				<div class="wenzi_h_one_ly" style="margin-bottom:8px; margin-top:2px; margin-left:23px; margin-right:2px;">
+						<div class="left_ly">
+							<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_18.gif" height="37" width="13">
+						</div>
+						<div id="onex" class="type_style_one">
+							<a href="javascript:void(0);" class="r2" onmouseover="tabChangeInfo('onex');">网上咨询</a>
+						</div>
+						<div id="twox" class="type_style_two">
+							<a href="javascript:void(0);" class="r2" onmouseover="tabChangeInfo('twox');">网上投诉</a>
+						</div>
+						<div class="left_lyr">
+							<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_37.gif" height="37" width="13">
+						</div>
+					</div>
+				
+				
+				<div id="infoOne" class="home_sty_xs" style="display:inline;">
+					<div class="wenzi_h_onee">
+						<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_06.gif" height="12" width="12">
+						网上咨询最新已解答问题
+					</div>
+					<div class="bjcx_boxx">
+						<table class="graytxt" style="" cellpadding="0" cellspacing="0" align="left" border="0" width="48%">
+							<tbody><tr>
+								<td colspan="2" align="left" height="34">
+									<strong>最新已解答的问题:</strong>
+								</td>
+							</tr>
+							
+		            			<tr>
+									<td align="center" height="28">
+										<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_10.gif" height="5" width="3">
+									</td>
+									<td class="bosy" align="left" height="28">
+										&nbsp;<a href="javascript:getReplyQues('456a83fd-006b-4d57-a585-7950668c923e',%20'1')" class="graytxt_color">
+											
+											
+												请问，市民之家窗口工作时间是几点？
+											
+										</a>
+									</td>
+								</tr>
+		            		
+		            			<tr>
+									<td align="center" height="28">
+										<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_10.gif" height="5" width="3">
+									</td>
+									<td class="bosy" align="left" height="28">
+										&nbsp;<a href="javascript:getReplyQues('c28a4113-cfca-408b-87dd-745cce768de8',%20'1')" class="graytxt_color">
+											
+											
+												请问，出入境管理处的咨询电话是多少？
+											
+										</a>
+									</td>
+								</tr>
+		            		
+		            			<tr>
+									<td align="center" height="28">
+										<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_10.gif" height="5" width="3">
+									</td>
+									<td class="bosy" align="left" height="28">
+										&nbsp;<a href="javascript:getReplyQues('71ac3cfb-5ba4-4d13-8a1a-6f4357fa19c4',%20'1')" class="graytxt_color">
+											
+											
+												请问，出入境管理处是否全部进驻到武汉市民之家？ 
+											
+										</a>
+									</td>
+								</tr>
+		            		
+		            			<tr>
+									<td align="center" height="28">
+										<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_10.gif" height="5" width="3">
+									</td>
+									<td class="bosy" align="left" height="28">
+										&nbsp;<a href="javascript:getReplyQues('b2bb27d0-30c7-44b7-886b-65305db35910',%20'1')" class="graytxt_color">
+											
+											
+												请问，武汉市民之家办理房产证吗？
+											
+										</a>
+									</td>
+								</tr>
+		            		
+		            			<tr>
+									<td align="center" height="28">
+										<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_10.gif" height="5" width="3">
+									</td>
+									<td class="bosy" align="left" height="28">
+										&nbsp;<a href="javascript:getReplyQues('cd3d2aa2-3a16-40b8-922d-01da1ec4d09b',%20'1')" class="graytxt_color">
+											
+											
+												三岁的小朋友需要办理港澳通行证么？
+											
+										</a>
+									</td>
+								</tr>
+		            		
+		            			<tr>
+									<td align="center" height="28">
+										<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_10.gif" height="5" width="3">
+									</td>
+									<td class="bosy" align="left" height="28">
+										&nbsp;<a href="javascript:getReplyQues('d4b4d435-7389-4eef-8b0b-fa776daee2ef',%20'1')" class="graytxt_color">
+											
+											
+												租赁合同上的租赁期限还没有生效，能否申办执照？ 
+											
+										</a>
+									</td>
+								</tr>
+		            		
+							<tr>
+								<td colspan="2" class="org_color" align="right" height="35">
+									<!-- <a href="#" class="org_color">查看您的留言回复和其它留言</a> -->
+								</td>
+							</tr>
+						</tbody></table>
+						<table class="graytxt" style="margin-right:5px;" cellpadding="0" cellspacing="0" align="right" border="0" width="48%">
+							<tbody><tr>
+								<td colspan="2" align="left" height="34">
+									<strong>最新待解答的问题:</strong>
+								</td>
+							</tr>
+							
+							
+		            			<tr>
+									<td align="center" height="28">
+										<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_10.gif" height="5" width="3">
+									</td>
+									<td class="bosy" align="left" height="28">
+										&nbsp;<a onclick="javascript:getReplyQues('9d1b191d-e723-4ae1-a39e-9b1457aad3c9','2')" href="javascript:void(0)">
+											
+											
+												武汉市居住证办理相关事项咨询
+											
+										</a>
+									</td>
+								</tr>
+		            		
+		            			<tr>
+									<td align="center" height="28">
+										<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_10.gif" height="5" width="3">
+									</td>
+									<td class="bosy" align="left" height="28">
+										&nbsp;<a onclick="javascript:getReplyQues('bc8603ca-dff0-4113-a20e-ed3e3051a0fb','2')" href="javascript:void(0)">
+											
+											
+												收看数字电视的优势有哪些？
+											
+										</a>
+									</td>
+								</tr>
+		            		
+		            			<tr>
+									<td align="center" height="28">
+										<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_10.gif" height="5" width="3">
+									</td>
+									<td class="bosy" align="left" height="28">
+										&nbsp;<a onclick="javascript:getReplyQues('c9db48bc-8b04-4323-b1ad-5921c1883fa8','2')" href="javascript:void(0)">
+											
+											
+												“武汉市文明旅游风景区”评选程序是怎样的？ 
+											
+										</a>
+									</td>
+								</tr>
+		            		
+		            		
+							<tr>
+								<td colspan="2" class="org_color" align="right" height="35">
+									<!-- <a href="#" class="org_color">查看您的留言回复和其它留言</a> -->
+								</td>
+							</tr>
+						</tbody></table>
+					</div>
+				</div>
+				
+				<div id="infoTwo" class="home_sty_xs" style="display:none;">
+					<div class="wenzi_h_onee">
+						<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_06.gif" height="12" width="12">
+						网上投诉最新已解答问题
+					</div>
+					<div class="bjcx_boxx">
+						<table class="graytxt" style="" cellpadding="0" cellspacing="0" align="left" border="0" width="96%">
+							<tbody><tr>
+								<td colspan="2" align="left" height="34">
+									<strong>最新已解答的问题:</strong>
+								</td>
+							</tr>
+							
+							
+		            			<tr>
+									<td align="center" height="28">
+										<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_10.gif" height="5" width="3">
+									</td>
+									<td class="bosy" align="left" height="28">
+										&nbsp;<a href="http://www.whhome.gov.cn/sgo/egs/site/extract/complain/queryComplainInfo.action?id=20232477-0d53-4b21-8390-204e7740ac3f" class="graytxt_color" target="_blank">
+											
+											
+												蔡甸区居民身份证遗失，可以在市民之家补办吗？
+											
+										</a>
+									</td>
+								</tr>
+		            		
+		            			<tr>
+									<td align="center" height="28">
+										<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_10.gif" height="5" width="3">
+									</td>
+									<td class="bosy" align="left" height="28">
+										&nbsp;<a href="http://www.whhome.gov.cn/sgo/egs/site/extract/complain/queryComplainInfo.action?id=1f1ed0ee-81a4-4b32-b0bf-67ab7e479a63" class="graytxt_color" target="_blank">
+											
+											
+												工商变更
+											
+										</a>
+									</td>
+								</tr>
+		            		
+		            			<tr>
+									<td align="center" height="28">
+										<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_10.gif" height="5" width="3">
+									</td>
+									<td class="bosy" align="left" height="28">
+										&nbsp;<a href="http://www.whhome.gov.cn/sgo/egs/site/extract/complain/queryComplainInfo.action?id=159042d0-d7e1-4e26-b213-97fa86dc6800" class="graytxt_color" target="_blank">
+											
+											
+												黄陂区政府网
+											
+										</a>
+									</td>
+								</tr>
+		            		
+		            			<tr>
+									<td align="center" height="28">
+										<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_10.gif" height="5" width="3">
+									</td>
+									<td class="bosy" align="left" height="28">
+										&nbsp;<a href="http://www.whhome.gov.cn/sgo/egs/site/extract/complain/queryComplainInfo.action?id=0c9ee4a4-2874-455e-a905-72e1db9dd357" class="graytxt_color" target="_blank">
+											
+											
+												办事效率超低--房产局3号窗口
+											
+										</a>
+									</td>
+								</tr>
+		            		
+		            			<tr>
+									<td align="center" height="28">
+										<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_10.gif" height="5" width="3">
+									</td>
+									<td class="bosy" align="left" height="28">
+										&nbsp;<a href="http://www.whhome.gov.cn/sgo/egs/site/extract/complain/queryComplainInfo.action?id=0a373f51-030f-468b-994a-fecebbc3c687" class="graytxt_color" target="_blank">
+											
+											
+												武汉到处是脏，乱
+											
+										</a>
+									</td>
+								</tr>
+		            		
+		            		
+							<tr>
+								<td colspan="2" class="org_color" align="right" height="35">
+									<a href="http://www.whhome.gov.cn/sgo/egs/site/extract/complain/queryComplainList.action" class="org_color" target="_blank">查看更多&gt;&gt;</a>
+								</td>
+							</tr>
+						</tbody></table>
+					</div>
+				</div>
+				
+				<div class="wenzi_h_one_dwdh">
+					<table class="graytxt" cellpadding="0" cellspacing="0" align="center" border="0" width="96%">
+						<tbody><tr>
+							<td colspan="4" align="left" height="34">
+								<strong>中心对外服务咨询电话：</strong>
+							</td>
+						</tr>
+						<tr>
+							<td align="center" height="28" width="42">
+								<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_11.gif" height="21" width="21">
+							</td>
+							<td align="left" height="28" width="162">
+								[行政投诉：027-82797902
+							</td>
+							<td align="center" height="28" width="40">
+								<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_13.gif" height="21" width="21">
+							</td>
+							<td align="left" height="28" width="442">
+								客服咨询：027-51318000
+							</td>
+						</tr>
+					</tbody></table>
+				</div>
+				<div class="home_sty_ly">
+					<div class="wenzi_h_one_ly">
+						<div class="left_ly">
+							<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_18.gif" height="37" width="13">
+						</div>
+						<div id="one" class="type_style_one">
+							<a href="javascript:void(0);" class="r2" onmouseover="tabChangeType('one');">我要咨询</a>
+						</div>
+						<div id="two" class="type_style_two">
+							<a href="javascript:void(0);" class="r2" onmouseover="tabChangeType('two');">我要投诉</a>
+						</div>
+						<div class="left_lyr">
+							<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_37.gif" height="37" width="13">
+						</div>
+					</div>
+					<div id="divOne" class="wenzi_h_one_ly11">
+						<form id="formQues" name="formQues" method="post" action="/sgo/egs/site/ias/IasConsultAction!askQuesAction.action">
+							<table class="graytxt" cellpadding="0" cellspacing="0" align="left" border="0" width="650">
+								<tbody><tr>
+									<td align="right" height="40" width="65">
+										咨询标题：
+									</td>
+									<td colspan="2" align="left" height="40">
+										<input id="txtTitle" name="title" size="50" style="width: 420px;" type="text">
+										&nbsp;
+										<span style="color: #f00;">*</span>
+									</td>
+								</tr>
+								<tr>
+									<td align="right" height="80">
+										咨询内容：
+									</td>
+									<td colspan="2" align="left" height="80">
+										<textarea id="txtDescription" name="description" cols="38" rows="4" style="width: 418px;"></textarea>
+										&nbsp;
+										<span style="color: #f00;">*</span>
+									</td>
+								</tr>
+								<tr>
+									<td align="right" height="40">
+										受理部门：
+									</td>
+									<td colspan="2" align="left" height="40">
+										<select id="comDept" name="deptId" style="border: 1px #a9a9a9 solid; width: 425px;">
+											<option selected="selected" value="">
+												-=请选择部门=-
+											</option>
+											
+												<option value="c55e8770-423d-409d-8bdb-7e095d2566c3">
+													市卫生计生委
+												</option>
+											
+												<option value="9fc3854e-d0a5-45d4-93d7-82030239a301">
+													市委人才办
+												</option>
+											
+												<option value="162a93ca-72db-4da8-a4ee-f8bd592b8bdf">
+													市财政局
+												</option>
+											
+												<option value="8c8ec5d3-239f-489f-9627-92bcbd1af1bf">
+													市人社局
+												</option>
+											
+												<option value="098b0a27-c80c-4929-b94c-1bbf7af76890">
+													市公安局
+												</option>
+											
+												<option value="29762d76-a778-491d-bf3a-f3c94f82ab72">
+													市商务局
+												</option>
+											
+												<option value="cb788116-d6ae-4916-96be-9a361a24e8cf">
+													市地税局
+												</option>
+											
+												<option value="1421c5f5-b4c6-4d17-ab5b-1ec629b2bfa4">
+													市工商局
+												</option>
+											
+												<option value="81fddca1-347a-47d3-aef1-ad9482995823">
+													市外侨办
+												</option>
+											
+												<option value="ba83cbd3-cd2d-4bae-a482-5b127c821d9e">
+													市教育局
+												</option>
+											
+												<option value="4c25bfc8-036a-48e1-af89-17ffdb02aba3">
+													市城管委
+												</option>
+											
+												<option value="9fffdc15-3899-47a3-aa84-c1f770c221ff">
+													市国税局
+												</option>
+											
+												<option value="f5889c6a-4156-4808-8d68-547d8902df50">
+													市国土规划局
+												</option>
+											
+												<option value="5fa76023-cd33-4741-9a75-072f5644433a">
+													市质监局
+												</option>
+											
+												<option value="d22de013-05c5-4db1-930f-9ed529540fca">
+													市城建委
+												</option>
+											
+												<option value="2675ae8b-c862-49e6-921f-4bf5e3eb1dcf">
+													市交通委
+												</option>
+											
+												<option value="5200869f-024c-405c-af37-3b750faec832">
+													市房管局
+												</option>
+											
+												<option value="30609601-2edb-4085-b72d-600acd057ef6">
+													审批协调
+												</option>
+											
+												<option value="fb7223be-a656-48c9-b874-f0d59acf1634">
+													市公安消防局
+												</option>
+											
+												<option value="bbb18ae2-bfc6-4a92-85e6-b9f19256a35e">
+													公积金中心
+												</option>
+											
+												<option value="5ACCD2A2-8362-4BE6-B3F1-9B54B693CE33">
+													市发改委
+												</option>
+											
+												<option value="E53E7037-E7A7-4727-98DA-300724642162">
+													市经信委
+												</option>
+											
+												<option value="3e3d13eb-8f0c-4d6e-9b89-2cc51ff90a95">
+													市民营办
+												</option>
+											
+												<option value="d9d32a42-4ed4-4d93-96ab-635ec2b02340">
+													市民政局
+												</option>
+											
+												<option value="5b676579-2d05-4fe8-8766-ca337057e540">
+													武汉海关
+												</option>
+											
+												<option value="c0b4b3a7-3626-47a9-8eac-15eac99d6eb4">
+													市民宗委
+												</option>
+											
+												<option value="1879b029-28df-4a2b-a734-754202be9642">
+													市科技局
+												</option>
+											
+												<option value="825d47e1-1e6d-44ad-b833-cd280f7457d2">
+													市物价局
+												</option>
+											
+												<option value="150fe335-9f2a-4d19-941f-74f11bbd813b">
+													市旅游局
+												</option>
+											
+												<option value="ea15449d-20a5-435b-8203-f8ec3edca664">
+													市水务局
+												</option>
+											
+												<option value="a2ee6f6f-784e-46fe-a754-8b2863688c13">
+													市司法局
+												</option>
+											
+												<option value="97681edd-f7c4-4a7a-ae13-fee0708fba8d">
+													市安监局
+												</option>
+											
+												<option value="dddf8b13-2b25-4754-a7fc-c2e7f433e599">
+													市文新广局
+												</option>
+											
+												<option value="6804dbd8-e78a-4dea-801a-9dde4b691e67">
+													市民防办
+												</option>
+											
+												<option value="7e83ad39-71d5-4f44-9cdd-f9e57989d93c">
+													市食药监局
+												</option>
+											
+												<option value="1295edea-984f-4ae8-83b7-dc31615a3904">
+													市档案局
+												</option>
+											
+												<option value="6e93df75-c167-4718-ad12-33c88e8248d4">
+													市林业局
+												</option>
+											
+												<option value="4443fa7e-007b-4576-a9dd-6356ff2bbad6">
+													市气象局
+												</option>
+											
+												<option value="32fc2b36-c71d-4de3-81b5-9176f7590797">
+													市老龄委
+												</option>
+											
+												<option value="f2d8aa0b-2383-4234-a721-215d87f4b233">
+													市残联
+												</option>
+											
+												<option value="d97f1926-45eb-467d-9ecd-48d1a1480d1b">
+													市统计局
+												</option>
+											
+												<option value="7276592c-7c85-43dd-8e44-f65f0749acf3">
+													市信产办
+												</option>
+											
+												<option value="03c0f1a0-b67b-49f5-afe7-1ce34818f477">
+													市国家安全局
+												</option>
+											
+												<option value="48858fe3-31e6-4519-a0a9-a50af5d7706f">
+													市环保局
+												</option>
+											
+												<option value="8e8bbe5c-a3d9-4d9f-8f19-8a03f60e1945">
+													市园林局
+												</option>
+											
+												<option value="c11788f8-f3fa-48fd-b24a-ed68ed748cff">
+													市农业局
+												</option>
+											
+												<option value="5e37c92b-0fcc-4537-a0db-c3a8ad58647f">
+													市烟草局
+												</option>
+											
+												<option value="8127bf55-0ea6-4767-be6b-bf9708c6482f">
+													外汇管理局
+												</option>
+											
+												<option value="397cfbbf-2fcb-46ed-8944-367d3351c7a3">
+													市体育局
+												</option>
+											
+												<option value="6320478b-a705-438d-a966-efbd830b94a7">
+													市供销社
+												</option>
+											
+												<option value="32cbb9c1-b836-47b0-8b4b-06b6c0203a2e">
+													湖北检验检疫
+												</option>
+											
+												<option value="bc8fe231-6023-4503-b6a3-1e74ad034f42">
+													武汉供电公司
+												</option>
+											
+												<option value="95b561ed-c968-4bc4-b2fe-2646378188a9">
+													市天然气公司
+												</option>
+											
+												<option value="6835f89e-ca9b-4e79-a5fd-cfa069517806">
+													市水务集团
+												</option>
+											
+												<option value="9e715cfb-2b29-4258-9e89-df1c734cee26">
+													东湖风景区
+												</option>
+											
+												<option value="834718ef-18ca-413f-984f-4dcf4288fdae">
+													市粮食局
+												</option>
+											
+												<option value="434cb435-fdde-462c-9da2-869e5c72ff41">
+													中国电信
+												</option>
+											
+												<option value="6fe3e1ee-0980-45f9-a80b-16f53d4e732a">
+													中国移动
+												</option>
+											
+												<option value="b666ddab-98d2-4b9b-885b-f592110baf2a">
+													中国联通
+												</option>
+											
+												<option value="0e57814e-c927-4a33-a36a-b654caf93106">
+													武汉通
+												</option>
+											
+												<option value="53dbed71-f9e1-45fd-856a-53ea85821d63">
+													武汉有线
+												</option>
+											
+												<option value="9bd30f13-90ac-4b2c-a24d-0a68f513c173">
+													市贸促会
+												</option>
+											
+												<option value="065126a6-552e-493c-aca7-6ae1cee8cdc7">
+													湖北日报
+												</option>
+											
+												<option value="b38872b9-6288-4355-a992-fe7aeb409323">
+													投资项目代办
+												</option>
+											
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td align="right" height="40">
+										咨询人：
+									</td>
+									<td colspan="2" align="left" height="40">
+										<input id="txtName" name="name" size="50" style="width: 420px;" type="text">
+										&nbsp;
+										<span style="color: #f00;">*</span>
+										<input name="userId" value="" type="hidden">
+									</td>
+								</tr>
+								<tr>
+									<td align="right" height="40">
+										手机号码：
+									</td>
+									<td colspan="2" align="left" height="40">
+										<input id="txtTel" name="tel" size="50" style="width: 420px;" type="text">
+										&nbsp;
+										<span style="color: #f00;">*</span>
+									</td>
+								</tr>
+								<tr>
+									<td align="right" height="40">
+										验证码：
+									</td>
+									<td height="40" width="25%">
+										<input id="txtCheckcode" name="checkcode" size="20" style="width: 100px;" type="text">
+									</td>
+									<td height="40" width="55%">
+										<img id="imgCheckCodeOne" src="__PUBLIC__/Images/default/Xingzheng/PictureCheckCode.jpg" height="28" width="65">
+										<a href="javascript:void(0)" onclick="reloadCheckCode('imgCheckCodeOne')">&nbsp;看不清，换一个</a>
+									</td>
+								</tr>
+								<tr>
+									<td height="40">
+										&nbsp;
+									</td>
+									<td colspan="2" height="40">
+										<a id="btnSave" href="javascript:btnSubmitOne();"><img src="__PUBLIC__/Images/default/Xingzheng/zwxx_46.gif" border="0">
+										</a>
+										<a href="javascript:void();" onclick=""><img src="__PUBLIC__/Images/default/Xingzheng/zwxx_48.gif" border="0">
+										</a>
+									</td>
+								</tr>
+							</tbody></table>
+						</form>
+					</div>
+					<div id="divTwo" class="wenzi_h_one_ly11" style="display: none; margin-left:20px;">
+							<span><a href="http://www.whhome.gov.cn/sgo/pages/common/register_index.jsp" target="_blank" style="color:#FF0000; font-size:12px; font-weight:bolder;"> 如果您还未登录，请先登录</a> </span>
+						<form id="formTousu" name="formTousu" method="post" action="/sgo/egs/site/extract/complain/saveOrUpdate.action">
+							<table class="graytxt" cellpadding="0" cellspacing="0" align="left" border="0" width="510">
+								<tbody><tr>
+									<td align="right" height="40" width="65">
+										投诉标题：
+									</td>
+									<td colspan="3" align="left" height="40">
+										<input id="title" name="title" size="50" style="width: 420px;" type="text">
+										&nbsp;
+										<span style="color: #f00;">*</span>
+									</td>
+								</tr>
+								
+							
+								<tr>
+									<td align="right" height="80">
+										投诉内容：
+									</td>
+									<td colspan="3" align="left" height="80">
+										<textarea cols="38" rows="4" id="contents" name="contents" style="width: 418px;"></textarea>
+											&nbsp;
+											<span style="color: #f00;">*</span>
+									</td>
+								</tr>
+								<tr>
+									<td align="right" height="40">
+										投诉部门：
+									</td>
+									<td colspan="3" align="left" height="40">
+										<select id="tsDept" name="tsDept" style="border: 1px #a9a9a9 solid; width: 425px;">
+											<option selected="selected" value="">
+												-=请选择部门=-
+											</option>
+											
+												<option value="c55e8770-423d-409d-8bdb-7e095d2566c3">
+													武汉市卫生计生委
+												</option>
+											
+												<option value="9fc3854e-d0a5-45d4-93d7-82030239a301">
+													市委人才办
+												</option>
+											
+												<option value="162a93ca-72db-4da8-a4ee-f8bd592b8bdf">
+													武汉市财政局
+												</option>
+											
+												<option value="8c8ec5d3-239f-489f-9627-92bcbd1af1bf">
+													武汉市人力资源和社会保障局
+												</option>
+											
+												<option value="098b0a27-c80c-4929-b94c-1bbf7af76890">
+													武汉市公安局
+												</option>
+											
+												<option value="29762d76-a778-491d-bf3a-f3c94f82ab72">
+													武汉市商务局
+												</option>
+											
+												<option value="cb788116-d6ae-4916-96be-9a361a24e8cf">
+													武汉市地税局
+												</option>
+											
+												<option value="1421c5f5-b4c6-4d17-ab5b-1ec629b2bfa4">
+													武汉市工商行政管理局
+												</option>
+											
+												<option value="81fddca1-347a-47d3-aef1-ad9482995823">
+													武汉市人民政府外事侨务办公室
+												</option>
+											
+												<option value="ba83cbd3-cd2d-4bae-a482-5b127c821d9e">
+													武汉市教育局
+												</option>
+											
+												<option value="4c25bfc8-036a-48e1-af89-17ffdb02aba3">
+													武汉市城市管理委员会
+												</option>
+											
+												<option value="9fffdc15-3899-47a3-aa84-c1f770c221ff">
+													武汉市国税局
+												</option>
+											
+												<option value="f5889c6a-4156-4808-8d68-547d8902df50">
+													武汉市国土资源和规划局
+												</option>
+											
+												<option value="5fa76023-cd33-4741-9a75-072f5644433a">
+													武汉市质量技术监督局
+												</option>
+											
+												<option value="d22de013-05c5-4db1-930f-9ed529540fca">
+													武汉市城乡建设委员会
+												</option>
+											
+												<option value="2675ae8b-c862-49e6-921f-4bf5e3eb1dcf">
+													武汉市交通运输委员会
+												</option>
+											
+												<option value="5200869f-024c-405c-af37-3b750faec832">
+													武汉市住房保障和房屋管理局
+												</option>
+											
+												<option value="30609601-2edb-4085-b72d-600acd057ef6">
+													审批协调
+												</option>
+											
+												<option value="fb7223be-a656-48c9-b874-f0d59acf1634">
+													市公安消防局
+												</option>
+											
+												<option value="bbb18ae2-bfc6-4a92-85e6-b9f19256a35e">
+													武汉住房公积金管理中心
+												</option>
+											
+												<option value="5ACCD2A2-8362-4BE6-B3F1-9B54B693CE33">
+													武汉市发展与改革委员会
+												</option>
+											
+												<option value="E53E7037-E7A7-4727-98DA-300724642162">
+													武汉市经济和信息化委员会
+												</option>
+											
+												<option value="3e3d13eb-8f0c-4d6e-9b89-2cc51ff90a95">
+													市民营经济办公室
+												</option>
+											
+												<option value="d9d32a42-4ed4-4d93-96ab-635ec2b02340">
+													武汉市民政局
+												</option>
+											
+												<option value="5b676579-2d05-4fe8-8766-ca337057e540">
+													武汉海关
+												</option>
+											
+												<option value="c0b4b3a7-3626-47a9-8eac-15eac99d6eb4">
+													武汉市民族宗教事务委员会
+												</option>
+											
+												<option value="1879b029-28df-4a2b-a734-754202be9642">
+													武汉市科技局
+												</option>
+											
+												<option value="825d47e1-1e6d-44ad-b833-cd280f7457d2">
+													武汉市物价局
+												</option>
+											
+												<option value="150fe335-9f2a-4d19-941f-74f11bbd813b">
+													武汉市旅游局
+												</option>
+											
+												<option value="ea15449d-20a5-435b-8203-f8ec3edca664">
+													武汉市水务局
+												</option>
+											
+												<option value="a2ee6f6f-784e-46fe-a754-8b2863688c13">
+													武汉市司法局
+												</option>
+											
+												<option value="97681edd-f7c4-4a7a-ae13-fee0708fba8d">
+													武汉市安全生产监督管理局
+												</option>
+											
+												<option value="dddf8b13-2b25-4754-a7fc-c2e7f433e599">
+													武汉市文新广局
+												</option>
+											
+												<option value="6804dbd8-e78a-4dea-801a-9dde4b691e67">
+													武汉市人民防空办公室
+												</option>
+											
+												<option value="7e83ad39-71d5-4f44-9cdd-f9e57989d93c">
+													武汉市食品药品监督管理局
+												</option>
+											
+												<option value="1295edea-984f-4ae8-83b7-dc31615a3904">
+													武汉市档案局
+												</option>
+											
+												<option value="6e93df75-c167-4718-ad12-33c88e8248d4">
+													武汉市林业局
+												</option>
+											
+												<option value="4443fa7e-007b-4576-a9dd-6356ff2bbad6">
+													武汉市气象局
+												</option>
+											
+												<option value="32fc2b36-c71d-4de3-81b5-9176f7590797">
+													市老龄委
+												</option>
+											
+												<option value="f2d8aa0b-2383-4234-a721-215d87f4b233">
+													武汉市残疾人劳动服务中心
+												</option>
+											
+												<option value="d97f1926-45eb-467d-9ecd-48d1a1480d1b">
+													武汉市统计局
+												</option>
+											
+												<option value="7276592c-7c85-43dd-8e44-f65f0749acf3">
+													市信息产业办
+												</option>
+											
+												<option value="03c0f1a0-b67b-49f5-afe7-1ce34818f477">
+													武汉市国家安全局
+												</option>
+											
+												<option value="48858fe3-31e6-4519-a0a9-a50af5d7706f">
+													武汉市环保局
+												</option>
+											
+												<option value="8e8bbe5c-a3d9-4d9f-8f19-8a03f60e1945">
+													武汉市园林局
+												</option>
+											
+												<option value="c11788f8-f3fa-48fd-b24a-ed68ed748cff">
+													市农业局
+												</option>
+											
+												<option value="5e37c92b-0fcc-4537-a0db-c3a8ad58647f">
+													武汉市烟草专卖局
+												</option>
+											
+												<option value="8127bf55-0ea6-4767-be6b-bf9708c6482f">
+													国家外汇管理局湖北分局
+												</option>
+											
+												<option value="397cfbbf-2fcb-46ed-8944-367d3351c7a3">
+													市体育局
+												</option>
+											
+												<option value="6320478b-a705-438d-a966-efbd830b94a7">
+													市供销合作总社
+												</option>
+											
+												<option value="32cbb9c1-b836-47b0-8b4b-06b6c0203a2e">
+													湖北出入境检验检疫局
+												</option>
+											
+												<option value="bc8fe231-6023-4503-b6a3-1e74ad034f42">
+													武汉供电公司
+												</option>
+											
+												<option value="95b561ed-c968-4bc4-b2fe-2646378188a9">
+													市天然气有限公司
+												</option>
+											
+												<option value="6835f89e-ca9b-4e79-a5fd-cfa069517806">
+													市水务集团有限公司
+												</option>
+											
+												<option value="9e715cfb-2b29-4258-9e89-df1c734cee26">
+													武汉市东湖生态旅游风景区管理委员会
+												</option>
+											
+												<option value="834718ef-18ca-413f-984f-4dcf4288fdae">
+													武汉市粮食局
+												</option>
+											
+												<option value="434cb435-fdde-462c-9da2-869e5c72ff41">
+													中国电信武汉分公司
+												</option>
+											
+												<option value="6fe3e1ee-0980-45f9-a80b-16f53d4e732a">
+													中国移动武汉分公司
+												</option>
+											
+												<option value="b666ddab-98d2-4b9b-885b-f592110baf2a">
+													中国联通武汉分公司
+												</option>
+											
+												<option value="0e57814e-c927-4a33-a36a-b654caf93106">
+													武汉城市一卡通有限公司
+												</option>
+											
+												<option value="53dbed71-f9e1-45fd-856a-53ea85821d63">
+													武汉有线
+												</option>
+											
+												<option value="9bd30f13-90ac-4b2c-a24d-0a68f513c173">
+													中国国际贸易促进会武汉市分会
+												</option>
+											
+												<option value="065126a6-552e-493c-aca7-6ae1cee8cdc7">
+													湖北日报
+												</option>
+											
+												<option value="b38872b9-6288-4355-a992-fe7aeb409323">
+													投资项目代办
+												</option>
+											
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td align="right" height="40">
+										姓名：
+									</td>
+									<td align="left" height="40" width="180">
+										<input id="complainName" name="complainName" size="20" style="width: 120px;" type="text">
+										&nbsp;
+										<span style="color: #f00;">*</span>
+									</td>
+									<td align="right" height="40">
+										电话：
+									</td>
+									<td align="left" height="40">
+										<input id="mobile" name="mobile" size="20" style="width: 120px;" type="text">
+										&nbsp;
+										<span style="color: #f00;">*</span>
+									</td>
+								</tr>
+								<tr>
+									<td align="right" height="40">
+										E-mail：
+									</td>
+									<td height="40">
+										<input id="email" name="email" size="20" style="width: 120px;" type="text">
+										&nbsp;
+										<span style="color: #f00;">*</span>
+									</td>
+									<td align="right" height="40">
+										地址：
+									</td>
+									<td height="40">
+										<input id="address" name="address" size="30" style="width: 120px;" type="text">
+									</td>
+								</tr>
+								<tr>
+									<td align="right" height="40">
+										验证码：
+									</td>
+									<td height="40">
+										<input id="validateCode" name="validateCode" size="18" style="width: 120px;" type="text">
+									</td>
+									<td colspan="2" height="40">
+										<img id="imgCheckCodeTwo" src="__PUBLIC__/Images/default/Xingzheng/PictureCheckCode.jpg" height="28" width="65">
+										<a href="javascript:void(0)" onclick="reloadCheckCode('imgCheckCodeTwo')">&nbsp;看不清，换一个</a>
+									</td>
+								</tr>
+								<tr>
+									<td height="40">
+										&nbsp;
+									</td>
+									<td colspan="2" height="40">
+										<a href="javascript:void();" onclick="formSubmit();"><img src="__PUBLIC__/Images/default/Xingzheng/zwxx_46.gif" border="0">
+										</a>
+										<a href="javascript:void();" onclick=""><img src="__PUBLIC__/Images/default/Xingzheng/zwxx_48.gif" border="0">
+										</a>
+									</td>
+								</tr>
+							</tbody></table>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="home_styl_xs">
+				<div class="wenzi_leftbox">
+					资源交易
+				</div>
+				<div class="box_jy">
+					<ul>
+						<li class="widbox">
+							<img src="__PUBLIC__/Images/default/Xingzheng/1_62.gif" height="18" width="18">
+						</li><li class="widbox1">
+							<a href="http://59.175.199.12/Default_627,1.html" class="g1" target="_blank">建设工程</a>
+						</li><li class="widbox">
+							<img src="__PUBLIC__/Images/default/Xingzheng/1_65.gif" height="18" width="18">
+						</li><li class="widbox1">
+							<a href="http://59.175.199.12/Default_626,1.html" class="g1" target="_blank">政府采购</a>
+						</li><li class="widbox">
+							<img src="__PUBLIC__/Images/default/Xingzheng/1_69.gif" height="18" width="18">
+						</li><li class="widbox1">
+							<a href="http://59.175.199.12/Default_628,1.html" class="g1" target="_blank">土地交易</a>
+						</li><li class="widbox">
+							<img src="__PUBLIC__/Images/default/Xingzheng/169.gif" height="18" width="18">
+						</li><li class="widbox1">
+							<a href="http://59.175.199.12/Default_629,1.html" class="g1" target="_blank">医疗物资</a>
+						</li><li class="widbox">
+							<img src="__PUBLIC__/Images/default/Xingzheng/1_71.gif" height="18" width="18">
+						</li><li class="widbox1">
+							<a href="http://59.175.199.12/Default_631,1.html" class="g1" target="_blank">知识产权</a>
+						</li><li class="widbox">
+							<img src="__PUBLIC__/Images/default/Xingzheng/1_73.gif" height="18" width="18">
+						</li><li class="widbox1">
+							<a href="http://59.175.199.12/Default_630,1.html" class="g1" target="_blank">农村产权</a>
+					</li></ul>
+				</div>
+				<div class="stye_ly" style="clear:left;">
+					<div class="wenzi_h_oneer">
+						中心简介
+					</div>
+					<div class="bjcx_boxxly">
+						<table cellpadding="0" cellspacing="0" align="center" border="0" width="100%">
+							<tbody><tr>
+								<td colspan="3" class="txt_size" align="center" height="119">
+									<img src="__PUBLIC__/Images/default/Xingzheng/zwxx_22.gif" height="98" width="197">
+								</td>
+							</tr>
+						</tbody></table>
+						<table cellpadding="0" cellspacing="0" align="center" border="0" width="88%">
+							<tbody><tr>
+								<td class="gray_ly">
+									
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武汉市民之家位于湖北省武汉市江岸区金桥大道117
+号（三环线与金桥大道交汇处），占地面积9.92万平方米，建筑规模12.34万平方米，是武汉市重要的标志性、景观性建筑。市民之家项目被市政府列为
+2010年为民办理的"十件实事"之首，该工程于2010年7月开工建设，2012年9月投入使用。
+									市民之家建设按照"
+								</td>
+							</tr>
+							<tr>
+								<td align="right" height="40">
+									[
+									<a href="javascript:showAroundSite();" class="r2">查看全文</a>]
+								</td>
+							</tr>
+						</tbody></table>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		
+
+
+
+
+
+
+
+<!--<script type="text/javascript"
+	src="/sgo/pages/commons/js/jquery-1.6.2.min.js"></script>-->
+<style type="text/css">
+body {
+	margin: 0px;
+	font-size: 12px;
+	color: #000000;
+	font-family: Tahoma, Geneva, sans-serif, "宋体";
+}
+
+a img {
+	border: none;
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #000000;
+}
+
+.focus {
+	border: solid 0px #cccccc;
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+
+.nowbt {
+	color: #a50803;
+}
+
+.linkfl {
+	color: #666666;
+}
+
+.linkeven {
+	background-color: #f6f6f6;
+}
+
+.linktable td {
+	padding-left: 12px;
+	height: 25px;
+	border: 0px;
+}
+
+.bt01 {
+	color: #8d0101;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.home_bottom {
+	width: 987px;
+	margin: 0px auto;
+	height: 35px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-image: url(__PUBLIC__/Images/default/Xingzheng/img106.gif);
+	background-repeat: repeat-x;
+	border: 1px solid #d9d9d9;
+	border: 1px solid #d2d2d2;
+}
+
+.tit_text {
+	width: 102px;
+	height: 25px;
+	font-size: 14px;
+	color: #999999;
+	font-weight: bold;
+	margin-top: 10px;
+	float: left;
+}
+
+.tit_text1 {
+	width: 128px;
+	height: 19px;
+	font-size: 12px;
+	font-weight: bold;
+	float: left;
+	background-image: url(__PUBLIC__/Images/default/Xingzheng/img103.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	text-align: center;
+	padding-top: 16px;
+}
+
+.texone {
+	color: #bf5c07;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.tit_text2 {
+	width: 128px;
+	height: 19px;
+	font-size: 12px;
+	float: left;
+	background-image: url(__PUBLIC__/Images/default/Xingzheng/img_104.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	text-align: center;
+	padding-top: 16px;
+}
+
+.banq_bottom {
+	background-image: url(__PUBLIC__/Images/default/Xingzheng/img_110.gif);
+	background-repeat: repeat-x;
+	height: 100px;
+	text-align: center;
+	line-height: 24px;
+	padding-top: 39px;
+}
+</style>
+<script type="text/javascript">
+	function setDisplayById3(str, ids, index, class1, class2) {
+		for (i = 0; i <= ids; i++) {
+			if (i == index && document.getElementById(str + 'c' + i).style.display == "none") {
+				document.getElementById(str + i).className = class1;
+				document.getElementById(str + 'x' + i).className = "texone";
+				document.getElementById(str + 'c' + i).style.display = "";
+			} else {
+				document.getElementById(str + i).className = class2;
+				document.getElementById(str + 'x' + i).className = "";
+				document.getElementById(str + 'c' + i).style.display = "none";
+			}
+		}
+	}
+</script>
+<script type="text/javascript">
+	function Over_(obj,obj2){
+		$("#tab1").css({display:"none"});
+		$("#tab2").css({display:"none"});
+		$("#tab3").css({display:"none"});
+                $("#tab4").css({display:"none"});
+                $("#tab5").css({display:"none"});
+		$("#"+obj).css({display:"block"}); 
+		$("#tab td").css({"background":"white"});
+		$(obj2).css({"background":"#cccccc"});
+		$(obj2).css({"font-weight":"bolder"});
+		$(obj2).css({"color":"#5f5f5f"});
+	}
+</script>
+
+<!--添加一个最外层的div-->
+<div style="background-color:#FFFFFF">
+
+<div class="home_bottom">
+	<div class="tit_text">
+		网站导航
+	</div>
+	<div id="ii0" class="tit_text2">
+		<span id="iix0" onclick="setDisplayById3('ii',5,0,'tit_text1','tit_text2')">国务院各部委</span>
+	</div>
+	<div id="ii1" class="tit_text2">
+		<span id="iix1" onclick="setDisplayById3('ii',5,1,'tit_text1','tit_text2')">省内地市州</span>
+	</div>
+	<div id="ii3" class="tit_text2">
+		<span id="iix3" onclick="setDisplayById3('ii',5,3,'tit_text1','tit_text2')">各地政务服务中心</span>
+	</div>
+	<div id="ii2" class="tit_text2">
+		<span id="iix2" onclick="setDisplayById3('ii',5,2,'tit_text1','tit_text2')">各区市直各部门</span>
+	</div>
+	<div id="ii4" class="tit_text2">
+		<span id="iix4" onclick="setDisplayById3('ii',5,4,'tit_text1','tit_text2')">各区政务服务中心</span>
+	</div>
+	<div id="ii5" class="tit_text2">
+		<span id="iix5" onclick="setDisplayById3('ii',5,5,'tit_text1','tit_text2')">常用信息平台</span>
+	</div>
+</div>
+
+<table class="focus" cellpadding="0" cellspacing="0" align="center" border="0" width="1010">
+	<!-- <tr>
+		<td height="27" valign="top" style="background-color: #f4f4f4;">
+			<table border="0" cellpadding="0" cellspacing="0" width="978"
+				class="touzibt">
+				<tr>
+					<td width="80" height="27" class="bt01" colspan="3" align="right">
+						网站链接:&nbsp;&nbsp;
+					</td>
+					<td class="linkfl">
+						<a id="ii0" href="javascript:void(0);"
+							onclick="setDisplayById3('ii',5,0,'nowbt','')"
+							style="line-height: 27px; float: left;" onfocus="this.blur();">国务院部门&nbsp;|&nbsp;</a>
+						<a id="ii1" href="javascript:void(0);"
+							onclick="setDisplayById3('ii',5,1,'nowbt','')"
+							style="line-height: 27px; float: left;" onfocus="this.blur();">省市州政府网站&nbsp;|&nbsp;</a>
+						<a id="ii2" href="javascript:void(0);"
+							onclick="setDisplayById3('ii',5,2,'nowbt','')"
+							style="line-height: 27px; float: left;" onfocus="this.blur();">&nbsp;市级各区各部门&nbsp;|&nbsp;</a>
+						<a id="ii3" href="javascript:void(0);"
+							onclick="setDisplayById3('ii',5,3,'nowbt','')"
+							style="line-height: 27px; float: left;" onfocus="this.blur();">&nbsp;各地政务服务中心&nbsp;|&nbsp;</a>
+						<a id="ii4" href="javascript:void(0);"
+							onclick="setDisplayById3('ii',5,4,'nowbt','')"
+							style="line-height: 27px; float: left;" onfocus="this.blur();">&nbsp;区政务服务中心&nbsp;|&nbsp;</a>
+						<a id="ii5" href="javascript:void(0);"
+							onclick="setDisplayById3('ii',5,5,'nowbt','')"
+							style="line-height: 27px; float: left;" onfocus="this.blur();">&nbsp;常用信息平台</a>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>-->
+	<tbody><tr id="iic0" style="display: none">
+		<td valign="top">
+			<table class="linktable" cellpadding="0" cellspacing="0" align="center" border="0" width="1010">
+				<tbody><tr>
+					<td>
+						<a href="http://www.gov.cn/" target="_blank">中央政府门户网站</a>
+					</td>
+					<td>
+						<a href="http://www.mfa.gov.cn/" target="_blank">外交部</a>
+					</td>
+					<td>
+						<a href="http://www.ndrc.gov.cn/" target="_blank">发展改革委</a>
+					</td>
+					<td>
+						<a href="http://www.moe.gov.cn/" target="_blank">教育部</a>
+					</td>
+					<td>
+						<a href="http://www.most.gov.cn/" target="_blank">科技部</a>
+					</td>
+					<td>
+						<a href="http://www.miit.gov.cn/" target="_blank">工业和信息化部</a>
+					</td>
+					<td>
+						<a href="http://www.seac.gov.cn/" target="_blank">国家民委</a>
+					</td>
+				</tr>
+				<tr class="linkeven">
+					<td>
+						<a href="http://www.mps.gov.cn/" target="_blank">公安部</a>
+					</td>
+					<td>
+						<a href="http://www.mos.gov.cn/" target="_blank">监察部</a>
+					</td>
+					<td>
+						<a href="http://www.mca.gov.cn/" target="_blank">民政部</a>
+					</td>
+					<td>
+						<a href="http://www.moj.gov.cn/" target="_blank">司法部</a>
+					</td>
+					<td>
+						<a href="http://www.mof.gov.cn/" target="_blank">财政部</a>
+					</td>
+					<td>
+						<a href="http://www.mohrss.gov.cn/" target="_blank">人力资源社会保障部</a>
+					</td>
+					<td>
+						<a href="http://www.mlr.gov.cn/" target="_blank">国土资源部</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="http://www.mep.gov.cn/" target="_blank">环境保护部</a>
+					</td>
+					<td>
+						<a href="http://www.mohurd.gov.cn/" target="_blank">住房城乡建设部</a>
+					</td>
+					<td>
+						<a href="http://www.moc.gov.cn/" target="_blank">交通运输部</a>
+					</td>
+					<td>
+						<a href="http://www.china-mor.gov.cn/" target="_blank">铁道部</a>
+					</td>
+					<td>
+						<a href="http://www.mwr.gov.cn/" target="_blank">水利部</a>
+					</td>
+					<td>
+						<a href="http://www.agri.gov.cn/" target="_blank">农业部</a>
+					</td>
+					<td>
+						<a href="http://www.mofcom.gov.cn/" target="_blank">商务部</a>
+					</td>
+				</tr>
+				<tr class="linkeven">
+					<td>
+						<a href="http://www.mcprc.gov.cn/" target="_blank">文化部</a>
+					</td>
+					<td>
+						<a href="http://www.moh.gov.cn/" target="_blank">卫生部</a>
+					</td>
+					<td>
+						<a href="http://www.chinapop.gov.cn/" target="_blank">人口计生委</a>
+					</td>
+					<td>
+						<a href="http://www.pbc.gov.cn/" target="_blank">人民银行</a>
+					</td>
+					<td>
+						<a href="http://www.audit.gov.cn/" target="_blank">审计署</a>
+					</td>
+					<td>
+						<a href="http://www.sasac.gov.cn/" target="_blank">国资委</a>
+					</td>
+					<td>
+						<a href="http://www.customs.gov.cn/" target="_blank">海关总署</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="http://www.chinatax.gov.cn/" target="_blank">税务总局</a>
+					</td>
+					<td>
+						<a href="http://www.saic.gov.cn/" target="_blank">工商总局</a>
+					</td>
+					<td>
+						<a href="http://www.aqsiq.gov.cn/" target="_blank">质检总局</a>
+					</td>
+					<td>
+						<a href="http://www.chinasarft.gov.cn/" target="_blank">广电总局</a>
+					</td>
+					<td>
+						<a href="http://www.gapp.gov.cn/" target="_blank">新闻出版总署(版权局)</a>
+					</td>
+					<td>
+						<a href="http://www.sport.gov.cn/" target="_blank">体育总局</a>
+					</td>
+					<td>
+						<a href="http://www.chinasafety.gov.cn/" target="_blank">安全监管总局</a>
+					</td>
+				</tr>
+				<tr class="linkeven">
+
+					<td>
+						<a href="http://www.stats.gov.cn/" target="_blank">统计局</a>
+					</td>
+					<td>
+						<a href="http://www.forestry.gov.cn/" target="_blank">林业局</a>
+					</td>
+					<td>
+						<a href="http://www.sipo.gov.cn/" target="_blank">知识产权局</a>
+					</td>
+					<td>
+						<a href="http://www.cnta.gov.cn/" target="_blank">旅游局</a>
+					</td>
+					<td>
+						<a href="http://www.sara.gov.cn/" target="_blank">宗教局</a>
+					</td>
+					<td>
+						<a href="http://www.counsellor.gov.cn/" target="_blank">参事室</a>
+					</td>
+					<td>
+						<a href="http://www.ggj.gov.cn/" target="_blank">国管局</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="http://www.nbcp.gov.cn/" target="_blank">预防腐败局</a>
+					</td>
+					<td>
+						<a href="http://www.gqb.gov.cn/" target="_blank">侨办</a>
+					</td>
+					<td>
+						<a href="http://www.hmo.gov.cn/" target="_blank">港澳办</a>
+					</td>
+					<td>
+						<a href="http://www.chinalaw.gov.cn/" target="_blank">法制办</a>
+					</td>
+					<td>
+						<a href="http://www.xinhuanet.com/" target="_blank">新华社</a>
+					</td>
+					<td>
+						<a href="http://www.cas.cn/" target="_blank">中科院</a>
+					</td>
+					<td>
+						<a href="http://www.cssn.cn/" target="_blank"> 社科院 </a>
+					</td>
+				</tr>
+				<tr class="linkeven">
+					<td>
+						<a href="http://www.cae.cn/" target="_blank"> 工程院 </a>
+					</td>
+					<td>
+						<a href="http://www.drc.gov.cn/" target="_blank"> 发展研究中心 </a>
+					</td>
+					<td>
+						<a href="http://www.nsa.gov.cn/" target="_blank"> 行政学院 </a>
+					</td>
+					<td>
+						<a href="http://www.cea.gov.cn/" target="_blank"> 地震局 </a>
+					</td>
+					<td>
+						<a href="http://www.cma.gov.cn/" target="_blank"> 气象局 </a>
+					</td>
+					<td>
+						<a href="http://www.cbrc.gov.cn/" target="_blank"> 银监会 </a>
+					</td>
+					<td>
+						<a href="http://www.csrc.gov.cn/" target="_blank"> 证监会 </a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="http://www.circ.gov.cn/" target="_blank"> 保监会 </a>
+					</td>
+					<td>
+						<a href="http://www.serc.gov.cn/" target="_blank"> 电监会 </a>
+					</td>
+					<td>
+						<a href="http://www.ssf.gov.cn/" target="_blank"> 社保基金会 </a>
+					</td>
+					<td>
+						<a href="http://www.nsfc.gov.cn/" target="_blank"> 自然科学基金会 </a>
+					</td>
+					<td>
+						<a href="http://www.gwytb.gov.cn/" target="_blank"> 台办 </a>
+					</td>
+					<td>
+						<a href="http://www.scio.gov.cn/" target="_blank"> 新闻办 </a>
+					</td>
+					<td>
+						<a href="http://www.saac.gov.cn/" target="_blank"> 档案局 </a>
+					</td>
+				</tr>
+				<tr class="linkeven">
+					<td>
+						<a href="http://www.gjxfj.gov.cn/" target="_blank"> 信访局 </a>
+					</td>
+					<td>
+						<a href="http://www.chinagrain.gov.cn/" target="_blank"> 粮食局 </a>
+					</td>
+					<td>
+						<a href="http://www.tobacco.gov.cn/" target="_blank"> 烟草局 </a>
+					</td>
+					<td>
+						<a href="http://www.safea.gov.cn/" target="_blank"> 外专局 </a>
+					</td>
+					<td>
+						<a href="http://www.scs.gov.cn/" target="_blank"> 公务员局 </a>
+					</td>
+					<td>
+						<a href="http://www.soa.gov.cn/" target="_blank"> 海洋局 </a>
+					</td>
+					<td>
+						<a href="http://www.sbsm.gov.cn/" target="_blank"> 测绘局 </a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="http://www.caac.gov.cn/" target="_blank"> 民航局 </a>
+					</td>
+					<td>
+						<a href="http://www.post.gov.cn/" target="_blank"> 邮政局 </a>
+					</td>
+					<td>
+						<a href="http://www.sach.gov.cn/" target="_blank"> 文物局 </a>
+					</td>
+					<td>
+						<a href="http://www.sda.gov.cn/WS01/CL0001" target="_blank">
+							食品药品监管局 </a>
+					</td>
+					<td>
+						<a href="http://www.satcm.gov.cn/web2010/" target="_blank">
+							中医药局 </a>
+					</td>
+					<td>
+						<a href="http://www.safe.gov.cn/" target="_blank"> 外汇局 </a>
+					</td>
+					<td>
+						<a href="http://www.chinasafety.gov.cn/mjweb/mjindex07.htm" target="_blank"> 煤矿安监局 </a>
+					</td>
+				</tr>
+				<tr class="linkeven">
+					<td>
+						<a href="http://www.oscca.gov.cn/" target="_blank"> 密码局 </a>
+					</td>
+					<td>
+						<a href="http://www.cnsa.gov.cn/" target="_blank"> 航天局 </a>
+					</td>
+					<td>
+						<a href="http://www.caea.gov.cn/" target="_blank"> 原子能机构 </a>
+					</td>
+					<td>
+						<a href="http://www.china-language.gov.cn/" target="_blank">
+							国家语委 </a>
+					</td>
+					<td>
+						<a href="http://www.cpad.gov.cn/" target="_blank"> 国务院扶贫办 </a>
+					</td>
+					<td>
+						<a href="http://www.3g.gov.cn/" target="_blank"> 国务院三峡办 </a>
+					</td>
+					<td>&nbsp;
+						
+					</td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+	<tr id="iic1" style="display: none">
+		<td valign="top">
+			<table class="linktable" cellpadding="0" cellspacing="0" align="center" border="0" width="1010">
+				<tbody><tr>
+					<td>
+						<a href="http://www.hubei.gov.cn/" target="_blank">省人民政府</a>
+					</td>
+					<td>
+						<a href="http://www.wh.gov.cn/" target="_blank">武汉市</a>
+					</td>
+					<td>
+						<a href="http://www.xf.gov.cn/" target="_blank">襄阳市</a>
+					</td>
+					<td>
+						<a href="http://www.jingzhou.gov.cn/" target="_blank">荆州市</a>
+					</td>
+					<td>
+						<a href="http://www.yichang.gov.cn/" target="_blank">宜昌市</a>
+					</td>
+					<td>
+						<a href="http://www.hg.gov.cn/" target="_blank">黄冈市</a>
+					</td>
+					<td>
+						<a href="http://www.huangshi.gov.cn/" target="_blank">黄石市</a>
+					</td>
+				</tr>
+				<tr class="linkeven">
+					<td>
+						<a href="http://www.shiyan.gov.cn/" target="_blank">十堰市</a>
+					</td>
+					<td>
+						<a href="http://www.xiaogan.gov.cn/" target="_blank">孝感市</a>
+					</td>
+					<td>
+						<a href="http://www.jingmen.gov.cn/" target="_blank">荆门市</a>
+					</td>
+					<td>
+						<a href="http://www.xianning.gov.cn/" target="_blank">咸宁市</a>
+					</td>
+					<td>
+						<a href="http://www.suizhou.gov.cn/" target="_blank">随州市</a>
+					</td>
+					<td>
+						<a href="http://www.snj.gov.cn/" target="_blank">神农架林区</a>
+					</td>
+					<td>
+						<a href="http://www.enshi.gov.cn/" target="_blank">恩施州</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="http://www.xiantao.gov.cn/" target="_blank">仙桃市</a>
+					</td>
+					<td>
+						<a href="http://www.tianmen.gov.cn/" target="_blank">天门市</a>
+					</td>
+					<td>
+						<a href="http://www.hbqj.gov.cn/" target="_blank">潜江市</a>
+					</td>
+					<td>
+						<a href="http://www.ezhou.gov.cn/" target="_blank">鄂州市</a>
+					</td>
+					<td>&nbsp;
+						
+					</td>
+					<td>&nbsp;
+						
+					</td>
+					<td>&nbsp;
+						
+					</td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+	<tr id="iic2" style="display: none">
+		<td valign="top">
+			<table class="linktable" cellpadding="0" cellspacing="0" align="center" border="0" width="1010">
+
+				<tbody><tr>
+					<td>
+						<a href="http://www.jiangan.gov.cn/" target="_blank">江岸区</a>
+					</td>
+					<td>
+						<a href="http://www.jianghan.gov.cn/" target="_blank">江汉区</a>
+					</td>
+					<td>
+						<a href="http://www.qiaokou.gov.cn/" target="_blank">硚口区</a>
+					</td>
+					<td>
+						<a href="http://www.hanyang.gov.cn/" target="_blank">汉阳区</a>
+					</td>
+					<td>
+						<a href="http://www.wuchang.gov.cn/" target="_blank">武昌区</a>
+					</td>
+					<td>
+						<a href="http://www.qingshan.gov.cn/" target="_blank">青山区</a>
+					</td>
+					<td>
+						<a href="http://www.huangpi.gov.cn/" target="_blank">黄陂区</a>
+					</td>
+				</tr>
+				<tr class="linkeven">
+					<td>
+						<a href="http://www.hongshan.gov.cn/" target="_blank">洪山区</a>
+					</td>
+					<td>
+						<a href="http://www.dxh.gov.cn/" target="_blank">东西湖区</a>
+					</td>
+					<td>
+						<a href="http://www.jiangxia.gov.cn/" target="_blank">江夏区</a>
+					</td>
+					<td>
+						<a href="http://www.hannan.gov.cn/" target="_blank">汉南区</a>
+					</td>
+					<td>
+						<a href="http://www.caidian.gov.cn/" target="_blank">蔡甸区</a>
+					</td>
+					<td>
+						<a href="http://www.whxinzhou.gov.cn/" target="_blank">新洲区</a>
+					</td><td>
+						<a href="http://www.whxg.gov.cn/" target="_blank">武汉新港管委会</a>
+					</td>
+
+				</tr>
+				<tr>
+					<td>
+						<a href="http://www.wehdz.gov.cn/" target="_blank">东湖新技术开发区</a>
+					</td>
+					<td>
+						<a href="http://www.wedz.com.cn/" target="_blank">经济技术开发区</a>
+					</td>
+					<td>
+						<a href="http://www.wjs.cn/" target="_blank">吴家山经济技术开发区</a>
+					</td>
+					<td>
+						<a href="http://www.whdonghu.gov.cn/" target="_blank">东湖生态旅游风景区</a>
+					</td>
+					<td>
+						<a href="http://www.wcip.gov.cn/" target="_blank">化学工业区</a>
+					</td>
+					<td>&nbsp;
+						
+					</td>
+					<td>&nbsp;
+						
+					</td>
+				</tr>
+
+				<tr class="linkeven">
+					<td>
+						<a href="http://www.whjw.gov.cn/" target="_blank">市发改委</a>
+					</td>
+					<td>
+						<a href="http://www.whec.gov.cn/" target="_blank">市经信委</a>
+					</td>
+					<td>
+						<a href="http://www.zgwhjs.gov.cn/" target="_blank">市城建委</a>
+					</td>
+					<td>
+						<a href="http://www.whjt.gov.cn/" target="_blank">市交通运输委</a>
+					</td>
+					<td>
+						<a href="http://www.whmzzj.gov.cn/" target="_blank">市民宗委</a>
+					</td>
+					<td>
+						<a href="http://www.whfpc.gov.cn/" target="_blank">市计生委</a>
+					</td>
+					<td>
+						<a href="http://www.whst.gov.cn/" target="_blank">市科技局</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="http://www.wuhantour.gov.cn/" target="_blank">市旅游局</a>
+					</td>
+					<td>
+						<a href="http://www.wh-price.gov.cn/" target="_blank">市物价局</a>
+					</td>
+					<td>
+						<a href="http://www.whrsj.gov.cn/" target="_blank">市人社局</a>
+					</td>
+					<td>
+						<a href="http://www.wpl.gov.cn/" target="_blank">市国土规划局</a>
+					</td>
+					<td>
+						<a href="http://www.whwater.gov.cn/" target="_blank">市水务局</a>
+					</td>
+					<td>
+						<a href="http://www.whga.gov.cn/" target="_blank">市公安局</a>
+					</td>
+					<td>
+						<a href="http://www.whsfxz.gov.cn/" target="_blank">市司法局</a>
+					</td>
+				</tr>
+				<tr class="linkeven">
+					<td>
+						<a href="http://www.whmzj.gov.cn/" target="_blank">市民政局</a>
+					</td>
+					<td>
+						<a href="http://www.whnpw.gov.cn/" target="_blank">市新闻出版局</a>
+					</td>
+					<td>
+						<a href="http://www.whwhj.gov.cn/" target="_blank">市文化局</a>
+					</td>
+					<td>
+						<a href="http://www.whfao.gov.cn/" target="_blank">市外侨办</a>
+					</td>
+					<td>
+						<a href="http://www.whrf.gov.cn/" target="_blank">市民防办</a>
+					</td>
+					<td>
+						<a href="http://www.whfda.gov.cn/" target="_blank">市药监局</a>
+					</td>
+					<td>
+						<a href="http://www.whsafety.gov.cn/" target="_blank">市安监局</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="http://www.whsswj.gov.cn/" target="_blank">市商务局</a>
+					</td>
+					<td>
+						<a href="http://www.whcg.gov.cn/" target="_blank">市城管局</a>
+					</td>
+					<td>
+						<a href="http://www.whqx.gov.cn/" target="_blank">市气象局</a>
+					</td>
+					<td>
+						<a href="http://www.whdaj.gov.cn/" target="_blank">市档案局</a>
+					</td>
+					<td>
+						<a href="http://www.whgjj.cn/" target="_blank">市公积金中心</a>
+					</td>
+					<td>
+						<a href="http://www.whcl.net.cn/" target="_blank">市残联</a>
+					</td>
+					<td>
+						<a href="http://www.whly.gov.cn/" target="_blank">市林业局</a>
+					</td>
+				</tr>
+				<tr class="linkeven">
+					<td>
+						<a href="http://www.whbc.com.cn/" target="_blank">市广播影视局</a>
+					</td>
+					<td>
+						<a href="http://www.whhd.gov.cn/" target="_blank">市工商局</a>
+					</td>
+					<td>
+						<a href="http://www.whbii.gov.cn/" target="_blank">市信息产业办</a>
+					</td>
+					<td>
+						<a href="http://www.whtj.gov.cn/" target="_blank">市统计局</a>
+					</td>
+					<td>
+						<a href="javasript:void%280%29;" target="_blank">市国安局</a>
+					</td>
+					<td>
+						<a href="http://www.whbts.gov.cn/" target="_blank">市质监局</a>
+					</td>
+					<td>
+						<a href="http://www.whfg.gov.cn/" target="_blank">市房管局</a>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<a href="http://www.whcst.com/" target="_blank">一卡通</a>
+					</td>
+					<td>
+						<a href="http://www.whjyj.gov.cn/" target="_blank">市教育局</a>
+					</td>
+					<td>
+						<a href="http://www.whwsj.gov.cn/" target="_blank">市卫生局</a>
+					</td>
+					<td>
+						<a href="http://www.whepb.gov.cn/" target="_blank">市环保局</a>
+					</td>
+					<td>
+						<a href="http://www.whylj.gov.cn/" target="_blank">市园林局</a>
+					</td>
+					<td>
+						<a href="http://www.whczj.gov.cn/" target="_blank">市财政局</a>
+					</td>
+					<td>
+						<a href="http://www.hb-l-tax.gov.cn/" target="_blank">市地税局</a>
+					</td>
+				</tr>
+
+
+				<tr class="linkeven">
+					<td>
+						<a href="http://wuhan.hb-n-tax.gov.cn/" target="_blank">市国税局</a>
+					</td>
+					<td>
+						<a href="http://www.wuhanagri.gov.cn/" target="_blank">市农业局</a>
+					</td>
+					<td>
+						<a href="http://www.whsport.gov.cn/" target="_blank">市体育局</a>
+					</td>
+					<td>
+						<a href="http://www.whco-op.gov.cn/" target="_blank">市供销社</a>
+					</td>
+					<td>
+						<a href="http://www.hbciq.cn/" target="_blank">出入境检验检疫局</a>
+					</td>
+					<td>
+						<a href="http://fj.safe.gov.cn/420000/" target="_blank">外汇管理局</a>
+					</td>
+					<td>
+						<a href="http://wuhan.customs.gov.cn/" target="_blank">武汉海关</a>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<a href="http://www.whllw.gov.cn/" target="_blank">市老龄委</a>
+					</td>
+					<td>
+						<a href="http://whgdgs.jcdlzx.hb.sgcc.com.cn/" target="_blank">市供电公司</a>
+					</td>
+					<td>
+						<a href="http://whgas.21hubei.com/" target="_blank">市燃气热力集团公司</a>
+					</td>
+					<td>
+						<a href="http://www.ct10000.com/" target="_blank">中国电信</a>
+					</td>
+					<td>
+						<a href="http://www.10086.cn/" target="_blank">中国移动</a>
+					</td>
+					<td>
+						<a href="http://www.10010.com/" target="_blank">中国联通</a>
+					</td>
+					<td>
+						<a href="http://www.whrcbank.com/" target="_blank">武汉农村商业银行</a>
+					</td>
+				</tr>
+				<tr class="linkeven">
+					<td>
+						<a href="http://hb.spb.gov.cn/" target="_blank">市邮政局</a>
+					</td>
+					<td>&nbsp;
+						
+					</td>
+					<td>&nbsp;
+						
+					</td>
+					<td>&nbsp;
+						
+					</td>
+					<td>&nbsp;
+						
+					</td>
+					<td>&nbsp;
+						
+					</td>
+					<td>&nbsp;
+						
+					</td>
+				</tr>
+
+
+
+			</tbody></table>
+		</td>
+	</tr>
+	<tr id="iic3" style="display: none">
+		<td valign="top">
+			<table class="linktable" cellpadding="0" cellspacing="0" align="center" border="0" width="1010">
+				<tbody><tr>
+					<td>
+<a href="http://eservice.beijing.gov.cn/" target="_blank">北京市</a>
+						
+					</td>
+					<td>
+<a href="http://www.pudong.gov.cn/website/html/shpd/zxgg/List/index.htm" target="_blank">上海浦东</a>
+						
+					</td>
+					<td>
+<a href="http://www.gzonline.gov.cn/eap/" target="_blank">广州市</a>
+						
+					</td>
+					<td>
+						<a href="http://www.mynj.gov.cn/" target="_blank">南京市</a>
+					</td>
+					<td>
+						<a href="http://www.hzggzy.gov.cn/" target="_blank">杭州市</a>
+					</td>
+					<td>
+						<a href="http://www.hrbxzsp.gov.cn/" target="_blank">哈尔滨</a>
+					</td>
+				</tr>
+				<tr class="linkeven">
+					<td>
+						<a href="http://www.jnxzsp.gov.cn/" target="_blank">济南市</a>
+					</td>
+					<td>
+						<a href="http://www.cdzw.gov.cn/index.asp" target="_blank">成都市</a>
+					</td>
+					<td>
+						<a href="http://www.xazw.gov.cn/" target="_blank">西安市</a>
+					</td>
+					<td>
+						<a href="http://124.93.228.65:8080/xzsp/approve/firstpage.do?method=begin#" target="_blank">大连市</a>
+					</td>
+					<td>
+						<a href="http://shenpi.qingdao.gov.cn/login/index.aspx" target="_blank">青岛市</a>
+					</td>
+					<td>
+						<a href="http://www.nbxzfw.gov.cn/txweb/" target="_blank">宁波市</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="http://www.xmas.gov.cn/" target="_blank"> 厦门市</a>
+					</td>
+					<td>
+						<a href="http://www.szzw.gov.cn/" target="_blank"> 深圳市</a>
+					</td>
+					<td>
+						<a href="http://www.cczw.gov.cn/" target="_blank">长春市</a>
+					</td>
+					<td>
+						<a href="http://www.sysp.gov.cn/" target="_blank">沈阳市</a>
+					</td>
+					<td>
+						<a href="http://www.tjxzxk.gov.cn/" target="_blank">天津市</a>
+					</td>
+					<td>&nbsp;
+						
+					</td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+	<tr id="iic4" style="display: none;">
+		<td valign="top">
+			<table class="linktable" cellpadding="0" cellspacing="0" align="center" border="0" width="1010">
+				<tbody><tr>
+					<td>
+						<a href="http://ja.whsp.gov.cn/" target="_blank">江岸区</a>
+					</td>
+					<td>
+						<a href="http://jh.whsp.gov.cn/" target="_blank">江汉区</a>
+					</td>
+					<td>
+						<a href="javascript:void();" target="_blank">硚口区</a>
+					</td>
+					<td>
+						<a href="http://hy.whsp.gov.cn/" target="_blank">汉阳区</a>
+					</td>
+					<td>
+						<a href="http://zwzx.wuchang.gov.cn:1080/" target="_blank">武昌区</a>
+					</td>
+					<td>
+						<a href="http://qs.whsp.gov.cn/" target="_blank">青山区</a>
+					</td>
+					<td>
+						<a href="http://hs.whsp.gov.cn/" target="_blank">洪山区</a>
+					</td>
+<td>
+						<a href="http://wedz.whsp.gov.cn/website/index.aspx" target="_blank">沌口</a>
+					</td>
+				</tr>
+				<tr class="linkeven">
+					<td>
+						<a href="http://dxh.whsp.gov.cn/" target="_blank">东西湖区</a>
+					</td>
+					<td>
+						<a href="http://hn.whsp.gov.cn/" target="_blank">汉南区</a>
+					</td>
+					<td>
+						<a href="http://jx.whsp.gov.cn/" target="_blank">江夏区</a>
+					</td>
+					<td>
+						<a href="http://zwzx.caidian.gov.cn/" target="_blank">蔡甸区</a>
+					</td>
+					<td>
+						<a href="http://hp.whsp.gov.cn/" target="_blank">黄陂区</a>
+					</td>
+					<td>
+						<a href="http://xz.whsp.gov.cn/" target="_blank">新洲区</a>
+					</td>
+					<td><a href="http://wehdz.whsp.gov.cn/" target="_blank">东湖技术开发区</a>
+						
+					</td>
+				</tr>
+				
+			</tbody></table>
+		</td>
+	</tr>
+	<tr id="iic5" style="display: none">
+		<td valign="top">
+			<table class="linktable" cellpadding="0" cellspacing="0" align="center" border="0" width="1010">
+				<tbody><tr>
+					<td>
+						<a href="http://www.wuhan.net.cn/" target="_blank">武汉热线</a>
+					</td>
+					<td>
+						<a href="http://www.xinhuanet.com/" target="_blank">新华网</a>
+					</td>
+					<td>
+						<a href="http://www.people.com.cn/" target="_blank">人民网</a>
+					</td>
+					<td>
+						<a href="http://www.chinanews.com/" target="_blank">中国新闻网</a>
+					</td>
+					<td>
+						<a href="http://www.cyol.net/" target="_blank">中青在线</a>
+					</td>
+					<td>
+						<a href="http://www.cntv.cn/" target="_blank">央视国际</a>
+					</td>
+					<td>
+						<a href="http://www.sina.com.cn/" target="_blank">新浪网</a>
+					</td>
+				</tr>
+				<tr class="linkeven">
+					<td>
+						<a href="http://www.sohu.com/" target="_blank">搜狐网</a>
+					</td>
+					<td>
+						<a href="http://www.163.com/" target="_blank">网易</a>
+					</td>
+					<td>
+						<a href="http://www.google.com.hk/" target="_blank">google搜索</a>
+					</td>
+					<td>
+						<a href="http://www.baidu.com/" target="_blank"> 百度搜索</a>
+					</td>
+					<td>&nbsp;
+						
+					</td>
+					<td>&nbsp;
+						
+					</td>
+					<td>&nbsp;
+						
+					</td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+</tbody></table>
+   <div class="banq_bottom">
+	主办：武汉市政务服务中心管理办公室 鄂ICP备12014119号-6 <!--网站访问量：
+	<span class="deep_red01">2635834</span>次-->
+	<br>
+	地址：武汉市江岸区金桥大道117号 邮编：430012 投诉咨询服务电话：027-65770000
+    </div>
+</div>
+<!-- foot Start-->
+<!-- 
+<div class="footbg">
+	<div class="foot">
+		<div class="div10"></div>
+		<div class="div10"></div>
+		<table width="50%" border="0" align="center" cellspacing="10">
+			<tr>
+				<td width="14%">
+				</td>
+				<td width="86%">
+					<P>
+						主办：武汉市政务服务中心管理办公室 鄂ICP备12014119号-6 网站访问量：
+						<span class="deep_red01">2635834</span>次
+						<br />
+						地址：武汉市江岸区金桥大道117号 邮编：430012 客服中心电话：027-65770000
+					</P>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+-->
+<!-- foot End-->
+
+
+	
+</body></html>

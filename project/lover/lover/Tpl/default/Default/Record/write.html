@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>情侣之家--书写我们的故事</title>
+<link href="/Public/images/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" href="/public/css/write.css">
+<link rel="stylesheet" type="text/css" href="/public/css/write_right.css">
+<link rel="stylesheet" type="text/css" href="/public/css/write_textarea.css">
+
+<script type="text/javascript" src="/Public/Js/jquery1.js"></script>
+<script type="text/javascript" src="/public/Js/write.js"></script>
+<script type="text/javascript" src="/public/Js/write_textarea.js"></script>
+<script type="text/javascript" src="/Public/Js/write_right.js"></script>
+<style type="text/css">
+form {margin: 0;}
+textarea {display: block;}
+</style>
+<SCRIPT LANGUAGE="JavaScript">
+	function tijiao1(){
+		var temp = document.getElementsByName("opinions");
+		var temp1 = document.getElementsByName("rizhi");
+		  for(var i=0;i<temp.length;i++)
+		  {
+		     if(temp[i].checked)
+		           var intHot = temp[i].value; 
+		  }
+		  
+		  for(var j=0;j<temp1.length;j++)
+		  {
+		     if(temp1[j].checked)
+		           var intHot1 = temp1[j].value; 
+		  }
+			
+			if(intHot==null||intHot1==null){
+				alert("请先选择日志权限");
+				return temp;
+			}else{
+				document.tijiao.action="rizhi"
+				document.getElementById("sourceEditor").value=KE.util.getData('sourceEditor');
+				document.tijiao.submit()
+			}
+			
+	}
+	function tijiao2(){
+		var temp = document.getElementsByName("opinions");
+		var temp1 = document.getElementsByName("rizhi");
+		  for(var i=0;i<temp.length;i++)
+		  {
+		     if(temp[i].checked)
+		           var intHot = temp[i].value; 
+		  }
+		  
+		  for(var j=0;j<temp1.length;j++)
+		  {
+		     if(temp1[j].checked)
+		           var intHot1 = temp1[j].value; 
+		  }
+			
+			if(intHot==null||intHot1==null){
+				alert("请先选择日志权限");
+				return temp;
+			}else{
+				document.tijiao.action="save_record"
+				document.getElementById("sourceEditor").value=KE.util.getData('sourceEditor');
+				document.tijiao.submit()
+			}
+	}
+	
+	$(function(){		
+		$('input').customInput();
+	});
+	
+</SCRIPT>
+<script>
+	var editor;
+	KindEditor.ready(function(K) {
+		editor = K.create('textarea[name="sourceEditor"]', {
+			resizeType : 1,
+			allowPreviewEmoticons : false,
+			allowImageUpload : false,
+			items : [
+				'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+				'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+				'insertunorderedlist']
+		});
+	});
+</script>
+</head>
+<body>
+<div id="container" style="margin:0px;padding:0px;">
+	<div id="Javascript.Div1" class="he" >
+		<div class="page">
+			<div class="chl-poster simple" id="header">
+				<div id="site-nav">
+					<UL class="quick-menu">
+					  <LI><A href="__URL__/record">首页</A> </LI>
+					  <LI class="services menu-item last">
+						  <div class="menu">
+							  <A class="menu-hd" href="#" target=_top style="margin-top:-15px;padding-top:17px;border-radius:3px;">爱记录<B style="margin-top:15px;"></B></A> 
+							  <div class="menu-bd" style="WIDTH: 100px; HEIGHT: 147px; _width: 2000px;margin-top:18px;border-radius:3px;">
+								  <div class="menu-bd-panel">
+									  <DL style="margin-top:-20px;">
+										<DT>
+											<img src="/public/images/write.png"style="height:20px;width:20px;margin-right:5px;float:left;" /><A href="write" style="display:block;height:20px;float:left;">写篇日志</A>
+									  </DL>
+									  <DL>
+										<DT>
+										<img src="/public/images/upload.png" style="height:20px;width:20px;margin-right:5px;float:left;"><A href="upload_img" style="display:block;height:20px;float:left;">上传图片</A> 
+									  </DL>
+									  <DL>
+										<DT>
+										<img src="/public/images/question.png" style="height:20px;width:20px;margin-right:5px;float:left;"><A href="question" style="display:block;height:20px;float:left;">情感咨询</A> 
+										</DT>
+										</DL>
+									  <DL>
+										<DT>
+										<img src="/public/images/help.png" style="height:20px;width:20px;margin-right:5px;float:left;"><A href="help" style="display:block;height:20px;float:left;">帮助中心</A> 
+									  </DL>
+									  <DL class=last>
+									  </DL>
+								  </div>
+								  <S class=r></S><S class=rt></S><S class=lt></S><S class=b style="WIDTH: 169px"></S><S class="b b2" style="WIDTH: 169px"></S><S class=rb></S><S class=lb></S>
+							  </div>
+						  </div>
+					  </LI>
+					  <LI style="padding-left:20px;">
+					  	<A href="">我的空间</A> 
+					  </LI>
+					  <LI class="services menu-item last" style="padding-top:2px;">
+					  	<A href="">我的空间</A>
+					  </LI>
+				    </UL>
+				</div>
+			</div>
+		</div>
+		<div class="inp">
+	  		<form action="record" method="post" name="myform" id="myform" >
+		  		<div class="input">
+				  	<input type="text" name="select" style="height:24px;width:185px;border:0;border-radius:1px;">
+		  		</div>
+			  	<div class="select2">
+					<a href="#" onclick="document.getElementById('myform').submit();"><img src="/Public/images/input_button.png" alt="点击搜索" title="点击搜索" style="border-radius:4px;"></a>  		
+			  	</div>
+			</form>	
+		</div>
+	</div>
+	<div style="margin:0 auto;height:auto;width:945px;">
+		<form action="" method="post" name="tijiao" id="tijiao">
+			<div id="main" class="mainContent">
+				<div id="mainContent1">
+					<div id="write_center">
+						<div id="write_top">
+							<span>写篇日志</span>
+						</div>
+						<div id="write_neirong">
+							<div id="write_biaoti">
+								<span>标题:</span><br/>
+								<input type="text" name="rizhi_biaoti" style="height:35px;width:99%;margin-top:5px;font-weight: bold; font-family:楷体;font-size: 150%;"/>
+							</div>
+							<div id="write_neirong1">
+								<span>内容:</span><br/>
+								<textarea name="sourceEditor" id="sourceEditor" style="width:100%;height:325px;visibility:hidden;margin-top:5px;"></textarea>
+							</div>
+							<div id="write_button">
+								<input type="submit" value="发表日志" onclick=tijiao1() style="background:url(/public/images/write_button.png) no-repeat;border-radius:5px;">
+								<input type="submit" value="存为草稿" onclick=tijiao2() style="background:url(/public/images/write_button.png) no-repeat;border-radius:5px;margin-left:100px;">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="mainContent2">
+					<div id="right">
+						<fieldset style="border-bottom:1px dashed #f2c4de;margin-left:-1px;">
+							<input type="radio" name="rizhi" id="action" value="0" />
+							<label for="action">标为重要事件</label>
+							
+							<input type="radio" name="rizhi" id="comedy" value="1" onclick="selectKind(this)"/>
+							<label for="comedy">个人日志</label>
+							
+							<input type="radio" name="rizhi" id="check-3" value="2" />
+							<label for="check-3">个人日记</label>
+							
+							<input type="radio" name="rizhi" id="science" value="3" />
+							<label for="science">情书表白</label>
+						</fieldset>	
+						<fieldset style="border-top:1px dashed #f2c4de;margin:30px auto;padding-top:10px;">
+							<input type="radio" name="opinions" id="totally" value="0" />
+							<label for="totally">只有自己可见</label>
+							
+							<input type="radio" name="opinions" id="no-way" value="1" />
+							<label for="no-way">只有好友可见</label>
+							
+							<input type="radio" name="opinions" id="whats-caddyshack" value="2" />
+							<label for="whats-caddyshack">所有人可见</label>
+						</fieldset>
+					</div>	
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<SCRIPT LANGUAGE="JavaScript">
+	if(document.all){
+		document.write('<textarea ID="sourceEditor" style="height:280px;width:100%;display:none">');
+	}else{
+		document.write('<textarea ID="sourceEditor" style="height:282px;width:100%;display:none">');
+	}
+</SCRIPT>
+</body>
+</html>

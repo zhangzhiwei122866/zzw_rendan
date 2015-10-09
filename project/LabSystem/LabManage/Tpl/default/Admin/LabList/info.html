@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<import type='css' file="Css.admin.admin" />
+<import file="Js.jquery" />
+<title>实验室一览</title>
+<style type="text/css">
+.center{height:auto;width:75%;margin-left:15%;margin-top:5px;margin-bottom:5px;}
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('select[name = option_number]').bind("change" ,function(){
+		var shinumber = $('select[name = option_number]').serialize();
+		$.get('__URL__/ajhuo',shinumber,function(cc){
+			if(cc.status == 0){
+				$('select[name = option_name]').val("没有这个编号").css("color","red");
+			}else{
+				$('select[name = option_name]').first().val(cc.data[0]['name']).css("color","black");
+			}
+		},'json')
+		
+	});
+});
+$(document).ready(function() {
+	  $('select[name = option_name]').bind("change" ,function(){
+			var shinumber1 = $('select[name = option_name]').serialize();
+			$.get('__URL__/ajhuo1',shinumber1,function(cc1){
+				if(cc1.status == 0){
+					$('select[name = option_number]').val("没有这个编号").css("color","red");
+				}else{
+					$('select[name = option_number]').first().val(cc1.data[0]['number']).css("color","black");
+				}
+			},'json')
+			
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="rightTop">
+    <p>实验室管理</p>
+    <ul class="subnav">
+    	<li><a href="__URL__/labList">实验室列表</a></li>
+    	<li><a href="__URL__/add">添加实验室</a></li>
+    </ul>
+</div>
+<div class="mrightTop">
+	<form method="get" enctype="multipart/form-data" action="__URL__/lab_info">
+		实验室编号：
+		<select name="option_number" class="querySelect">
+			<volist name="list"  id="vo">
+				<option  value="{$vo.number}">{$vo.number}</option>
+			</volist>
+	 	</select>
+	 	实验室名称：
+		<select name="option_name" class="querySelect">
+			<volist name="list"  id="voli">
+				<option>{$voli.name}</option>
+			</volist>
+	 	</select>
+		<input type="submit" value="查询" class="formbtn searchbtn" />
+	</form>
+</div>
+<div class="center">
+<table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#acce8e">
+<volist name="info" id="inf">
+  <tr>
+    <td width="16%" height="52" align="center" valign="middle">实验室名称</td>
+    <td colspan="5" align="center" valign="middle">{$inf.name}</td>
+  </tr>
+  <tr>
+    <td height="52" align="center" valign="middle">实验室编号</td>
+    <td width="21%" align="center" valign="middle">{$inf.number}</td>
+    <td width="14%" align="center" valign="middle">所属学院编号</td>
+    <td width="16%" align="center" valign="middle">{$inf.s_number}</td>
+    <td width="16%" align="center" valign="middle">所属学院名称</td>
+    <td width="17%" align="center" valign="middle">{$inf.s_name}</td>
+  </tr>
+  <tr>
+    <td height="52" align="center" valign="middle">实验室位置</td>
+    <td colspan="5" align="center" valign="middle">{$inf.place}</td>
+  </tr>
+  <tr>
+    <td height="52" align="center" valign="middle">实验室类别</td>
+    <td align="center" valign="middle">{$inf.type}</td>
+    <td align="center" valign="middle">所属学科</td>
+    <td align="center" valign="middle">{$inf.subject}</td>
+    <td align="center" valign="middle">实验室面积</td>
+    <td align="center" valign="middle">{$inf.area}</td>
+  </tr>
+  <tr>
+    <td height="52" align="center" valign="middle">岗位职责</td>
+    <td align="center" valign="middle">{$inf.job_responsibility}</td>
+    <td align="center" valign="middle">实验教学运行经费</td>
+    <td align="center" valign="middle">{$inf.teach_expenditure}</td>
+    <td align="center" valign="middle">年材料消耗费</td>
+    <td align="center" valign="middle">{$inf.material_expenditure}</td>
+  </tr>
+  <tr>
+    <td height="52" align="center" valign="middle">实验室成立年份</td>
+    <td colspan="2" align="center" valign="middle">{$inf.year}</td>
+    <td align="center" valign="middle">实验室信息录入时间</td>
+    <td colspan="2" align="center" valign="middle">{$inf.enter_time}</td>
+  </tr>
+  <tr>
+    <td height="150" align="center" valign="middle">管理制度</td>
+    <td colspan="5"><textarea style="width: 732px; height: 143px;text-align:center;line-height:2">{$inf.institution}</textarea></td>
+  </tr>
+  </volist>
+</table>
+</div>
+</body>
+</html>

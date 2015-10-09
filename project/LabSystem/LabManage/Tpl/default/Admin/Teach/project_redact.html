@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<import type='css' file="Css.admin.admin" />
+<import file="Js.jquery,Js.index,Js.projectcheck1" />  
+<import type='Js' file="Js.calendar" />
+<title>后台管理</title>
+<style type="text/css">
+.center{height:auto;width:75%;margin-left:15%;margin-top:30px;margin-bottom:5px;}
+input{height:52px;width:99%;border:0px}
+.sele{height:52px;width:99%;border:0px;text-align:center;padding-top:18px;}
+</style>
+<script>
+$(document).ready(function() {
+	  $('select[name = lab_name]').bind("change" ,function(){
+			var shinumber = $('select[name = lab_name]').serialize();
+			$.get('__URL__/ajhuo17',shinumber,function(cc){
+				//alert(shinumber);
+				if(cc.status == 0){
+					$('select[name = lab_number]').val("没有这个编号").css("color","red");
+				}else{
+					$('select[name = lab_number]').first().val(cc.data[0]['number']).css("color","black");
+				}
+			},'json')
+			
+		});
+	});
+	$(document).ready(function() {
+		  $('select[name = lab_number]').bind("change" ,function(){
+				var shinumber1 = $('select[name = lab_number]').serialize();
+				$.get('__URL__/ajhuo18',shinumber1,function(cc1){
+					if(cc1.status == 0){
+						$('select[name = lab_name]').val("没有这个编号").css("color","red");
+					}else{
+						$('select[name = lab_name]').first().val(cc1.data[0]['name']).css("color","black");
+					}
+				},'json')
+				
+			});
+		});
+
+function doaction(){
+if(confirm("确定要修改吗？"))
+{
+alert('修改成功！');
+return true;
+}else
+{
+return false;
+}
+}
+</script>
+</head>
+<body>
+	<div id="rightTop">
+    <p>实验课项目</p>
+    <ul class="subnav">
+    	<li><a href="__URL__/project">项目列表</a></li>
+    	<li><a href="__URL__/project_add">添加项目</a></li>
+    </ul>
+</div>
+<div class="center">
+	<form name="registerf" method="post" enctype="multipart/form-data" action="__URL__/project_xiugai">
+		<table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#c1dff3">
+		<volist name="info" id="inf">
+		<input type="hidden" name="lab_id"  value="<?php $id=$_GET['lab_id'];echo $id;?>"/>
+		  <tr>
+		    <td width="25%" height="52" align="center" valign="middle">实验室名称</td>
+		    <td width="25%" align="center">
+		    	<select name="lab_name" class="sele">
+		    	<option value="{$inf.lab_name}">{$inf.lab_name}</option>
+		    		<volist name="lab_list" id="lis">
+		    		<option value="{$lis.name}">{$lis.name}</option>
+		    		</volist>
+		    	</select>
+		    	
+		    </td>
+		    <td width="25%" align="center" valign="middle">实验课名称</td>
+		    <td width="25%" align="center">
+		    	<select name="lesson_name" class="sele">
+		    		<option value="{$inf.lesson_number}">{$inf.lesson_name}</option>
+		    		<volist name="list" id="lis">
+		    		<option value="{$lis.lesson_number}">{$lis.lesson_name}</option>
+		    		</volist>
+		    	</select>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td width="25%" height="52" align="center" valign="middle">实验室编号</td>
+		    <td width="25%" align="center">
+		    	<select name="lab_number" class="sele">
+		    	<option value="{$inf.lab_number}">{$inf.lab_number}</option>
+		    		<volist name="lab_list" id="lis1">
+		    		<option value="{$lis1.number}">{$lis1.number}</option>
+		    		</volist>
+		    	</select>
+		    </td>
+		    <td width="25%" align="center" valign="middle">实验课项目编号</td>
+		    <td width="25%" align="center">
+		    	<input name="number" type="text" value="{$inf.number}"/>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td height="52" align="center" valign="middle">实验课任课教师名称</td>
+		    <td align="center">
+		    	<input name="teacher_name" type="text" value="{$inf.teacher_name}"/>
+		    </td>
+		    <td align="center" valign="middle">实验课项目名称</td>
+		    <td align="center">
+		    	<input name="name" type="text" value="{$inf.name}"/>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td height="52" align="center" valign="middle">实验课项目性质</td>
+		    <td align="center">
+		    	<input name="character" type="text" value="{$inf.character}"/>
+		    </td>
+		    <td align="center" valign="middle">实验课项目所需课时</td>
+		    <td align="center">
+		    	<input name="period" type="text" value="{$inf.period}"/>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td height="52" colspan="6" align="center" valign="middle">
+		    <input type="submit" value="提交" onclick="return doaction()" name="Submit"  style="float:left;width:30%;margin-left:16%;cursor:pointer;background-color:white;"/>
+		    <input type="reset" value="重置"  style="float:right;width:30%;margin-right:16%;cursor:pointer;background-color:white;"/>
+		    </td>
+		  </tr>
+		  </volist>
+		</table>
+	</form>
+</div>
+
+</body>
+</html>

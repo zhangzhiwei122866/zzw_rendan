@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<import type='css' file="Css.admin.admin" />
+<title></title>
+</head>
+<body>
+<div id="rightTop">
+    <p>数据库表</p>
+   <!-- <ul class="subnav">
+        <li><a href="__URL__/typeList">资源类型</a></li>
+        <li><a href="__URL__/add">添加类型</a></li>
+    	<li><a href="__URL__/resourceList">资源列表</a></li>
+    	<li><a href="__URL__/addResource">添加资源</a></li>
+    </ul> --> 
+</div>
+<div class = "tdare">
+	<table width="100%" cellspacing="0" class="dataTable">
+	<form action="__URL__/back" method="post">
+		<tr class="tatr1">
+			<th width="10%" class="firstCell"></th>
+			<th width="90%">表名</th>
+		</tr>		
+		<?php foreach($list as $key=>$val){ ?>		
+		<tr class="tatr2" style="text-align:center;">
+			<td class="firstCell">
+				<input type="checkbox"  name="id[]"  value="<?php echo $val;?>"  class="checkitem"  />
+			</td>
+			<td><?php echo $val;?></td>									
+		</tr>
+		<?php } ?>
+		<tr class="tatr2" style="text-align:center;">
+			<td class="firstCell"></td>
+			<td>每个分卷文件大小：<input type="text" name="filesize" value="2048" size="5" />kb</td>									
+		</tr>
+		<tr class="tatr2" style="text-align:center;">
+			<td class="firstCell"></td>
+			<td><input type="button" class="bginput" id="checkall" value="全选/取消"/> 
+	      		<input type="submit" name="submit" value="开始备份" class="bginput"/></td>									
+		</tr>		
+	</form>	
+	</table>
+	</div>
+<import file="Js.jquery,Js.index" />
+<script type="text/javascript">
+$("#checkall").click(function(){
+	$("input[name='id[]']").each(function(){
+		if(this.checked == false){
+			this.checked = true;
+		}
+		else{
+			this.checked = false;
+		}			
+	});
+});
+</script>
+</body>
+</html>

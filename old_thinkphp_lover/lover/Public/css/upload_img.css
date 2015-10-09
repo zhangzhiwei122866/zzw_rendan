@@ -1,0 +1,67 @@
+
+textarea { resize: none }
+input[type=text]:focus, input[type=password]:focus, textarea:focus { outline: 0 }
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden }
+.clearfix { zoom: 1; display: inline-block; _height: 1px }
+*html .clearfix { height: 1% }
+*+html .clearfix { height: 1% }
+.clearfix { display: block; clear: both }
+.clearfloat { display: inline-block; *display:inline;
+*zoom:1
+}
+textarea { resize: none }
+input[type=text]:focus, input[type=password]:focus, textarea:focus { outline: 0 }
+.btn { padding: 5px 16px; height: 27px; cursor: pointer; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; color: white; background-color: #e95e95; border: 1px solid #528641; display: inline; }
+.btn:hover { background-color: #f2c4de; }
+.btn-disabled { color: #999; background: #F0F0F0; border: 1px solid #B9B9B9; }
+.btn-disabled:hover { background: #F0F0F0 }
+.input { padding: 4px 2px; border: 1px solid #DDD; }
+.btn-flat { display: -moz-inline-box; display: inline-block; border-width: 1px; border-style: solid; border-color: #BBB #BBB #999; color: #444; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; overflow: hidden; vertical-align: middle; }
+.btn-flat input { border: 0; height: 25px; padding: 0 14px; color: #333; background: transparent url(http://img3.douban.com/pics/site/sp_all_2.png) repeat-x 0 -700px 9; font-size: 12px; margin: 0!important; cursor: pointer; -webkit-appearance: none; border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px; background-image: -moz-linear-gradient(-90deg, #FCFCFC 0, #E9E9E9 100%); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FCFCFC), color-stop(1, #E9E9E9)); }
+/*reset end*/
+
+
+/*hd*/
+#hd { background: #EDF4ED; zoom: 1; height: 74px; margin-bottom: 40px; }
+#hd a { color: #072; font-size: 15px; }
+#hd a:hover { background: #072; color: #fff }
+.hd-logo a:hover { background: none!important }
+.hd-wrap { padding-top: 13px; margin: 0 auto; width: 1000px; zoom: 1; position: relative }
+.hd-link { position: absolute; left: 220px; top: 13px; height: 50; line-height: 50px; }
+.hd-link ul li { display: inline; margin-right: 30px; }
+.hd-so { position: absolute; right: 0; top: 13px; zoom: 1; width: 320px; }
+.hd-so legend { display: none; }
+.hd-so label { position: absolute; left: 12px; top: 8px; line-height: 30px; cursor: text; color: #BBB; width: auto; z-index: 333; }
+.hd-so .inp { width: 248px; height: 28px; background: white; border: 1px solid #E1E9E1; text-align: left; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; position: absolute; top: 8px; }
+.hd-so .inp input { width: 236px; _width: 238px; border: 0; margin: 0; padding: 6px 5px; outline: 0 }
+.hd-so .inp-btn { position: absolute; left: auto; top: 8px; _top: 9px; right: 40px; width: 30px; height: 28px; border: 1px solid #E1E9E1; border-left: none; background-color: white; font-size: 0; overflow: hidden; }
+.hd-so .inp-btn input { border: 0; cursor: pointer; width: 30px; height: 28px; padding: 0; margin: 0; line-height: 100px; background: transparent url(../images/btn_so.png) no-repeat 50% 50%; }
+
+/*container*/
+
+.col-left { width: 600px; height: auto;margin:20px auto;}
+.col-left h1 { word-wrap: break-word; display: block; font-size: 25px; font-weight: bold; color: #494949; margin: 0; padding: 15px 10px 15px 0; line-height: 1.1; }
+
+/*upload-work*/
+.bd-work-wrap { color: #666; margin:20px auto;}
+.case-que-hd, .case-que-foot { color: #666; position: relative; height: 40px; line-height: 50px; border-bottom: 1px solid #CECECE }
+.filename, .filesize, .filedel { display: block; position: absolute; }
+.filesize { right: 100px }
+.filedel { right: 0 }
+.case-que-foot { border: 0; display: none; margin-top: 20px; }
+.case-que-foot i { font-weight: bold; padding: 0 5px; }
+#upload-btn { margin: 10px 0; }
+/*swfupload*/
+.progressWrapper { position: relative; height: 25px; overflow: hidden; border-bottom: 1px solid #E8E8E8; }
+.progressContainer { background-color: white; overflow: hidden; }
+.message { margin: 1em 0; padding: 10px 20px; border: solid 1px #FFDD99; background-color: #FFFFCC; overflow: hidden; }
+.progressName { display: inline; position: absolute; top: 4px; top: 3px 9; left: 12px; z-index: 999;  }
+.progressBarInProgress { border-right: 2px solid #36824B; transition: width .8s ease-in-out; -webkit-transition: width .8s ease-in-out; -moz-transition: width .8s ease-in-out; -o-transition: width .8s ease-in-out; }
+.progressBarInProgress, .progressBarComplete, .progressBarError { position: absolute; top: 0; z-index: 99; font-size: 0; width: 0; height: 25px; background-color: #EAFAE6; }
+.progressBarComplete { width: 100%; background-color: green; visibility: hidden; }
+.progressBarError { width: 100%; background-color: red; visibility: hidden; }
+.progressBarStatus { margin-top: 2px; font-size: 7pt; font-family: Arial; text-align: left; white-space: nowrap; position: absolute; right: 85px }
+a.progressCancel { font-size: 0; display: block; height: 14px; width: 14px; margin: 5px 8px 0 0; background: url(../images/icon-recycle.png) no-repeat; float: right; }
+a.progressCancel:hover { background-position: 0px 0px; }
+.progressSize { position: absolute; right: 90px; top: 5px }
+

@@ -1,0 +1,19 @@
+*{background-color:wihte;}
+#title{background:url(../../Images/admin/login_title.png) no-repeat;background-color:#fbfbfb;width:100%;height:85px;margin-top:66px;}
+#content{background-color:#f4f3f3;text-align:center;}
+#login{background:url(../../Images/admin/login_body.png) no-repeat center;height:447px;width:1200px;margin:0 auto;}
+#main{float:right;height:390px;width:323px;background-color:white;border:1px solid #bcbaba;margin-right:146px;margin-top:30px;box-shadow:0px 0px 10px 0px #666;}
+#type1{width:161px;height:48px;float:left;text-align:center;cursor:pointer;}
+#type2{width:160px;height:48px;float:left;text-align:center;background:url(../../Images/admin/login_button1.png) repeat-x;border:1px solid #93afc6;cursor:pointer;}
+#window1{width:320px;height:340px;float:left;}
+#window2{width:320px;height:300px;float:left;display:none;}
+#inputtable{margin-left:15px;margin-top:15px;}
+#inputtable tr {height:55px;color:#99a2d4;}
+#inputtable2{margin-left:15px;margin-top:15px;}
+#inputtable2 tr {height:55px;color:#000;}
+.span1{background:url(../../Images/admin/login_inputleft.png) no-repeat;width:10px;height:39px;display:block;float:left;}
+.span2{background:url(../../Images/admin/login_inputright.png) no-repeat;width:10px;height:39px;display:block;float:left;}
+.input1{background:url(../../Images/admin/login_inputmiddle.png);width:258px;height:40px;border:0px;display:block;float:left;color:gray;line-height:40px;}
+.input2{width:100px;}
+.button2{border:0px;width:106px;height:44px;background:url(../../Images/admin/login_button2.png) no-repeat;cursor:pointer;}
+#footer{background-color:#fbfbfb;height:50px;text-align:center;font-size:12px;color:gray;}

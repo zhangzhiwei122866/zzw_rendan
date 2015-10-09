@@ -1,0 +1,42 @@
+@charset "utf-8";
+body {font-size:12px;line-height:24px;}
+* {margin:0px;padding:0px;}
+a img {border:none;}
+a {text-decoration:none;}
+a:hover {text-decoration:underline;}
+.fl {float:left;}
+.fr {float:right;}
+.fontsize01 {font-size:14px;}
+.color01 {color:#999999;}
+.bold {font-weight:bold}
+.lineheight01 {line-height:45px;}
+.indent01 {text-indent:8px;}
+.approval {width:988px;margin-left:auto;margin-right:auto;}
+.approvalleft {width:262px; background:url(../../Images/default/Xingzheng/approvalleftbg.gif) left top repeat-y;height:720px;}
+.approvalleftcon {width:246px;}
+.approvalright {width:726px;background-color:#ffffff;height:720px;}
+.approvaltitlexian01 {height:45px;background:url(../../Images/default/Xingzheng/approvaltitlexian01.gif) left top no-repeat;margin-right:8px }
+.approval01con {width:228px;margin-left:auto;margin-right:auto;height:116px;text-align:center;}
+.approval01con img {margin-top:6px;margin-left:3px;margin-right:3px;}
+.approvaltitlexian02 {margin-top:20px;}
+.approval02con {
+	height:100px;
+	padding-top:10px;
+	padding-bottom:10px;
+	border-top:solid 1px #d2d2d2;
+	margin-right:8px;
+	border-bottom:solid 1px #d2d2d2;
+	text-align:center;
+}
+.approval02p {width:200px;margin-left:auto;margin-right:auto;text-indent:24px;}
+.approval02p2 {width:200px;margin-left:auto;margin-right:auto;text-align:right;}
+.approvalred {color:#c31d0d;text-align:right;}
+.approvalred a {color:#c31d0d;text-align:right;}
+.approvaltitle03 {width:726px;height:88px;background:url(../../Images/default/Xingzheng/approvaltitle03.jpg) right top no-repeat;}
+.approval03con {width:724px;height:150px;background:url(../../Images/default/Xingzheng/approval03conbg.gif) right top repeat-x;padding-top:12px;}
+.approval03con img {margin-top:20px;margin-left:15px;margin-right:0px;}
+.approval03con p {text-align:center;margin-left:auto;margin-right:auto;}
+.approval04table {width:724px;height:350px;background:url(../../Images/default/Xingzheng/approval04tablebg.gif) right top repeat-x;padding-top:28px; }
+.approval04table th {border-top:dashed 1px #656565;border-bottom:dashed 1px #656565;}
+.approval04table a {color:#000000;}
+.approvalpage {text-align:center;margin-top:10px;}

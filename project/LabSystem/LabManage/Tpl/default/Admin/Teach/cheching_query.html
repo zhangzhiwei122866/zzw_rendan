@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<import type='css' file="Css.admin.admin" />
+<import file="Js.jquery" />
+<title>实验室一览</title>
+<script type="text/javascript">
+
+function doaction(){
+if(confirm("确定要删除吗？"))
+{
+alert('删除成功！');
+return true;
+}else
+{
+return false;
+}
+}
+</script>
+</head>
+<body>
+	<div id="rightTop">
+    <p>实验课出勤情况</p>
+    <ul class="subnav">
+    	<li><a href="__URL__/allocation">情况列表</a></li>
+    	<li><a href="__URL__/cheching_add">出勤添加</a></li>
+    </ul>
+</div>
+<div class="mrightTop">
+	<form method="get" enctype="multipart/form-data" action="__URL__/cheching_query">
+		实验课名称：
+		<select name="lesson_name" class="querySelect">
+			<volist name="lis"  id="vo">
+				<option  value="{$vo.lesson_number}">{$vo.lesson_name}</option>
+			</volist>
+	 	</select>
+	 	实验课任课教师：
+		<select name="lesson_teacher" class="querySelect">
+			<volist name="list1"  id="vo1">
+				<option>{$vo1.teacher_name1}</option>
+			</volist>
+	 	</select>
+	 	上课班级：
+		<select name="class" class="querySelect">
+			<volist name="list1"  id="vo2">
+				<option>{$vo2.class}</option>
+			</volist>
+	 	</select>
+		<input type="submit" value="查询" class="formbtn searchbtn" />
+	</form>
+</div>
+<div class = "tdare">
+	<table width="100%" cellspacing="0" class="dataTable">
+		<tr class="tatr1">
+			
+			<th width="10%">实验室名称</th>
+			<th width="10%">实验课名称</th>
+			<th width="20%">实验课任课教师</th>
+			<th width="10%">实验项目名称</th>
+			<th width="10%">上课班级</th>
+			<th width="10%">上课日期</th>
+			<th width="10%">上课时间</th>
+			<th width="10%">班长姓名</th>
+			<th width="10%">基本操作</th>
+		</tr>	
+		
+		
+            <?php foreach($list_number1 as $key => $vol ): ?> 
+		<tr class="tatr2" style="text-align:center;">
+			
+			<td><a href="../labList/info?lab_id=<?php echo $vol['lesson_id'];?>"><?php echo $vol['cheching_lab_name'];?></a></td>
+			<td><a href=""><?php echo $vol['lesson_name'];?></a></td>
+			<td><?php echo $vol['teacher_name1'];?></td>
+			<td><?php echo $vol['name'];?></td>
+			<td><a href="__URL__/cheching_info?lab_id=<?php echo $vol['cheching_id'];?>"><?php echo $vol['class'];?></a></td>
+			<td><?php echo $vol['cheching_date'];?></td>
+			<td><?php echo $vol['class_time'];?></td>
+			<td><?php echo $vol['monitor'];?></td>
+			<td><a href="__URL__/cheching_redact?lab_id=<?php echo $vol['cheching_id'];?>">编辑</a> | <a  onclick="return doaction()" href="__URL__/cheching_delete?lab_id=<?php echo $vol['cheching_id'];?>">删除</a></td>
+		</tr>
+		<?php endforeach; ?>
+		 <?php foreach($list_number2 as $key => $vol ): ?> 
+		<tr class="tatr2" style="text-align:center;">
+			
+			<td><a href="../labList/info?lab_id=<?php echo $vol['lesson_id'];?>"><?php echo $vol['cheching_lab_name'];?></a></td>
+			<td><a href=""><?php echo $vol['lesson_name'];?></a></td>
+			<td><?php echo $vol['teacher_name1'];?></td>
+			<td><?php echo $vol['name'];?></td>
+			<td><a href="__URL__/cheching_info?lab_id=<?php echo $vol['cheching_id'];?>"><?php echo $vol['class'];?></a></td>
+			<td><?php echo $vol['cheching_date'];?></td>
+			<td><?php echo $vol['class_time'];?></td>
+			<td><?php echo $vol['monitor'];?></td>
+			<td><a href="__URL__/cheching_redact?lab_id=<?php echo $vol['cheching_id'];?>">编辑</a> | <a  onclick="return doaction()" href="__URL__/cheching_delete?lab_id=<?php echo $vol['cheching_id'];?>">删除</a></td>
+		</tr>
+		<?php endforeach; ?>
+		 <?php foreach($list_number3 as $key => $vol ): ?> 
+		<tr class="tatr2" style="text-align:center;">
+			
+			<td><a href="../labList/info?lab_id=<?php echo $vol['lesson_id'];?>"><?php echo $vol['cheching_lab_name'];?></a></td>
+			<td><a href=""><?php echo $vol['lesson_name'];?></a></td>
+			<td><?php echo $vol['teacher_name1'];?></td>
+			<td><?php echo $vol['name'];?></td>
+			<td><a href="__URL__/cheching_info?lab_id=<?php echo $vol['cheching_id'];?>"><?php echo $vol['class'];?></a></td>
+			<td><?php echo $vol['cheching_date'];?></td>
+			<td><?php echo $vol['class_time'];?></td>
+			<td><?php echo $vol['monitor'];?></td>
+			<td><a href="__URL__/cheching_redact?lab_id=<?php echo $vol['cheching_id'];?>">编辑</a> | <a  onclick="return doaction()" href="__URL__/cheching_delete?lab_id=<?php echo $vol['cheching_id'];?>">删除</a></td>
+		</tr>
+		<?php endforeach; ?>
+	</table>
+	<div class="pageLinks">
+	{$page}
+	</div>
+	</div>
+<import file="Js.jquery,Js.index" />
+</body>
+</html>

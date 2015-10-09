@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户注册</title>
+<style type="text/css">
+html, body, div, a,img,form, table, tbody, tr, th, td, input {margin: 0;padding: 0;}
+img {border:0px;}
+html.hasFontSmoothing-false body {font-family: Tahoma,Arial,Helvetica,STHeiti;}
+body {background:url(__PUBLIC__/Images/admin/login_bg.png) #d7edf3 repeat-x;}
+a{text-decoration:none;}
+.wrap {margin:0px auto;width:1000px;height:610px;background:url(__PUBLIC__/Images/admin/login_bg2.png) no-repeat;position:relative;font-size:12px;font-family:Arial, "宋体";color:#2C86AE;}
+.Logo{height:25px;width:120px;float:left;padding-top:210px;padding-left:190px;font-size:13px;}
+.adminLogin{height:40px;width:220px;float:left;padding-top:210px;margin-left:310px;background:url(__PUBLIC__/Images/admin/login_tip.png) no-repeat scroll 80% 90% transparent;}
+.reg_form{padding-left:300px;padding-top:260px;margin:0 auto;}
+.formInfo th{height:60px;align:left;font-size:16px;}
+.formInfo td .inputText{float:left;-moz-border-radius:3px 3px 3px 3px;background-color:#FFFFFF;border:1px solid #CCCCCC;font-size:14px;height:16px;line-height:16px;padding:11px 5px;width:230px;}
+.formInfo td label{float:left;color:#94B3BB;padding-left:8px;text-decoration:none;width:auto;}
+.formInfo th{word-spacing:15px;padding-right:8px;}
+.formInfo td label{color:#94B3BB;line-height:15px;height:15px;text-align:center;padding-top:11px;}
+#registerBotton{border:0 none;width:126px;height:56px;background:url(__PUBLIC__/Images/admin/register_btn.png) no-repeat;cursor:pointer;padding:0;}
+.foot {position:absolute;left:0px;bottom:20px;color:#9bbfc8;width:100%;text-align:center;font-size:12px;word-spacing:15px;}
+.foot a {color:#408c9e;text-decoration:none;}
+.foot a:hover {color:#09C;}
+</style>
+</head>
+
+</div>
+<body>
+<div class="wrap">
+     <div class="Logo"><td>用户注册</td></div>
+	 <div class="adminLogin"></div>
+<form class="reg_form" action="__URL__/doReg" method="post">
+	<table cellspacing="0" cellpadding="0" border="0" align="0" class="formInfo">
+    	<tbody>
+            <tr>
+            	<th>邮 箱</th>
+                <td>
+                	<input id="email" class="inputText" type="text" tabindex=1 value="" size="28" name="email">
+                     <label class="note">填个常用邮箱作为登录账号</label>
+                </td>
+            </tr>
+            <tr>
+            	<th>密 码</th>
+                <td>
+                	<input id="password" class="inputText" type="password" tabindex=2 value="" size="28" name="password">
+                     <label class="note">设置登录密码</label>
+                </td>
+            </tr>
+            <tr>
+            	<th>确认密码</th>
+                <td>
+                	<input id="repassword" class="inputText" type="password" tabindex=3 value="" size="28" name="repassword">
+                     <label class="note">再次确认登录密码</label>
+                </td>
+            </tr>
+			<tr>
+				<th></th>
+				<td><button id="registerBotton" tabindex=4 type="submit"></button></td>
+			</tr>
+        </tbody>
+    </table>
+</form>
+<div class="foot">
+<a href="#">使用手册</a> <a href="#" >常见问题</a> <a href="#">客服服务</a> <a href="#">官方论坛</a> <a href="#">联系我们</a> <a href="#">赞助商</a>
+</div>
+</div>   
+ 
+</body>
+</html>

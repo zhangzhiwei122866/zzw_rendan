@@ -1,0 +1,4 @@
+@CHARSET "UTF-8";
+@import url(public.css);
+
+#content{width:450px;height:330px;border:2px solid blue;position:absolute;font-size:14px;}

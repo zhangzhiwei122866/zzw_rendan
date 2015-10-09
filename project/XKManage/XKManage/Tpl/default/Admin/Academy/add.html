@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>学科信息</title>
+<style type="text/css">
+<!--
+html,body,ul {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size: 12px
+}
+ul {
+	margin-left: 0px;
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size: 12px
+}
+a{text-decoration:none}
+#table{margin:20px auto;border-top:1px solid #B5CFEE;border-left:1px solid #B5CFEE;margin-top:100px}
+#table tr,#table td{border-right:1px solid #B5CFEE;border-bottom:1px solid #B5CFEE; text-align:center;}
+.input{border:none ; outline:none;}
+table {
+	margin:auto;
+}
+td {
+	font-size:10pt;
+	color: #000080;
+}
+.button {
+		width:101px;
+	height:41px;
+	color:#fff;
+	font-weight:bold;
+	line-height:30px;
+	font-size:16px;
+	background:url(__PUBLIC__/images/botton.png);
+	border:none;
+	margin:5px auto;
+	cursor:pointer;
+}
+.button_1:hover input {
+	background:url(__PUBLIC__/images/botton_2.png);
+}
+.mrightTop{height:30px;margin-left:2px;padding:1px;background:url(__PUBLIC__/images/admin/top_bj.gif) repeat-x;}
+.searchbtn{position:relative;top:-2px;}
+.subnav li{margin:0 10px;}
+.subnav li,.subnav li a{float:left;display:inline;line-height:20px;color:#fff;text-decoration:none;background:url(__PUBLIC__/images/admin/btn_1.png) no-repeat;}
+.subnav li a{background:url(__PUBLIC__/images/admin/btn_2.png) no-repeat right 0;padding:0 12px;}
+.subnav li.on,.subnav li.on a{background-image:none;}
+-->
+</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="30" background="__PUBLIC__/images/tab_05.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="12" height="30"><img src="__PUBLIC__/images/tab_03.gif" width="12" height="30" /></td>
+        <td><font>学院管理</font></td>
+        <td width="16"><img src="__PUBLIC__/images/tab_07.gif" width="16" height="30" /></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<div class="mrightTop">
+	  <ul class="subnav">
+    	<li><a href="__URL__/academyList">学院列表</a></li>
+    </ul>
+</div>
+  <form  method="post" enctype="multipart/form-data" action="__URL__/insert">	  
+	  <table id="table" width="60%"cellspacing="0" cellpadding="0">
+	  <?php if($jiguo != NULL){ ?>
+		<tr height="40">
+	        <td style="background:#daedfb;width:20%" >学院编号</td><td  style="width:80%" colspan="3"><input class="input"  style="width:90%;margin-left:-35px;margin-bottom:-8px;"  type="text"  name="academy_number"  value={$jiguo[0][academy_number]} /></td>
+		</tr>
+	  	<tr height="40">
+	  		<td style="background:#daedfb;width:20%" >学院名称</td><td  style="width:80%" colspan="3"><input class="input"  style="width:90%;margin-left:-35px;margin-bottom:-8px;"  type="text"  name="academy_name"  value={$jiguo[0][academy_name]} /></td>
+	  	</tr>
+	    <?php }else{ ?>
+	 	<tr height="40">	 		
+	  		<td style="background:#daedfb;width:20%" >学院名称</td><td  style="width:80%" colspan="3"><input class="input"  style="width:90%;margin-left:-35px;margin-bottom:-8px;"  type="text"  name="academy_name" /></td>
+	  	</tr>
+	    <?php } ?>
+	  	  <tr>
+          <td colspan=4 align="center" height="50">
+          <a class="button_1" style="text-decoration:none;"><input type="submit" name="submit" value="提交" class="button"/></a>
+	  	  <a class="button_1" style="text-decoration:none;"><input type="reset" value="重置" style="margin-left:10px;" name="Submit2" class="button" /></a>&nbsp;
+          <a href="__URL__/academyList" class="button_1" style="text-decoration:none;">
+            <input type="button" value="返回" class="button"/>
+            </a></td>
+        </tr>
+	  </table>
+  </form>
+</body>
+</html>

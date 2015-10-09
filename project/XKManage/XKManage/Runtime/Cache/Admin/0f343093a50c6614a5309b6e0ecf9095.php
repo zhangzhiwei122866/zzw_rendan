@@ -1,0 +1,135 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>left</title>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8" />
+<style type=text/css> 
+#menuTree  div span{color:red;font-size:18px;}
+#menuTree div div  div:hover{background:url(images/tree/cebei.jpg);}
+#menuTree  div div:hover{background:url(images/tree/cebei.jpg);}
+#menuTree div div div{background-color:#aad1f4;}
+#menuTree1  div div  div:hover{background:url(images/tree/cebei.jpg);}
+#menuTree1  div div:hover{background:url(images/tree/cebei.jpg);}
+#menuTree1  div div div{background-color:#aad1f4;}
+#menuTree1 div  div div div{border:0px;;}
+{
+	font-size: 12px;
+}
+#menuTree a {
+	color: #566984; text-decoration: none
+}
+#menuTree1 a {
+	color: #566984; text-decoration: none
+}
+#bg{
+	background:url(images/bg_left_henu.png) bottom right no-repeat;
+}
+body,html,div,ul,li{margin:0px; padding:0px;}
+body{background:#dde8f4; font-family:Microsoft Yahei;}
+</style>
+<script src="Js/TreeNode.js" type=text/javascript></script >
+<script  src="Js/Tree.js" type=text/javascript></script >
+<meta content="MSHTML 6.00.2900.5848" name=generator>
+</head>
+<body style=" overflow: auto;">
+<table  id="bg"  height="100%" cellSpacing=0 cellPadding=0 width="100%">  <tbody>
+    <tr style="background:url('images/left_tt_bg.png') repeat-x;height:40px;" >
+    	<td><img src="images/left_tt.png"></td>
+    </tr>
+    <tr>
+      <td id="menuTree" style="backgroung-image:url(images/tree/cebei.jpg)  no-repeat;line-height:35px;padding-right: 10px; padding-left: 10px; padding-top: 10px; height: auto;"  vAlign=top></td>
+    </tr>
+    <tr>
+      <td id=menuTree1 style="padding-right: 10px; padding-left: 10px; padding-bottom: 10px; padding-top: 0px; height: 100%;" vAlign=top></td>
+    </tr>
+  </tbody>
+</table>
+<script type="text/javascript">
+var tree = null;
+var root = new TreeNode('菜单导航');
+var fun13 = new TreeNode('学科公告');
+var fun14 = new TreeNode('公告列表', '/Admin/Notice/noticeList', 'tree_node.gif', null, 'tree_node.gif', null);
+fun13.add(fun14);
+<?php if($_SESSION['power'] == 2 | $_SESSION['power'] == 3 ){ ?>
+var fun15 = new TreeNode('添加公告', '/Admin/Notice/add', 'tree_node.gif', null, 'tree_node.gif', null);
+fun13.add(fun15);
+root.add(fun13);
+<?php } 
+    if($_SESSION['power'] == 1){ ?>
+    root.add(fun13);
+<?php }?>
+<?php if($_SESSION['power'] == 2 | $_SESSION['power'] == 3 ){ ?>   
+var fun17 = new TreeNode('信息管理');
+var fun20 = new TreeNode('学院管理', '/Admin/Academy/academyList', 'tree_node.gif', null, 'tree_node.gif', null);
+fun17.add(fun20);
+var fun18 = new TreeNode('学科管理', '/Admin/Discipline/disciplineList', 'tree_node.gif', null, 'tree_node.gif', null);
+fun17.add(fun18);
+var fun19 = new TreeNode('研究方向管理', '/Admin/Branch/branch', 'tree_node.gif', null, 'tree_node.gif', null);
+fun17.add(fun19);
+root.add(fun17);
+var fun24 = new TreeNode('账户管理');
+var fun25 = new TreeNode('密码修改', '/Admin/User/userEdit', 'tree_node.gif', null, 'tree_node.gif', null);
+fun24.add(fun25);
+root.add(fun24);
+var fun22 = new TreeNode('日志管理');
+var fun23 = new TreeNode('登陆日志', '/Admin/Logs/logList', 'tree_node.gif', null, 'tree_node.gif', null);
+fun22.add(fun23);
+root.add(fun22);
+var fun24 = new TreeNode('数据管理');
+var fun25 = new TreeNode('数据备份', '/Admin/Bak/bak', 'tree_node.gif', null, 'tree_node.gif', null);
+fun24.add(fun25);
+root.add(fun24);
+<?php } ?>
+tree = new Tree(root);
+tree.show('menuTree')
+<?php 
+		foreach ($list2  as $key => $val2){
+?>
+var tree1 = null;
+var root1 = new TreeNode('<?php echo $val2['academy_name'] ?>');
+var fun1 = new TreeNode('学科基本信息表');
+<?php 
+		foreach ($list  as $key => $val3){
+			if($val2['academy_id'] == $val3['academy_id']){
+?>
+var fun2 = new TreeNode('<?php echo $val3['des_name'] ?>学科');
+var fun26 = new TreeNode('<?php echo $val3['des_name'] ?>学科基本信息表','/Admin/KeyDiscipline/keyDiscipline?desid=<?php echo $val3['des_id'] ?>', 'tree_node.gif', null, 'tree_node.gif', null);
+var fun27 = new TreeNode('目标任务书','/Admin/TaskBook/taskList?desid=<?php echo $val3['des_id'] ?>', 'tree_node.gif', null, 'tree_node.gif', null);
+var fun28 = new TreeNode('绩效汇总','/Admin/PerformanceGather/index?desid=<?php echo $val3['des_id'] ?>', 'tree_node.gif', null, 'tree_node.gif', null);
+fun2.add(fun26);
+fun2.add(fun27);
+fun2.add(fun28);
+fun1.add(fun2);
+<?php  }}?>
+root1.add(fun1);
+var fun5 = new TreeNode('研究方向');
+root1.add(fun5);
+<?php 
+		foreach ($list3  as $key => $val4){
+	if($val2['academy_id'] == $val4['academy_id']){
+?>
+var fun6 = new TreeNode('<?php echo $val4['branch_name'] ?>', '/Admin/Sour/sourList?study_branch=<?php echo $val4['branch_id'] ?>', 'tree_node.gif', null, 'tree_node.gif', null);
+fun5.add(fun6);
+<?php  }}?>
+var fun9 = new TreeNode('学术人员');
+var fun10 = new TreeNode('各方向人员总表', '/Admin/Researcher/researcherList?academyid=<?php echo $val2['academy_id'] ?>', 'tree_node.gif', null, 'tree_node.gif', null);
+fun9.add(fun10);
+<?php if($_SESSION['power'] == 1 & $_SESSION['des_id'] ==$val['des_id']){ ?>
+var fun11 = new TreeNode('个人简况表', '/Admin/Researcher/researcher?researcher_id=<?php echo $_SESSION['researcher_id'] ?>', 'tree_node.gif', null, 'tree_node.gif', null);
+fun9.add(fun11);
+<?php }?>
+<?php if($_SESSION['power'] == 2 | $_SESSION['power'] == 3 ){ ?>
+var fun12 = new TreeNode('学术人员添加', '/Admin/Researcher/add?academyid=<?php echo $val2['academy_id'] ?>', 'tree_node.gif', null, 'tree_node.gif', null);
+fun9.add(fun12);
+root1.add(fun9);
+<?php }?>
+<?php if($_SESSION['power'] == 1){ ?>
+root1.add(fun9);
+<?php }?>
+tree1 = new Tree(root1);
+tree1.show('menuTree1')//隐藏菜单栏
+
+<?php  }?>
+</script>
+</body>
+</html>

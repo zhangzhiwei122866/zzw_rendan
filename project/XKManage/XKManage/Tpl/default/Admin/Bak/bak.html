@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>数据备份</title>
+<style type="text/css">
+	body {
+		margin:0 3px;
+		margin:0 3px;background: url(/public/images/bg_left.gif) repeat-x;
+		font-size: 12px
+	}
+	a{text-decoration:none}
+	.head{color:#fff;font-size: 12px}
+	.STYLE1 {font-size: 13px}
+	.STYLE3 {font-size: 12px; font-weight: bold; }
+	.STYLE4 {color: #03515d;font-size: 12px;}
+.button {
+		width:101px;
+	height:41px;
+	color:#fff;
+	font-weight:bold;
+	line-height:30px;
+	font-size:16px;
+	background:url(__PUBLIC__/images/botton.png);
+	border:none;
+	margin:5px auto;
+	cursor:pointer;
+}
+.button_1:hover input {
+	background:url(__PUBLIC__/images/botton_2.png);
+}
+</style>
+</head>
+<body>
+<div style="background:#fff; width:100%; height:100%;">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr height="30">
+    <td width="10" height="30" style="background:url(__PUBLIC__/images/bg_left_tl.png) no-repeat;" >&nbsp;</td>
+    <td height="30" style="color:#fff; background:url(__PUBLIC__/images/bg_left_tc.png) repeat-x;">数据备份</td>
+    <td width="10" height="30" style="background:url(__PUBLIC__/images/bg_left_tr.png) no-repeat;" >&nbsp;</td>
+</tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">  
+  <tr >
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="8">&nbsp;</td>
+        <td><table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="b5d6e6" onmouseover="changeto()"  onmouseout="changeback()">
+          <tr>
+            <td width="15%" height="22" background="__PUBLIC__/images/bg.gif" bgcolor="#FFFFFF"><div align="center"><span class="head">文件名</span></div></td>
+            <td width="13%" height="22" background="__PUBLIC__/images/bg.gif" bgcolor="#FFFFFF"><div align="center"><span class="head">备份时间</span></div></td>
+            <td width="15%" height="22" background="__PUBLIC__/images/bg.gif" bgcolor="#FFFFFF"><div align="center"><span class="head">文件大小</span></div></td>
+            <td width="10%" height="22" background="__PUBLIC__/images/bg.gif" bgcolor="#FFFFFF" class="head"><div align="center">基本操作</div></td>
+          </tr>
+          <php>
+		function MyScandir($FilePath='./',$Order=0){
+		$FilePath = opendir($FilePath);
+		while (false !== ($filename = readdir($FilePath))) {
+		  $FileAndFolderAyy[] = $filename;
+		}
+		$Order == 0 ? sort($FileAndFolderAyy) : rsort($FileAndFolderAyy);
+		return $FileAndFolderAyy;
+		}
+		
+		$FileArr = MyScandir('../databak/');
+		foreach ($FileArr as $i => $n){
+		        if($n != 'PHPMyAdminInitialData.sql' && $i>1){
+		                $FileTime = date('Y-m-d H:i:s',filemtime('../databak/'.$n));
+		                $FileSize = filesize('../databak/' . $n)/1024;
+		
+		                if ($FileSize < 1024){
+		                        $FileSize = number_format($FileSize,2) . ' KB';
+		                } else {
+		                        $FileSize = '<font color="#FF0000">' . number_format($FileSize/1024,2) . '</font> MB';
+		                }
+		                $sAS = "<img src=\"__PUBLIC__/images/down.jpg\" width=\"12\" border=\"0\"  height=\"13\" /><a href=\"?Action=dow&file=" . $n . "\">下载</a> | ";
+		                $sAS .= "<img src=\"__PUBLIC__/images/return.jpg\" width=\"14\" border=\"0\"  height=\"11\" /><a onClick=\"return confirm('确定将数据库还原到当前备份吗？');\" href=\"?Action=RL&File=$n\">还原</a> | ";
+		                $sAS .= "<img src=\"__PUBLIC__/images/del.gif\" width=\"16\" border=\"0\"  height=\"13\" /><a onClick=\"return confirm('确定删除该备份文件吗？');\" href=\"?Action=Del&File=$n\">删除</a>";
+		                echo "<tr class=\"row\">
+		                <td bgcolor=\"#FFFFFF\" height=\"20\" align=\"center\">$n</td>
+		                <td bgcolor=\"#FFFFFF\"  align=\"center\">$FileTime</td>
+		                <td bgcolor=\"#FFFFFF\"  align=\"center\">$FileSize</td>
+		                <td bgcolor=\"#FFFFFF\"  align=\"center\">$sAS</td>
+		                </tr>";
+		                unset($FileTime,$FileSize,$sAS);
+		        }
+		}
+</php>   
+        </table></td>
+        <td width="8">&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="35" background="__PUBLIC__/images/tab_19.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="12" height="35"><img src="__PUBLIC__/images/tab_18.gif" width="12" height="35" /></td>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+           	<td class="STYLE4" align="right"></td> 
+          </tr>
+        </table></td>
+        <td width="16"><img src="__PUBLIC__/images/tab_20.gif" width="16" height="35" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr class="row">
+                <td style="color:#333333; line-height:20px;">
+                        注：1、本操作对数据库中当前网站数据进行备份，其它站点不受影响。&nbsp;2、备份后的数据可以进行下载、还原和删除操作。 　
+                        <a href="#" class="button_1" style="text-decoration:none;"><input type="button" class="button" value="备份数据" style="width:101px;margin-right:5px;float:right; height:41px;cursor: hand" onClick="javascript:location.href='__URL__/bak/Action/backup'" /></a>　
+                </td>
+        </tr>
+  </table>
+</div>
+</body>
+</html>

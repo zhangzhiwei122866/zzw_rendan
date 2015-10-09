@@ -1,0 +1,47 @@
+/*************************** 公用样式 *****************************/
+body,object,iframe,h1,h2,h3,h4,h5,h6,blockquote,pre,a,abbr,acronym,address,code,del,dfn,em,q,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead{margin:0;padding:0;word-wrap:break-word;}
+body,html{padding:0;margin:0;}
+textarea{font-size:12px;}
+body{background-color:#f2c4de;text-align:center;}
+table{border-collapse:collapse;border-spacing:0;}
+img{border:none;width:100%;height:100%;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}h1{font-size:34px;}h2{font-size:26px;}h3{font-size:18px; }h4{font-size:16px;}h5{font-size:14px;}h6{font-size:12px;}
+input,label,img,th{vertical-align:top;}
+address,cite,dfn,em,var{font-style:normal;}
+ul,ol,li{list-style-type:none;}
+img,div{border:0px;margin:0px;padding:0px;}
+a:link{text-decoration:none;}
+ a:link{color: #e95e95} a:visited{color: #e95e95} a:hover{color: #e221ae} a:active{color:#e221ae}
+.left{ float:left; display:inline;}
+.right{ float:right; display:inline;}
+.clear{width:100%;height:0;font-size:0;float:none;overflow:hidden;clear:both;}
+marquee{font-size: 100%; line-height: 1;font-weight: bold; font-family: Arial, Tahoma, sans-serif;color:#e95e95;text-align:center;}
+p{font-size:100%;color:#e95e95; font-weight: bold;line-height: 1; font-family: Arial, Tahoma, sans-serif;}
+span{font-size:100%;color:#e95e95; font-weight: bold; font-family: Arial, Tahoma, sans-serif;}
+td{text-align:center;}
+/*******************************中间主要部分**********************************/
+.zong{background:url(../images/register.png) repeat scroll 0 0 transparent;width:1366px;height:620px; margin:0 auto;text-align:left; display:block;z-index:5; overflow:hidden;}
+.zon{height:94%; width:87%;margin-left:4.5%;margin-top:15px;}
+.zhongjian{width:1188px;height:186px;border-top:1px solid #f2c4de;}
+#center{height:440px;width:712px;border:3px solid #e95e95;border-radius:10px;margin-left:255px;margin-top:135px;background:url(../images/table.png)}
+/******************************table里的内容***********************************/
+#table{height:440px;width:400px;margin-left:72px;}
+#table1{height:440px;width:247px;float:right;margin-top:-443px;}
+/******************************js验证*******************************************/
+.table2{height:20px;width:247px;margin-top:18px;font-size:12px;color:#e95e95; font-weight: bold;line-height: 1; font-family: Arial, Tahoma, sans-serif;text-align:left;}
+.table3{height:20px;width:247px;margin-top:31px;font-size:12px;color:#e95e95; font-weight: bold;line-height: 1; font-family: Arial, Tahoma, sans-serif;text-align:left;}
+.table4{height:95px;width:247px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

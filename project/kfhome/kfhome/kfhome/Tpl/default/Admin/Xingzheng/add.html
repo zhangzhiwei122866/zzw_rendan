@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<import type='css' file="Css.admin.admin" />
+<title>实验室一览</title>
+<style type="text/css">
+.sele{height:52px;width:99%;border:0px;text-align:center;padding-top:18px;}
+input{height:52px;width:99%;border:0px}
+</style>
+</head>
+<body>
+	<div id="rightTop">
+    <p>各部门基本信息</p>
+    <ul class="subnav">
+    	<li><a href="__URL__/index">部门列表</a></li>
+    	<li><a href="__URL__/add">添加部门</a></li>
+    </ul>
+</div>
+<div class="mrightTop">
+	<form method="post" enctype="multipart/form-data" action="__URL__/check">
+		类别：<select name="option" class="querySelect">
+				<option value="">未选择</option>
+			<volist name="list"  id="vo">
+				<option  value="{$vo.gd_id}">{$vo.dep_name}</option>
+			</volist>
+	 	</select>
+		<input type="submit" value="查询" class="formbtn searchbtn" />
+	</form>
+</div>
+<div class = "tdare" style="width:75%;margin:0 auto;margin-top:20px;">
+<form action="__URL__/zheng_add" method="post" enctype="multipart/form-data">
+<table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#c1dff3" align="center">
+   <tr>
+    <td width="23%" height="71" align="center">政府名称</td>
+    <td width="27%"><input type="text" name="dep_name" /></td>
+    <td width="25%" align="center">政府类型</td>
+    <td width="25%">
+    <select name="option" class="sele">
+				<option value="">未选择</option>
+			<volist name="list"  id="vo">
+				<option  value="{$vo.gdt_id}">{$vo.type_name}</option>
+			</volist>
+	</select>
+    </td>
+  </tr>
+  <tr>
+    <td height="71" align="center">政府网址</td>
+    <td><input type="text" name="dep_url" value="Http://" /></td>
+    <td align="center">政府电话</td>
+    <td><input type="text" name="phone" /></td>
+  </tr>
+  <tr>
+    <td height="71" align="center">政府图标</td>
+    <td colspan="3"><input type="file" name="file" /></td>
+  </tr>
+  <tr>
+    <td height="71" colspan="4" align="center" valign="middle">
+		    <input type="submit" value="提交" name="Submit" style="float:left;width:30%;margin-left:16%;cursor:pointer;background-color:white;"/>
+		    <input type="reset" value="重置"  style="float:right;width:30%;margin-right:16%;cursor:pointer;background-color:white;"/>
+	</td>
+	
+  </tr>
+</table>
+</form>
+	</div>
+<import file="Js.jquery,Js.index" />
+</body>
+</html>
