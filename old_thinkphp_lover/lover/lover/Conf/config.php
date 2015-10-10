@@ -16,8 +16,9 @@ return array(
 	'URL_HTML_SUFFIX'     => '.html',  								// URL伪静态后缀设置
    // 'URL_CASE_INSENSITIVE' =>true,								// 实现URL访问不再区分大小写
 	'DEFAULT_FILTER'=>'htmlspecialchars,strip_tags',   		//会依次对变量进行htmlspecialchars和strip_tags方法过滤后返回结果
-
+	//'SESSION_AUTO_START' =>true,
 /* 数据库配置 */
+
 	'DB_TYPE'             => 'mysql',  // 数据库类型
 	'DB_HOST'             => 'localhost', // 数据库服务器地址
 	'DB_NAME'             => 'lover', // 数据库名称
@@ -25,5 +26,21 @@ return array(
     'DB_PWD'              => '123456', // 数据库密码
 	'DB_PORT'             => '3306', // 数据库端口
 	'DB_FIELDTYPE_CHECK'  => false,   // 是否进行字段类型检查
-	'DB_PREFIX'           => '',   // 数据库表前缀	
+	'DB_PREFIX'           => '',   // 数据库表前缀
+/*  memcached配置 */
+	 //'SESSION_PREFIX' => 'sess_',
+	//定义session为memcache
+	'SESSION_TYPE' => 'Memcache',
+	//Memcache服务器
+	'MEMCACHE_HOST' => '127.0.0.1',
+	//Memcache端口
+	'MEMCACHE_PORT' => 11211,
+	//Memcache的session信息有效时间
+	//'SESSION_EXPIRE' => 10,
+/* session配置	*/
+	//'SESSION_TYPE' => 'memcache',
+	'SESSION_HOST'	=> '127.0.0.1', //填写memcache服务器地址
+	'SESSION_PORT'=>11211, //memcache端口,默认11211
+	'SESSION_EXPIRE'=>	604800, //session过期时间(秒)
+	'SESSION_TIMEOUT'=> 60, //memcache连接超时时间,默认60秒
 );
